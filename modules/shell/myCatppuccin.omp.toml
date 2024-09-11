@@ -36,9 +36,16 @@ alignment = "left"
   leading_diamond = ""
   powerline_symbol = ""
   foreground = "p:text"
-  background = "p:blue"
-  template = "♥ ʕ•ᴥ•ʔっ{{.Icon}} "
-  background_templates = [ "{{if eq .OS \"debian\"}}p:sapphire{{end}}" ]
+  background_templates = [
+    "{{if eq .OS \"debian\"}}p:red{{end}}",
+    "{{if .Env.IN_NIX_SHELL }}p:sapphire{{end}}",
+    "p:blue",
+  ]
+  templates_logic = "join"
+  templates = [
+    "♥ ʕ•ᴥ•ʔっ{{.Icon}} ",
+  ]
+  # template = "♥ ʕ•ᴥ•ʔっ{{.Icon}} {{if eq .Env.IN_NIX_SHELL \"impure\" }}hi{{else}}no{{end}}"
 
   [[blocks.segments]]
   type = "root"
@@ -54,7 +61,12 @@ alignment = "left"
   powerline_symbol = ""
   foreground = "p:text"
   background = "p:surface"
-  template = " {{ .Parent }}{{ if or .Parent .RootDir }}<p:blue>{{ .Path }}</>{{ else }}{{ .Path }}{{ end }} "
+  # template = " {{ .Parent }}{{ if or .Parent .RootDir }}<p:blue>{{ .Path }}</>{{ else }}{{ .Path }}{{ end }} "
+  templates_logic = "join"
+  templates = [
+    "{{if .Env.IN_NIX_SHELL}} <p:textLight>in</> <p:sapphire>Nix Shell</>{{end}}",
+    " {{ .Parent }}{{ if or .Parent .RootDir }}<p:blue>{{ .Path }}</>{{ else }}{{ .Path }}{{ end }} ",
+  ]
 
     [blocks.segments.properties]
     style = "folder"
@@ -247,7 +259,12 @@ alignment = "right"
   invert_powerline = true
   foreground = "p:textLight"
   background = "p:overlay"
-  template = ' {{if not .Error}}{{if gt .Percentage 98}}󰁹{{else if gt .Percentage 90}}󰂂{{else if gt .Percentage 80}}󰂁{{else if gt .Percentage 70}}󰂀{{else if gt .Percentage 60}}󰁿{{else if gt .Percentage 50}}󰁾{{else if gt .Percentage 40}}󰁽{{else if gt .Percentage 30}}󰁼{{else if gt .Percentage 20}}󰁻{{else if gt .Percentage 0}}󰁺{{end}}{{if .Icon}}{{ .Icon }}{{else if eq "Unknown" .State.String}}<p:green> </>{{end}}{{end}}{{.Error}}'
+  template = ' {{if not .Error}}{{.Templates}}{{end}}{{.Error}}'
+  templates_logic = "join"
+  templates = [
+    '{{if gt .Percentage 98}}󰁹{{else if gt .Percentage 90}}󰂂{{else if gt .Percentage 80}}󰂁{{else if gt .Percentage 70}}󰂀{{else if gt .Percentage 60}}󰁿{{else if gt .Percentage 50}}󰁾{{else if gt .Percentage 40}}󰁽{{else if gt .Percentage 30}}󰁼{{else if gt .Percentage 20}}󰁻{{else if gt .Percentage 0}}󰁺{{end}}',
+    '{{if .Icon}}{{ .Icon }}{{else if eq "Unknown" .State.String}}<p:green> </>{{end}}',
+  ]
   foreground_templates = [
   "{{if eq \"Unknown\" .State.String}}p:green{{end}}",
   "{{if eq \"Not Charging\" .State.String}}p:green{{end}}",
@@ -531,7 +548,12 @@ alignment = "right"
   invert_powerline = true
   foreground = "p:textLight"
   background = "p:overlay"
-  template = ' {{if not .Error}}{{if gt .Percentage 98}}󰁹{{else if gt .Percentage 90}}󰂂{{else if gt .Percentage 80}}󰂁{{else if gt .Percentage 70}}󰂀{{else if gt .Percentage 60}}󰁿{{else if gt .Percentage 50}}󰁾{{else if gt .Percentage 40}}󰁽{{else if gt .Percentage 30}}󰁼{{else if gt .Percentage 20}}󰁻{{else if gt .Percentage 0}}󰁺{{end}}{{if .Icon}}{{ .Icon }}{{else if eq "Unknown" .State.String}}<p:green> </>{{end}}{{end}}{{.Error}}'
+  template = ' {{if not .Error}}{{.Templates}}{{end}}{{.Error}}'
+  templates_logic = "join"
+  templates = [
+    '{{if gt .Percentage 98}}󰁹{{else if gt .Percentage 90}}󰂂{{else if gt .Percentage 80}}󰂁{{else if gt .Percentage 70}}󰂀{{else if gt .Percentage 60}}󰁿{{else if gt .Percentage 50}}󰁾{{else if gt .Percentage 40}}󰁽{{else if gt .Percentage 30}}󰁼{{else if gt .Percentage 20}}󰁻{{else if gt .Percentage 0}}󰁺{{end}}',
+    '{{if .Icon}}{{ .Icon }}{{else if eq "Unknown" .State.String}}<p:green> </>{{end}}',
+  ]
   foreground_templates = [
   "{{if eq \"Unknown\" .State.String}}p:green{{end}}",
   "{{if eq \"Not Charging\" .State.String}}p:green{{end}}",
