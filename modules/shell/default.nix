@@ -37,6 +37,12 @@ in {
       # };
       
       initExtra = ''
+        # This is the workaround
+        export EDITOR="vim"
+        
+        # Bind ctrl+backspace to delete word
+        bindkey '^H' backward-kill-word
+        
         git-is-descendant() {
           git merge-base --is-ancestor $1 $2
           if [[ $? = 0 ]]; then
@@ -47,12 +53,17 @@ in {
             return $?
           fi
         }
-      
-        # This is the workaround
-        export EDITOR="vim"
         
-        # Bind ctrl+backspace to delete word
-        bindkey '^H' backward-kill-word
+        # Make sure that `nix develop` always uses zsh with my prompt:
+        # Override nix develop to add -c "zsh" to the end of the given arguments.
+        alias nix="nix-override"
+        nix-override() {
+          if [[ $1 == "develop" ]]; then
+            \nix develop ''${@:2} -c "zsh"
+          else
+            \nix $@
+          fi
+        }
       '';
       
       oh-my-zsh = {
