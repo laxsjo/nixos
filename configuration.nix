@@ -194,6 +194,9 @@ in
     oryx
   ];
   
+  # TODO: move to better place
+  boot.binfmt.emulatedSystems = [ "i686-linux" ];
+  
   # Enable polkit (might be necessary for vscode to be able to use sudo in terminal?)
   # security.polkit.enable = true; # Was already enabled apparently...
 

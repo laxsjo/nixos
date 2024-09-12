@@ -12,9 +12,11 @@ in {
   
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
+      # For lbm repl
       gcc_multi
       readline
       gnumake
+      graphviz
       
       # Temporary for gd-save-sync
       libmtp
