@@ -18,6 +18,11 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.vesc-tool-src.url = "github:vedderb/vesc_tool/master";
     };
+    lispbm-flake = {
+      url = "github:laxsjo/lispbm-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     gd-save-transfer = {
       url = "git+file:///home/rasmus/projects/github/gd-save-transfer";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,6 +36,11 @@
       system = "x86_64-linux";
       specialArgs = { inputs = inputs; };
       modules = [
+        {
+          nixpkgs.overlays = [
+            inputs.lispbm-flake.overlays.default
+          ];
+        }
         ./configuration.nix
         flatpak.nixosModules.nix-flatpak
         home-manager.nixosModules.home-manager

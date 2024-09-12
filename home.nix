@@ -24,6 +24,8 @@
     wev
     git
     kdotool
+    lbm
+    lbm64
     
     ## Other
     man-pages
