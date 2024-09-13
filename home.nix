@@ -29,7 +29,8 @@
     
     ## Other
     man-pages
-    man-pages-posix 
+    man-pages-posix
+    wayland-utils # To be able to use wayland-info in Info Center
     
     ## GUI utils
     kdePackages.filelight
