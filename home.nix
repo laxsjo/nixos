@@ -26,6 +26,7 @@
     kdotool
     lbm
     lbm64
+    nixVersions.latest
     
     ## Other
     man-pages
