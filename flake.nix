@@ -16,7 +16,10 @@
       url = "github:laxsjo/vesc-tool-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
-      inputs.vesc-tool-src.url = "github:vedderb/vesc_tool/master";
+      # Not specifying a hard commit makes nixos-rebuild (and other operations
+      # that interact with the flake) always update the lock file to point to
+      # the most recent commit for whatever reason...
+      inputs.vesc-tool-src.url = "github:vedderb/vesc_tool/24754273b498d2dea78d5006a1c2e174b9d412da";
     };
     lispbm-flake = {
       url = "github:laxsjo/lispbm-flake";
