@@ -245,7 +245,8 @@
         "lispbm-flake": "lispbm-flake",
         "nixpkgs": "nixpkgs_2",
         "plasma-manager": "plasma-manager",
-        "vesc-tool-flake": "vesc-tool-flake"
+        "vesc-tool-flake": "vesc-tool-flake",
+        "vesc-tool-src": "vesc-tool-src"
       }
     },
     "systems": {
@@ -322,14 +323,16 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "vesc-tool-src": "vesc-tool-src"
+        "src": [
+          "vesc-tool-src"
+        ]
       },
       "locked": {
-        "lastModified": 1725542388,
-        "narHash": "sha256-EoUTGHJ3G7oRPzDqHQzGPwPC3EwDUp+y/b8I7Kx0cyo=",
+        "lastModified": 1726490234,
+        "narHash": "sha256-aiNZOEILfSoXMCBgp+dcIE1eP9FG2CjkdOGNLMaJXBY=",
         "owner": "laxsjo",
         "repo": "vesc-tool-flake",
-        "rev": "a484da2641887de1967394e05de1240df927d07a",
+        "rev": "10103ea775cbe44f50163f1025d6660741d5e1d7",
         "type": "github"
       },
       "original": {
@@ -341,16 +344,16 @@
     "vesc-tool-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1726081162,
-        "narHash": "sha256-jrzcONiWpxM0G0suuBSt8ndnUvTbzgPPs1S5chMTn40=",
+        "lastModified": 1726471001,
+        "narHash": "sha256-y1gfStat4TkxmrVavLuPbHg5Wi8evbOwqQmohhQg5jE=",
         "owner": "vedderb",
         "repo": "vesc_tool",
-        "rev": "24754273b498d2dea78d5006a1c2e174b9d412da",
+        "rev": "5e4ad9192ae1164e62b6ab5a0f71393bde5ed49b",
         "type": "github"
       },
       "original": {
         "owner": "vedderb",
-        "ref": "release_6_05",
+        "ref": "master",
         "repo": "vesc_tool",
         "type": "github"
       }
