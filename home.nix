@@ -13,6 +13,7 @@
     ./programs/plasma
     ./programs/vesc-tool
     ./programs/vscode.nix
+    ./programs/linecut
   ];
   
   home.username = "rasmus";
@@ -113,6 +114,7 @@
   programs.xeyes.enable = true;
   programs.vesc-tool.enable = true;
   programs.vscode.enable = true;
+  programs.linecut.enable = true;
 
   ## Flatpaks!
   # services.flatpak.enable = true;
