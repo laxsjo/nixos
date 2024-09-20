@@ -34,6 +34,7 @@
     man-pages-posix
     wayland-utils # To be able to use wayland-info in Info Center
     wineWowPackages.waylandFull # To be able to run windows EXEs.
+    rustup # To make the rust-analyzer vscode extension work.
     
     ## GUI utils
     kdePackages.filelight
