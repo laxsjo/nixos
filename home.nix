@@ -58,6 +58,7 @@
     kicad
   ] ++ [
     inputs.gd-save-transfer.packages.${system}.default
+    inputs.lolitop.packages.${system}.default
   ];
   
   # The state version is required and should stay at the version you

@@ -17,6 +17,7 @@
       flake = false;
     };
     vesc-tool-flake = {
+      # url = "git+file:///home/rasmus/Lind/vesc-tool-flake";
       url = "github:laxsjo/vesc-tool-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
@@ -32,7 +33,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    # cortex-xtop.url = "github:numtide/flake-utils";
+    lolitop = {
+      url = "github:cortex/lolitop";
+      # url = "git+file:///home/rasmus/projects/github/xtop-laxsjo";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, flatpak, flake-utils, ... }: {
