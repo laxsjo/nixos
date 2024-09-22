@@ -158,7 +158,7 @@ in
   ];
 
   # Nix configuration
-  nix.settings.experimental-features = ["nix-command" "flakes" "repl-flake"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Make shells available
   programs.zsh.enable = true;
