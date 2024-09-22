@@ -38,7 +38,7 @@ in {
       
       initExtra = ''
         # This is the workaround
-        export EDITOR="vim"
+        export EDITOR="code --wait"
         
         # Bind ctrl+backspace to delete word
         bindkey '^H' backward-kill-word
