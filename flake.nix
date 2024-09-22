@@ -46,6 +46,7 @@
       modules = [
         {
           nixpkgs.overlays = [
+            inputs.vesc-tool-flake.overlays.default
             inputs.lispbm-flake.overlays.default
           ];
         }

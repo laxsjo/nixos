@@ -75,11 +75,8 @@ in {
   };
   
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      # (pkgs.callPackage vescToolDerivation { })
-      # vescToolDerivation
-      # (lib.debug.trace (mapAttrsToList (name: value: name) vesc-tool-derivation))
-      inputs.vesc-tool-flake.packages.${system}.default
+    home.packages = with pkgs; [
+      vesc-tool
     ];
   };
 }

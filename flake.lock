@@ -431,11 +431,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1726840839,
-        "narHash": "sha256-OzK5twwqbWgYzNr6Z+RMqK0IYi0sSp7vGWSoIFt779U=",
+        "lastModified": 1727004304,
+        "narHash": "sha256-XEnYvjVsKZjdJSNiGWebrDYbzQRVzbupcrsbuMaIs2Q=",
         "owner": "laxsjo",
         "repo": "vesc-tool-flake",
-        "rev": "3bbb46363ea128c2653bf53b62ab03588820f877",
+        "rev": "e1d3400b115e51188c48c91006a77873265e88b5",
         "type": "github"
       },
       "original": {
