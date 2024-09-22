@@ -97,6 +97,10 @@ in
 
   # idk where this belongs, to make sure that editing admin files in sublime works
   security.polkit.enable = true;
+  # Set sudo password timeout to 2 hours.
+  security.sudo.extraConfig = let timeoutMins = 120; in ''
+    Defaults        timestamp_timeout=${builtins.toString (timeoutMins * 60)}
+  '';
   
   # Is this enabled by default? *thinking-emoji*
   hardware.opengl.enable = true;
