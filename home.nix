@@ -27,6 +27,7 @@
     kdotool
     lbm
     lbm64
+    neofetch
     nixVersions.latest
     
     ## Other
