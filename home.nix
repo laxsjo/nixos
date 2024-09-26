@@ -29,6 +29,7 @@
     lbm64
     neofetch
     nixVersions.latest
+    tree
     
     ## Other
     man-pages
