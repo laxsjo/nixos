@@ -51,6 +51,7 @@
     filezilla
     inkscape
     vlc
+    blender
     
     ## Gaming
     prismlauncher # Minecraft launcher
