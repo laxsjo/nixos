@@ -30,6 +30,7 @@
     neofetch
     nixVersions.latest
     tree
+    cowsay
     
     ## Other
     man-pages
