@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "bldcSrc": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726298176,
+        "narHash": "sha256-Z4pVm/5K4wxx0iHAmFeEPQiWZmHcoKWHJUt7UDwkU1I=",
+        "owner": "vedderb",
+        "repo": "bldc",
+        "rev": "b8a7a34f03e4338fe8e927f9dab944ef95efc2f5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vedderb",
+        "ref": "release_6_05",
+        "repo": "bldc",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -420,6 +437,7 @@
     },
     "vesc-tool-flake": {
       "inputs": {
+        "bldcSrc": "bldcSrc",
         "flake-utils": [
           "flake-utils"
         ],
@@ -431,11 +449,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1727004304,
-        "narHash": "sha256-XEnYvjVsKZjdJSNiGWebrDYbzQRVzbupcrsbuMaIs2Q=",
+        "lastModified": 1727429540,
+        "narHash": "sha256-MU7sqtQaqVJhJL+hRn/rxSMbWKkHv9d0mEmVdggJZKg=",
         "owner": "laxsjo",
         "repo": "vesc-tool-flake",
-        "rev": "e1d3400b115e51188c48c91006a77873265e88b5",
+        "rev": "0b9c615b85bb8160c58e7bcf95e555e3d3dcb6de",
         "type": "github"
       },
       "original": {
