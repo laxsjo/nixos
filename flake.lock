@@ -449,11 +449,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1727429540,
-        "narHash": "sha256-MU7sqtQaqVJhJL+hRn/rxSMbWKkHv9d0mEmVdggJZKg=",
+        "lastModified": 1727443277,
+        "narHash": "sha256-CFc1kfoBRBvgrCqlZs7cLi4s8AWa64+ahmLSB5IHtqo=",
         "owner": "laxsjo",
         "repo": "vesc-tool-flake",
-        "rev": "0b9c615b85bb8160c58e7bcf95e555e3d3dcb6de",
+        "rev": "87c401d0c36b8f8387835b8ecaba4e4b503919fa",
         "type": "github"
       },
       "original": {
@@ -465,11 +465,11 @@
     "vesc-tool-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1726471001,
-        "narHash": "sha256-y1gfStat4TkxmrVavLuPbHg5Wi8evbOwqQmohhQg5jE=",
+        "lastModified": 1727361092,
+        "narHash": "sha256-1BaXXxv1bsRa8oHVxBeSGt7Nj9F3Hjz+wh0qIMX7HD8=",
         "owner": "vedderb",
         "repo": "vesc_tool",
-        "rev": "5e4ad9192ae1164e62b6ab5a0f71393bde5ed49b",
+        "rev": "1c1a5ea0faa5f3e1d1eb9b63d0048d0cdc68e258",
         "type": "github"
       },
       "original": {
