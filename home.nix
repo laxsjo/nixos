@@ -31,6 +31,7 @@
     nixVersions.latest
     tree
     cowsay
+    just
     
     ## Other
     man-pages
