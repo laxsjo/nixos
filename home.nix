@@ -32,6 +32,7 @@
     tree
     cowsay
     just
+    jq
     
     ## Other
     man-pages
