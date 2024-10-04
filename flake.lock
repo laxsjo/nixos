@@ -465,11 +465,11 @@
     "vesc-tool-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1727361092,
-        "narHash": "sha256-1BaXXxv1bsRa8oHVxBeSGt7Nj9F3Hjz+wh0qIMX7HD8=",
+        "lastModified": 1727704801,
+        "narHash": "sha256-VxB0Z9rAUOl1j8O4VyJfc+B+ewmga5HEoOr9t36JdFQ=",
         "owner": "vedderb",
         "repo": "vesc_tool",
-        "rev": "1c1a5ea0faa5f3e1d1eb9b63d0048d0cdc68e258",
+        "rev": "6d8cb19f41714a4bd778bc1078bd6513155b39b1",
         "type": "github"
       },
       "original": {
