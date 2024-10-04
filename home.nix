@@ -96,6 +96,7 @@
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       submodule.recurse = true;
+      advice.detachedHead = false;
     };
   };
   
