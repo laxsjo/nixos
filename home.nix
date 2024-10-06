@@ -33,6 +33,7 @@
     cowsay
     just
     jq
+    xorg.xwininfo
     
     ## Other
     man-pages
