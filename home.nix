@@ -34,6 +34,7 @@
     just
     jq
     xorg.xwininfo
+    file
     
     ## Other
     man-pages
