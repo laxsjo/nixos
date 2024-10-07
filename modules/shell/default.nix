@@ -27,6 +27,7 @@ in {
         "ls" = "eza --icons always";
         "ll" = "eza -lh --icons always";
         "lt" = "eza -T -L 4 --icons always";
+        "gitp" = "git --no-pager";
       };
       
       # This seems to be broken per
