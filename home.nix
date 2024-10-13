@@ -58,6 +58,7 @@
     inkscape
     vlc
     blender
+    obsidian
     
     ## Gaming
     prismlauncher # Minecraft launcher
