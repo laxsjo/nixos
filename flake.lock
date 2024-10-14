@@ -125,11 +125,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1726216698,
-        "narHash": "sha256-lm4EE1ofS4VqviX9BeTyVarvPp57q/nSuFA7VFNhmq0=",
+        "lastModified": 1728841498,
+        "narHash": "sha256-sz6ACEWxQcqkWBIbKYkwsrzwPak9d1w+4Os+5Dc6wxY=",
         "owner": "laxsjo",
         "repo": "lispbm-flake",
-        "rev": "e9930b9a8f7de0501c3f0fb13830d110126cce66",
+        "rev": "7578d107c049fd68f8e23d95e0f976ab463367f4",
         "type": "github"
       },
       "original": {
@@ -141,11 +141,11 @@
     "lispbm-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1726162248,
-        "narHash": "sha256-alYFN6820rRfmhIv23pWWc3Q1lOaTaNegcYPubHG+Yw=",
+        "lastModified": 1728742179,
+        "narHash": "sha256-njPgWIZL5evg4U+2YN9kdzk5gk7OmmGDeb5QqYdHvdM=",
         "owner": "svenssonjoel",
         "repo": "lispBM",
-        "rev": "24eeabe02936bcac8f56de0756aa3a1848555ec3",
+        "rev": "d4af0ec2b6faeb5f3f97629e70d4cffbc071fdd2",
         "type": "github"
       },
       "original": {

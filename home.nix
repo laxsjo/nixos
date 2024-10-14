@@ -153,4 +153,8 @@
       "STEAM_FORCE_DESKTOPUI_SCALING" = "1.5";
     };
   };
+  
+  ## Nix conf
+  # nix.settings.debugger-on-trace = true;
+  
 }
