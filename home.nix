@@ -35,6 +35,7 @@
     jq
     xorg.xwininfo
     file
+    bbe # binary file editor
     
     ## Other
     man-pages
