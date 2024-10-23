@@ -14,6 +14,7 @@
     ./programs/vesc-tool
     ./programs/vscode.nix
     ./programs/linecut
+    ./programs/discord.nix
   ];
   
   home.username = "rasmus";
