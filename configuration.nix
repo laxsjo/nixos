@@ -146,6 +146,7 @@ in
     xorg.setxkbmap
     xorg.xkbcomp
     nerdfonts
+    cntr
   ];
   
   # Enable flatpaks
