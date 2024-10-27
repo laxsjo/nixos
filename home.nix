@@ -64,6 +64,7 @@
     vlc
     blender
     obsidian
+    geeqie # image viewer
     
     ## Gaming
     prismlauncher # Minecraft launcher
