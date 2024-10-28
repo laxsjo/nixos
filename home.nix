@@ -40,6 +40,7 @@
     # See the following for an example:
     # https://discourse.nixos.org/t/debug-a-failed-derivation-with-breakpointhook-and-cntr/8669
     cntr # For debugging derivations in interactive containers
+    nmap # For scanning active ports
     
     ## Other
     man-pages
