@@ -162,11 +162,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1729758383,
-        "narHash": "sha256-r0f3u01Xp/P4i/4bGqVSqcReT8kY+/RBCJPUThBtRSA=",
+        "lastModified": 1730202213,
+        "narHash": "sha256-5/qGHpl2/Yo+R7o81G0A4rhXY+4vWim5RcXsg4+H2Z0=",
         "owner": "cortex",
         "repo": "lolitop",
-        "rev": "44e0298fa752b5b10ef01286ccba61f90a57faa8",
+        "rev": "30a2bc53510cc6e8e9295548a7f3ecc55f0ee1c8",
         "type": "github"
       },
       "original": {
