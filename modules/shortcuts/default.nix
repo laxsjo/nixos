@@ -1,4 +1,5 @@
 # Globabl shortcuts to focus windows
+# TODO: This isn't currently working
 { lib, config, pkgs, ... }:
 
 let

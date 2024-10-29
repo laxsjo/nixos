@@ -4,6 +4,7 @@
   imports = [
     ./modules/build-env.nix
     ./modules/shell
+    ./modules/ssh
     ./modules/shortcuts
     
     inputs.flatpak.homeManagerModules.nix-flatpak
@@ -86,6 +87,7 @@
   
   module.shortcuts.enable = true;
   module.shell.enable = true;
+  module.ssh.enable = true;
   
   ## Program configurations
 
