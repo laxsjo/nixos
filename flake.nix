@@ -39,7 +39,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, flatpak, flake-utils, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, flatpak, flake-utils, ... }: rec {
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -65,5 +65,8 @@
         }
       ];
     };
+    
+    # For debugging
+    inherit self;
   };
 }
