@@ -43,6 +43,7 @@
     cntr # For debugging derivations in interactive containers
     nmap # For scanning active ports
     sshpass # For non-interactive password ssh/scp connections
+    pv # Show progress for any command that can be piped.
     
     ## Other
     man-pages

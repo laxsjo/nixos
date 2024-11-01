@@ -24,10 +24,14 @@ in {
       syntaxHighlighting.enable = true;
       
       shellAliases = {
+        # Apparently this makes aliases resolve when using sudo...
+        "sudo" = "sudo ";
+        
         "ls" = "eza --icons always";
         "ll" = "eza -lh --icons always";
         "lt" = "eza -T -L 4 --icons always";
         "gitp" = "git --no-pager";
+        "dd" = "\\dd status=progress";
       };
       
       # This seems to be broken per
