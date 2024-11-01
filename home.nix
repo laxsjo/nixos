@@ -3,9 +3,10 @@
 {
   imports = [
     ./modules/build-env.nix
+    ./modules/shortcuts
     ./modules/shell
     ./modules/ssh
-    ./modules/shortcuts
+    ./modules/systemd.nix
     
     inputs.flatpak.homeManagerModules.nix-flatpak
     inputs.plasma-manager.homeManagerModules.plasma-manager
@@ -91,6 +92,7 @@
   module.shortcuts.enable = true;
   module.shell.enable = true;
   module.ssh.enable = true;
+  module.systemd.enable = true;
   
   ## Program configurations
 

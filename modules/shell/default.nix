@@ -4,8 +4,18 @@ let
   name = "shell";
   cfg = config.module.${name};
 in {
-  options = {
-    module.${name}.enable = lib.mkEnableOption "shell. You want to enable this. (Why did I even make this an option?)";
+  options.module.${name} = with lib; {
+    enable = lib.mkEnableOption "shell. You want to enable this. (Why did I even make this an option?)";
+    # Custom option for setting environment variables because both home.sessionVariables
+    # and programs.zsh.sessionVariables appear to be broken in zsh per 
+    # https://github.com/nix-community/home-manager/issues/3681
+    sessionVariables = lib.mkOption {
+      type = lib.types.attrsOf lib.types.str;
+      default = {};
+      example = {
+        "EDITOR" = "vim";
+      };
+    };
   };
   
   config = lib.mkIf cfg.enable {
@@ -16,6 +26,10 @@ in {
       bat
       eza
     ];
+    
+    module.${name}.sessionVariables = {
+      "EDITOR" = "code --wait";
+    };
     
     programs.zsh = {
       enable = true;
@@ -34,17 +48,7 @@ in {
         "dd" = "\\dd status=progress";
       };
       
-      # This seems to be broken per
-      # https://github.com/nix-community/home-manager/issues/3681
-      # I have a workaround 
-      # sessionVariables = {
-      #   EDITOR = "vim";
-      # };
-      
       initExtra = ''
-        # This is the workaround
-        export EDITOR="code --wait"
-        
         # Bind ctrl+backspace to delete word
         bindkey '^H' backward-kill-word
         
@@ -69,6 +73,10 @@ in {
             \nix $@
           fi
         }
+        
+        ${lib.concatStringsSep "\n" (lib.mapAttrsToList (key: value:
+          ''export ${key}="${lib.escape ["\""] value}"''
+        ) cfg.sessionVariables)}
       '';
       
       oh-my-zsh = {
