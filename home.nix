@@ -46,6 +46,7 @@
     sshpass # For non-interactive password ssh/scp connections
     pv # Show progress for any command that can be piped.
     dust # Terminal folder size visualization
+    reuse # Tool for working with the REUSE recommendations.
     
     ## Other
     man-pages
