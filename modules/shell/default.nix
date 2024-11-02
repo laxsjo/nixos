@@ -52,6 +52,13 @@ in {
         # Bind ctrl+backspace to delete word
         bindkey '^H' backward-kill-word
         
+        # usage: faketty [command] [args]
+        # Run command in an environment that pretends to be a terminal. Suitable for
+        # piping into other commands while forcing colors.
+        faketty () {
+          script -qefc "$(printf "%q " "$@")" /dev/null
+        }
+        
         git-is-descendant() {
           git merge-base --is-ancestor $1 $2
           if [[ $? = 0 ]]; then
