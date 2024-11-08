@@ -48,6 +48,8 @@
     dust # Terminal folder size visualization
     reuse # Tool for working with the REUSE recommendations.
     usbutils
+    direnv
+    nix-direnv
     
     ## Other
     man-pages
