@@ -174,5 +174,6 @@
   
   ## Nix conf
   # nix.settings.debugger-on-trace = true;
-  
+  nixpkgs.config = import ./nixpkgs-config.nix;
+  xdg.configFile."nixpkgs/config.nix".source = ./nixpkgs-config.nix;
 }
