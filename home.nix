@@ -165,6 +165,10 @@
       appId = "io.github.zen_browser.zen";
       origin = "flathub";
     }
+    {
+      appId = "com.boxy_svg.BoxySVG";
+      origin = "flathub";
+    }
   ];
   services.flatpak.overrides = {
     "com.valvesoftware.Steam".Environment = {
