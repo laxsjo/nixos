@@ -59,12 +59,22 @@ in {
           script -qefc "$(printf "%q " "$@")" /dev/null
         }
         
-        git-is-descendant() {
+        git-is-ancestor() {
+          if [[ $1 = "--help" ]]; then
+            echo "Usage: git-is-ancestor OLDER NEWER"
+            echo "       git-is-ancestor --help"
+            echo "Print true if OLDER is found in NEWER's tree, otherwise false."
+            echo "Example to check if <commit> is already merged into main:"
+            echo "  git-is-ancestor <commit> main"
+            return 0
+          fi
+          
           git merge-base --is-ancestor $1 $2
           if [[ $? = 0 ]]; then
             echo "true"
           elif [[ $? = 1 ]]; then
             echo "false"
+            return 1
           else
             return $?
           fi
