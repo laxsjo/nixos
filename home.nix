@@ -50,6 +50,8 @@
     usbutils
     direnv
     nix-direnv
+    zip
+    unzip
     
     ## Other
     man-pages
