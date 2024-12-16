@@ -125,6 +125,7 @@
       # usage `git adog`: pretty commit graph
       # from this amazing post: https://stackoverflow.com/a/35075021/15507414
       alias.adog = "log --all --decorate --oneline --graph";
+      alias.dog = "log --decorate --oneline --graph";
     };
   };
   
