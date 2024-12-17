@@ -23,10 +23,15 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.src.follows = "vesc-tool-src";
     };
+    lispbm-src = {
+      url = "github:svenssonjoel/lispBM/master";
+      flake = false;
+    };
     lispbm-flake = {
       url = "github:laxsjo/lispbm-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.lispbm-src.follows = "lispbm-src";
     };
     gd-save-transfer = {
       url = "git+file:///home/rasmus/projects/github/gd-save-transfer";

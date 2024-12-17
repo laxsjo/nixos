@@ -119,7 +119,9 @@
         "flake-utils": [
           "flake-utils"
         ],
-        "lispbm-src": "lispbm-src",
+        "lispbm-src": [
+          "lispbm-src"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -141,11 +143,11 @@
     "lispbm-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1728742179,
-        "narHash": "sha256-njPgWIZL5evg4U+2YN9kdzk5gk7OmmGDeb5QqYdHvdM=",
+        "lastModified": 1734360887,
+        "narHash": "sha256-xw9+rRonyzt+PtwMm8Fd7vFWzWN70TqNUekRT93vnR8=",
         "owner": "svenssonjoel",
         "repo": "lispBM",
-        "rev": "d4af0ec2b6faeb5f3f97629e70d4cffbc071fdd2",
+        "rev": "bfda82003cfe64d9b34b0b2250f2112e9fb47917",
         "type": "github"
       },
       "original": {
@@ -329,6 +331,7 @@
         "gd-save-transfer": "gd-save-transfer",
         "home-manager": "home-manager",
         "lispbm-flake": "lispbm-flake",
+        "lispbm-src": "lispbm-src",
         "lolitop": "lolitop",
         "nixpkgs": "nixpkgs_4",
         "plasma-manager": "plasma-manager",
