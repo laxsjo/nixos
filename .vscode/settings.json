@@ -11,6 +11,8 @@
         "lrwxrwxrwx",
         "nmap",
         "posix",
+        "pypeek",
+        "pyproject",
         "usbutils",
         "vesktop",
         "wmertens",

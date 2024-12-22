@@ -17,6 +17,7 @@
     ./programs/vscode.nix
     ./programs/linecut
     ./programs/discord.nix
+    ./programs/pypeek.nix
   ];
   
   home.username = "rasmus";
