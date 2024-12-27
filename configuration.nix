@@ -46,7 +46,7 @@ in
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  # services.xserver.enable = false;
+  # services.xserver.enable = true;
 
   # Enable the wayland windowing system. (does this sentence even make sense ._.)
   services.displayManager.sddm.wayland.enable = true;
@@ -103,7 +103,8 @@ in
   '';
   
   # Is this enabled by default? *thinking-emoji*
-  hardware.opengl.enable = true;
+  # Previously known as hardware.opengl.enable
+  hardware.graphics.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
