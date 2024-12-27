@@ -78,6 +78,7 @@
     blender
     obsidian
     geeqie # image viewer
+    kooha # Image recorder
     
     ## Gaming
     prismlauncher # Minecraft launcher
