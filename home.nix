@@ -53,6 +53,7 @@
     nix-direnv
     zip
     unzip
+    openocd
     
     ## Other
     man-pages
