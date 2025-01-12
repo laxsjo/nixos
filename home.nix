@@ -79,6 +79,7 @@
     obsidian
     geeqie # image viewer
     kooha # Image recorder
+    ghostty # Terminal emulator
     
     ## Gaming
     prismlauncher # Minecraft launcher

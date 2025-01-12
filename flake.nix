@@ -40,6 +40,9 @@
       url = "github:cortex/lolitop";
       # url = "git+file:///home/rasmus/projects/github/xtop-laxsjo";
     };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, flatpak, flake-utils, ... }: rec {
@@ -51,6 +54,7 @@
           nixpkgs.overlays = [
             inputs.vesc-tool-flake.overlays.default
             inputs.lispbm-flake.overlays.default
+            inputs.ghostty.overlays.default
           ];
         }
         ./configuration.nix
