@@ -1,7 +1,7 @@
 { config, lib, pkgs, osConfig, inputs, ... }:
 
 {
-  imports = [
+  imports = builtins.break [
     ./modules/build-env.nix
     ./modules/shortcuts
     ./modules/shell
@@ -18,6 +18,7 @@
     ./programs/linecut
     ./programs/discord.nix
     ./programs/pypeek.nix
+    ./programs/rlr.nix
   ];
   
   home.username = "rasmus";
@@ -158,6 +159,7 @@
   programs.vesc-tool.enable = true;
   programs.vscode.enable = true;
   programs.linecut.enable = true;
+  programs.rlr.enable = true;
 
   ## Flatpaks!
   # services.flatpak.enable = true;
