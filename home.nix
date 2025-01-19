@@ -77,7 +77,7 @@
     filezilla
     inkscape
     vlc
-    blender
+    blender-hip
     obsidian
     geeqie # image viewer
     kooha # Image recorder

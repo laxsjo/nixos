@@ -104,7 +104,15 @@ in
   
   # Is this enabled by default? *thinking-emoji*
   # Previously known as hardware.opengl.enable
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+  };
+  hardware.amdgpu = {
+    opencl.enable = true;
+    # IDK if this actually changed anything.
+    amdvlk.enable = true;
+  };
+  
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
