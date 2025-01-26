@@ -112,16 +112,20 @@ in
     # IDK if this actually changed anything.
     amdvlk.enable = true;
   };
-  
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+
+  users.groups = {
+    "plugdev" = {};
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rasmus = {
     isNormalUser = true;
     description = "Rasmus Söderhielm";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    # I'm not sure if I'm supposed to be a member of the plugdev group...
+    extraGroups = [ "networkmanager" "wheel" "dialout" "plugdev" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
@@ -133,7 +137,6 @@ in
 
   # Install firefox.
   programs.firefox.enable = true;
-
 
   nixpkgs.config = {
     # Allow unfree packages
@@ -199,7 +202,7 @@ in
 
   # udev rules
   services.udev.packages = [
-    ((pkgs.writeTextFile {
+    (pkgs.writeTextFile {
       name = "misc_rules";
       destination = "/etc/udev/rules.d/99-misc-rules.rules";
       text = ''
@@ -211,7 +214,18 @@ in
         # For the Brother PTouch
         SUBSYSTEM=="usb", ATTR{idVendor}=="04f9", ATTR{idProduct}=="2060",MODE:="0667",SYMLINK+="ptouch_%n"
       '';
-    }))
+    })
+    (pkgs.writeTextFile {
+      name = "android";
+      destination = "/etc/udev/rules.d/99-android.rules";
+      text = ''
+        ## For debugging android phones
+      
+        # Google Pixel 7 Pro
+        # (IDK, this rule might also apply to more google products...)
+        SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE:="0660", GROUP="plugdev"
+      '';
+    })
     oryx
   ];
   

@@ -55,6 +55,7 @@
     zip
     unzip
     openocd
+    android-tools # To get adb for debugging Android phones.
     
     ## Other
     man-pages

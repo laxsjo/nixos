@@ -128,11 +128,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1728840517,
-        "narHash": "sha256-/7aSSb/daXAdN80gjhiYrPsjVvsTtO9IfJzHDpPy2yw=",
+        "lastModified": 1737906121,
+        "narHash": "sha256-wXNXIgNkRIkGdhhoq8U/T72yOshWHB+wfQBxWaPpX9g=",
         "ref": "refs/heads/main",
-        "rev": "497cbde4a79b24ad30c63f4a1d32d1deeb92240b",
-        "revCount": 13,
+        "rev": "0bfb5e6e55d120fe44d55ddb96b945793286b9a4",
+        "revCount": 16,
         "type": "git",
         "url": "file:///home/rasmus/projects/github/gd-save-transfer"
       },
