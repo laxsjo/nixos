@@ -213,6 +213,9 @@ in
         
         # For the Brother PTouch
         SUBSYSTEM=="usb", ATTR{idVendor}=="04f9", ATTR{idProduct}=="2060",MODE:="0667",SYMLINK+="ptouch_%n"
+        
+        # For the Framework 16 Keyboard
+        SUBSYSTEM=="usb", ATTR{idVendor}=="32ac", ATTR{idProduct}=="0018", MODE:="0660", GROUP="plugdev"
       '';
     })
     (pkgs.writeTextFile {
