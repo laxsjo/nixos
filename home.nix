@@ -18,6 +18,7 @@
     ./programs/discord.nix
     ./programs/pypeek.nix
     ./programs/rlr.nix
+    ./programs/emote.nix
   ];
   
   home.username = "rasmus";
