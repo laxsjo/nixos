@@ -9,7 +9,6 @@
     ./modules/systemd.nix
     
     inputs.flatpak.homeManagerModules.nix-flatpak
-    inputs.plasma-manager.homeManagerModules.plasma-manager
     ./programs/normcap.nix
     ./programs/xeyes
     ./programs/plasma

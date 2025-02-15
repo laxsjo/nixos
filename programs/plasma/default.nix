@@ -1,6 +1,9 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.plasma-manager.homeManagerModules.plasma-manager
+  ];
   config = {
     programs.plasma = {
       enable = true;
