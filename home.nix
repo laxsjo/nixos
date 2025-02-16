@@ -9,16 +9,7 @@
     ./modules/systemd.nix
     
     inputs.flatpak.homeManagerModules.nix-flatpak
-    ./programs/normcap.nix
-    ./programs/xeyes
-    ./programs/plasma
-    ./programs/vesc-tool
-    ./programs/vscode.nix
-    ./programs/linecut
-    ./programs/discord.nix
-    ./programs/pypeek.nix
-    ./programs/rlr.nix
-    ./programs/emote.nix
+    ./programs
   ];
   
   home.username = "rasmus";
