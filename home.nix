@@ -127,7 +127,6 @@
       submodule.recurse = true;
       submodule.fetchJobs = 8;
       advice.detachedHead = false;
-      blame.ignoreRevsFile = ".git-blame-ignore-revs";
       
       # usage `git adog`: pretty commit graph
       # from this amazing post: https://stackoverflow.com/a/35075021/15507414
