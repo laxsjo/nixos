@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
+    flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
     flake-utils.url = "github:numtide/flake-utils";
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
