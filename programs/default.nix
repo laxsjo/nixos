@@ -12,5 +12,6 @@
     ./pypeek.nix
     ./rlr.nix
     ./emote.nix
+    ./zed-editor.nix
   ];
 }
