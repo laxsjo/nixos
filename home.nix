@@ -163,7 +163,7 @@
       origin = "flathub";
     }
     {
-      appId = "io.github.zen_browser.zen";
+      appId = "app.zen_browser.zen";
       origin = "flathub";
     }
     {
