@@ -125,7 +125,7 @@ in
     isNormalUser = true;
     description = "Rasmus Söderhielm";
     # I'm not sure if I'm supposed to be a member of the plugdev group...
-    extraGroups = [ "networkmanager" "wheel" "dialout" "plugdev" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "plugdev" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
@@ -134,6 +134,9 @@ in
   # users.extraUsers.rasmus = {
   #   shell = pkgs.zsh;
   # };
+  
+  # Install docker
+  virtualisation.docker.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
