@@ -7,6 +7,12 @@
   config = {
     programs.plasma = {
       enable = true;
+      # Wallpapers by Sameera Sandakelum:
+      # https://photos.app.goo.gl/vm9UudLFVqMrcyKW7
+      # Lockscreen wallpaper
+      kscreenlocker.appearance.wallpaper = ../../assets/zen-coral-white-dim.jpeg;
+      workspace.wallpaper = ../../assets/zen-dark-coral-dim.jpeg;
+      
       shortcuts = {
         "ActivityManager"."switch-to-activity-dad1e87e-84fb-4f4e-aa0f-cb086bfb65a6" = [ ];
         "KDE Keyboard Layout Switcher"."Switch keyboard layout to Swedish" = [ ];
