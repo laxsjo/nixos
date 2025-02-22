@@ -4,7 +4,6 @@
   imports = [
     ./normcap.nix
     ./xeyes
-    ./plasma
     ./vesc-tool
     ./vscode.nix
     ./linecut

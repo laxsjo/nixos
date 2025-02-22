@@ -1,10 +1,23 @@
 { lib, config, pkgs, inputs, ... }:
 
 {
-  imports = [
-    inputs.plasma-manager.homeManagerModules.plasma-manager
-  ];
+  imports = [ ];
+  
   config = {
+    # Enable the wayland windowing system. (does this sentence even make sense ._.)
+    services.displayManager.sddm.wayland.enable = true;
+
+    # Enable the KDE Plasma Desktop Environment.
+    services.displayManager.sddm.enable = true;
+    services.desktopManager.plasma6.enable = true;
+  };
+  
+  # Home manager configuration
+  config.home-manager.users.rasmus = { lib, config, pkgs, inputs, ... }: {
+    imports = [
+      inputs.plasma-manager.homeManagerModules.plasma-manager
+    ];
+    
     home.packages = [
       pkgs.kdePackages.sddm-kcm
     ];
