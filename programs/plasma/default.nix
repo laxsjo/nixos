@@ -5,6 +5,10 @@
     inputs.plasma-manager.homeManagerModules.plasma-manager
   ];
   config = {
+    home.packages = [
+      pkgs.kdePackages.sddm-kcm
+    ];
+    
     programs.plasma = {
       enable = true;
       # Wallpapers by Sameera Sandakelum:
