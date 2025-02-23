@@ -17,6 +17,7 @@ let
       '';
     };
   
+  user = "rasmus";
   theme = "breeze-clean";
   # Wallpapers by Sameera Sandakelum:
   # https://photos.app.goo.gl/vm9UudLFVqMrcyKW7
@@ -45,6 +46,34 @@ in {
     # # Enable fingerprint reader handling
     # services.fprintd.enable = true;
     
+    # Make SDDM use the same config files as the specified user. This makes sure
+    # that the current display settings used in my desktop is applied in SDDM.
+    # (Maybe it's possible to make SDDM use my dark theme...)
+    # TODO: This should probably be written as a systemd service.
+    system.activationScripts.copySddmConfig = {
+      deps = [ "var" "users" ];
+      text = ''
+        mkdir -p /var/lib/sddm/.config
+        
+        any_changed=false
+        copy_if_exists() {
+          if [ -f /home/${user}/$1 ]; then
+            cp /home/${user}/$1 /var/lib/sddm/$1
+            any_changed=true
+          fi
+        }
+        
+        copy_if_exists .config/kwinoutputconfig.json
+        copy_if_exists .config/kcminputrc
+        
+        if [ $any_changed = true ]; then
+          echo "copied ${user}'s config into /var/lib/sddm/.config/"
+        fi
+        
+        chown sddm:sddm /var/lib/sddm/.config/
+      '';
+    };
+    
     environment.systemPackages = [
       (pkgs.atPath
         sddmUserThemeConfig
@@ -60,7 +89,7 @@ in {
   };
   
   # Home manager configuration
-  config.home-manager.users.rasmus = { lib, config, pkgs, inputs, ... }: {
+  config.home-manager.users.${user} = { lib, config, pkgs, inputs, ... }: {
     imports = [
       inputs.plasma-manager.homeManagerModules.plasma-manager
     ];

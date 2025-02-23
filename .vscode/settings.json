@@ -62,6 +62,7 @@
         "ksmserver",
         "kwalletrc",
         "kwin",
+        "kwinoutputconfig",
         "kwinrc",
         "libmtp",
         "localerc",
