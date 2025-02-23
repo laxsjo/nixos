@@ -1,6 +1,33 @@
 { lib, config, pkgs, inputs, ... }:
 
-{
+let
+  makeIni = (pkgs.formats.ini {}).generate;
+  imageMapRange = image: sourceColorStart: sourceColorEnd: destinationColorStart: destinationColorEnd:
+    pkgs.stdenvNoCC.mkDerivation {
+      name = "${image.name or builtins.baseNameOf image}.recolored.png";
+      nativeBuildInputs = [ pkgs.imagemagick ];
+      
+      phases = [ "installPhase" ];
+      installPhase = ''
+        magick "${image}" \
+          -level-colors "${sourceColorStart}":"${sourceColorEnd}" \
+          -colorspace Gray \
+          +level-colors "${destinationColorStart}":"${destinationColorEnd}" \
+          PNG:$out
+      '';
+    };
+  
+  theme = "breeze-clean";
+  # Wallpapers by Sameera Sandakelum:
+  # https://photos.app.goo.gl/vm9UudLFVqMrcyKW7
+  loginBackground = imageMapRange ../../assets/zen-coral-white-dim.jpeg "#F66E51" "white" "#BC97FF" "white";
+  desktopBackground = ../../assets/zen-dark-coral-dim.jpeg;
+  sddmUserThemeConfig = makeIni "theme.conf.user" {
+    General = {
+      background = "${loginBackground}";
+    };
+  };
+in {
   imports = [ ];
   
   config = {
@@ -17,6 +44,19 @@
     # Make some day I will revisit this and try to solve it.
     # # Enable fingerprint reader handling
     # services.fprintd.enable = true;
+    
+    environment.systemPackages = [
+      (pkgs.atPath
+        sddmUserThemeConfig
+        "share/sddm/themes/${theme}/${sddmUserThemeConfig.name}")
+      (pkgs.callPackage ./breeze-clean.nix { })
+    ];
+    
+    services.displayManager.sddm.settings = {
+      Theme = {
+        Current = theme;
+      };
+    };
   };
   
   # Home manager configuration
@@ -31,11 +71,10 @@
     
     programs.plasma = {
       enable = true;
-      # Wallpapers by Sameera Sandakelum:
-      # https://photos.app.goo.gl/vm9UudLFVqMrcyKW7
+      
       # Lockscreen wallpaper
-      kscreenlocker.appearance.wallpaper = ../../assets/zen-coral-white-dim.jpeg;
-      workspace.wallpaper = ../../assets/zen-dark-coral-dim.jpeg;
+      kscreenlocker.appearance.wallpaper = loginBackground;
+      workspace.wallpaper = desktopBackground;
       
       shortcuts = {
         "ActivityManager"."switch-to-activity-dad1e87e-84fb-4f4e-aa0f-cb086bfb65a6" = [ ];

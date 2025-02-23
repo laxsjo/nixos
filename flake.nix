@@ -55,6 +55,7 @@
             inputs.vesc-tool-flake.overlays.default
             inputs.lispbm-flake.overlays.default
             inputs.ghostty.overlays.default
+            (import ./overlay.nix)
           ];
         }
         ./configuration.nix
