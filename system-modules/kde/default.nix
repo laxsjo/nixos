@@ -10,6 +10,13 @@
     # Enable the KDE Plasma Desktop Environment.
     services.displayManager.sddm.enable = true;
     services.desktopManager.plasma6.enable = true;
+    # So turns out that enabling this currently makes loging through SDDM take
+    # much longer. This is a known problem that still hasn't been fixed:
+    # https://github.com/sddm/sddm/issues/1840
+    # https://github.com/sddm/sddm/pull/1220
+    # Make some day I will revisit this and try to solve it.
+    # # Enable fingerprint reader handling
+    # services.fprintd.enable = true;
   };
   
   # Home manager configuration
