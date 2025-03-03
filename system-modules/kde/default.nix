@@ -16,6 +16,7 @@ let
           PNG:$out
       '';
     };
+  secsFromMins = minutes: 60 * minutes;
   
   user = "rasmus";
   theme = "breeze-clean";
@@ -95,6 +96,7 @@ in {
     ];
     
     home.packages = [
+      # Allows kde system settings UI to edit SDDM settings.
       pkgs.kdePackages.sddm-kcm
     ];
     
@@ -104,6 +106,17 @@ in {
       # Lockscreen wallpaper
       kscreenlocker.appearance.wallpaper = loginBackground;
       workspace.wallpaper = desktopBackground;
+      
+      # Power settings
+      powerdevil = {
+        AC = {
+          displayBrightness = 100;
+          # Never go to sleep/turn off
+          autoSuspend.action = "nothing";
+          dimDisplay.idleTimeout = secsFromMins 5;
+          turnOffDisplay.idleTimeout = "never";
+        };
+      };
       
       shortcuts = {
         "ActivityManager"."switch-to-activity-dad1e87e-84fb-4f4e-aa0f-cb086bfb65a6" = [ ];
