@@ -11,6 +11,7 @@ in
     ./hardware-configuration.nix
     ./system-modules/keyboard.nix
     ./system-modules/kde
+    ./cachix.nix
   ];
 
   # Bootloader.
