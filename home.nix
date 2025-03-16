@@ -47,6 +47,7 @@
     unzip
     openocd
     android-tools # To get adb for debugging Android phones.
+    xsel # Utility for saving stdin to clipboard.
     
     ## Other
     man-pages

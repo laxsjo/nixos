@@ -122,6 +122,7 @@
         "xhci",
         "xkbcomp",
         "xorg",
+        "xsel",
         "xsession",
         "Xwayland",
         "xwininfo",
