@@ -5,11 +5,18 @@ let
   patched = pkgs.applyPatches {
     src = pkgs.kdePackages.plasma-desktop;
     patches = [
-      ./breeze-metadata.patch
       ./breeze-no-dropshadow.patch
     ];
   };
 in
-  pkgs.atPath
-    "${patched}/share/sddm/themes/breeze"
-    "share/sddm/themes/breeze-clean"
+  pkgs.symlinkJoin {
+    name = "breeze-clean";
+    paths = [
+      (pkgs.atPath
+        "${patched}/share/sddm/themes/breeze"
+        "share/sddm/themes/breeze-clean")
+      (pkgs.atPath
+        ./metadata.desktop
+        "share/sddm/themes/breeze-clean/metadata.desktop")
+    ];
+  }

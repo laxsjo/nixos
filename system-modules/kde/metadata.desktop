@@ -1,0 +1,21 @@
+[SddmGreeterTheme]
+Name=Breeze Clean
+Name[en_GB]=Breeze Clean
+Name[sv]=Breeze Rent
+Description=Breeze
+Description[en_GB]=Breeze
+Description[sv]=Breeze
+Author=KDE Visual Design Group
+Copyright=(c) 2014, David Edmundson
+License=CC-BY-SA
+Type=sddm-theme
+Version=0.1
+Website=https://github.com/laxsjo/nixos
+Screenshot=preview.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Email=rasmus.soderhielm@gmail.com
+Theme-Id=breeze-clean
+Theme-API=2.0
+QtVersion=6
