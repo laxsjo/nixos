@@ -177,9 +177,4 @@
       "STEAM_FORCE_DESKTOPUI_SCALING" = "1.5";
     };
   };
-  
-  ## Nix conf
-  # nix.settings.debugger-on-trace = true;
-  nixpkgs.config = import ./nixpkgs-config.nix;
-  xdg.configFile."nixpkgs/config.nix".source = ./nixpkgs-config.nix;
 }
