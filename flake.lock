@@ -182,15 +182,15 @@
         "repo": "home-manager",
         "type": "github"
       }
-    },    
+    },
     "lispbm": {
       "flake": false,
       "locked": {
-        "lastModified": 1734360887,
-        "narHash": "sha256-xw9+rRonyzt+PtwMm8Fd7vFWzWN70TqNUekRT93vnR8=",
+        "lastModified": 1742404841,
+        "narHash": "sha256-nN8ACC8csDQiCixux6/YpqgJSavZ+wDCqacffcqHK/A=",
         "owner": "svenssonjoel",
         "repo": "lispBM",
-        "rev": "bfda82003cfe64d9b34b0b2250f2112e9fb47917",
+        "rev": "ba125026d621c571e0d5751939397ba90eda07ba",
         "type": "github"
       },
       "original": {
