@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    vesc-tool-src = {
+    vesc-tool = {
       url = "github:vedderb/vesc_tool/master";
       flake = false;
     };
@@ -21,9 +21,9 @@
       url = "github:laxsjo/vesc-tool-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
-      inputs.src.follows = "vesc-tool-src";
+      inputs.src.follows = "vesc-tool";
     };
-    lispbm-src = {
+    lispbm = {
       url = "github:svenssonjoel/lispBM/master";
       flake = false;
     };
@@ -31,7 +31,7 @@
       url = "github:laxsjo/lispbm-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
-      inputs.lispbm-src.follows = "lispbm-src";
+      inputs.lispbm-src.follows = "lispbm";
     };
     gd-save-transfer = {
       url = "git+file:///home/rasmus/projects/github/gd-save-transfer";

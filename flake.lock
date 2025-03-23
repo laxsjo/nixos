@@ -182,6 +182,23 @@
         "repo": "home-manager",
         "type": "github"
       }
+    },    
+    "lispbm": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1734360887,
+        "narHash": "sha256-xw9+rRonyzt+PtwMm8Fd7vFWzWN70TqNUekRT93vnR8=",
+        "owner": "svenssonjoel",
+        "repo": "lispBM",
+        "rev": "bfda82003cfe64d9b34b0b2250f2112e9fb47917",
+        "type": "github"
+      },
+      "original": {
+        "owner": "svenssonjoel",
+        "ref": "master",
+        "repo": "lispBM",
+        "type": "github"
+      }
     },
     "lispbm-flake": {
       "inputs": {
@@ -189,7 +206,7 @@
           "flake-utils"
         ],
         "lispbm-src": [
-          "lispbm-src"
+          "lispbm"
         ],
         "nixpkgs": [
           "nixpkgs"
@@ -206,23 +223,6 @@
       "original": {
         "owner": "laxsjo",
         "repo": "lispbm-flake",
-        "type": "github"
-      }
-    },
-    "lispbm-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1734360887,
-        "narHash": "sha256-xw9+rRonyzt+PtwMm8Fd7vFWzWN70TqNUekRT93vnR8=",
-        "owner": "svenssonjoel",
-        "repo": "lispBM",
-        "rev": "bfda82003cfe64d9b34b0b2250f2112e9fb47917",
-        "type": "github"
-      },
-      "original": {
-        "owner": "svenssonjoel",
-        "ref": "master",
-        "repo": "lispBM",
         "type": "github"
       }
     },
@@ -448,13 +448,13 @@
         "gd-save-transfer": "gd-save-transfer",
         "ghostty": "ghostty",
         "home-manager": "home-manager",
+        "lispbm": "lispbm",
         "lispbm-flake": "lispbm-flake",
-        "lispbm-src": "lispbm-src",
         "lolitop": "lolitop",
         "nixpkgs": "nixpkgs_5",
         "plasma-manager": "plasma-manager",
-        "vesc-tool-flake": "vesc-tool-flake",
-        "vesc-tool-src": "vesc-tool-src"
+        "vesc-tool": "vesc-tool",
+        "vesc-tool-flake": "vesc-tool-flake"
       }
     },
     "systems": {
@@ -586,34 +586,7 @@
         "type": "github"
       }
     },
-    "vesc-tool-flake": {
-      "inputs": {
-        "bldcSrc": "bldcSrc",
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "src": [
-          "vesc-tool-src"
-        ]
-      },
-      "locked": {
-        "lastModified": 1727443277,
-        "narHash": "sha256-CFc1kfoBRBvgrCqlZs7cLi4s8AWa64+ahmLSB5IHtqo=",
-        "owner": "laxsjo",
-        "repo": "vesc-tool-flake",
-        "rev": "87c401d0c36b8f8387835b8ecaba4e4b503919fa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "laxsjo",
-        "repo": "vesc-tool-flake",
-        "type": "github"
-      }
-    },
-    "vesc-tool-src": {
+    "vesc-tool": {
       "flake": false,
       "locked": {
         "lastModified": 1739374748,
@@ -627,6 +600,33 @@
         "owner": "vedderb",
         "ref": "master",
         "repo": "vesc_tool",
+        "type": "github"
+      }
+    },
+    "vesc-tool-flake": {
+      "inputs": {
+        "bldcSrc": "bldcSrc",
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "src": [
+          "vesc-tool"
+        ]
+      },
+      "locked": {
+        "lastModified": 1727443277,
+        "narHash": "sha256-CFc1kfoBRBvgrCqlZs7cLi4s8AWa64+ahmLSB5IHtqo=",
+        "owner": "laxsjo",
+        "repo": "vesc-tool-flake",
+        "rev": "87c401d0c36b8f8387835b8ecaba4e4b503919fa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "laxsjo",
+        "repo": "vesc-tool-flake",
         "type": "github"
       }
     },
