@@ -48,9 +48,7 @@ let
       hash = "sha256-XF1owxyC1VjrTaAiK1XhZugIQ11v4JxrBBb8ZHV5DlA=";
     };
 
-    # TODO: Test if this removes the warning
-    useFetchCargoVendor = true;
-    cargoHash = "sha256-L7s3cQwCdggPVT3GXxyH/gm2OGKznqyzyKAFNqh2bC8=";
+    cargoHash = "sha256-81GFc7qp0NNrw5oOHgfxghnMD4VQNY4AkyGmcdVFF4o=";
   };
 in {
   options = {

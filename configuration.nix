@@ -78,7 +78,7 @@ in
   };
   
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -158,6 +158,7 @@ in
     gedit
     xorg.setxkbmap
     xorg.xkbcomp
+    nerdfonts
     cntr
   ];
   
@@ -167,7 +168,7 @@ in
   # Fonts
   fonts.packages = with pkgs; [
     fira-code
-    nerd-fonts.fira-code
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
   # Nix configuration
