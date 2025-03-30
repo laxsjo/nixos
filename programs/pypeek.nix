@@ -1,14 +1,20 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 # Only supported on X11 :(
 
 let
   pname = "pypeek";
-  version = "2.10.11";  
+  version = "2.10.11";
   # Override vesktop to use the standard discord icon
   pypeek = pkgs.python312Packages.buildPythonPackage {
     inherit pname version;
     pyproject = true;
-    
+
     src = pkgs.fetchPypi {
       inherit pname version;
       sha256 = "sha256-Nd7VHD1CbyOALfV7TGeG157m/H7omvurOR8z7aSI8e0=";
@@ -23,7 +29,8 @@ let
     ];
     doCheck = false;
   };
-in {
+in
+{
   config = {
     home.packages = with pkgs; [
       pypeek

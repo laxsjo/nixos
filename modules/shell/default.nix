@@ -1,23 +1,30 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   name = "shell";
   cfg = config.module.${name};
-in {
+in
+{
   options.module.${name} = with lib; {
     enable = lib.mkEnableOption "shell. You want to enable this. (Why did I even make this an option?)";
     # Custom option for setting environment variables because both home.sessionVariables
-    # and programs.zsh.sessionVariables appear to be broken in zsh per 
+    # and programs.zsh.sessionVariables appear to be broken in zsh per
     # https://github.com/nix-community/home-manager/issues/3681
     sessionVariables = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
-      default = {};
+      default = { };
       example = {
         "EDITOR" = "vim";
       };
     };
   };
-  
+
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       oh-my-posh
@@ -26,39 +33,39 @@ in {
       bat
       eza
     ];
-    
+
     module.${name}.sessionVariables = {
       "EDITOR" = "code --wait";
     };
-    
+
     programs.zsh = {
       enable = true;
       enableCompletion = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
-      
+
       shellAliases = {
         # Apparently this makes aliases resolve when using sudo...
         "sudo" = "sudo ";
-        
+
         "ls" = "eza --icons always";
         "ll" = "eza -lh --icons always";
         "lt" = "eza -T -L 4 --icons always";
         "gitp" = "git --no-pager";
         "dd" = "\\dd status=progress";
       };
-      
+
       initExtra = ''
         # Bind ctrl+backspace to delete word
         bindkey '^H' backward-kill-word
-        
+
         # usage: faketty [command] [args]
         # Run command in an environment that pretends to be a terminal. Suitable for
         # piping into other commands while forcing colors.
         faketty () {
           script -qefc "$(printf "%q " "$@")" /dev/null
         }
-        
+
         git-is-ancestor() {
           if [[ $1 = "--help" ]]; then
             echo "Usage: git-is-ancestor OLDER NEWER"
@@ -79,7 +86,7 @@ in {
             return $?
           fi
         }
-        
+
         # Make sure that `nix develop` always uses zsh with my prompt:
         # Override nix develop to add -c "zsh" to the end of the given arguments.
         alias nix="nix-override"
@@ -90,12 +97,14 @@ in {
             \nix $@
           fi
         }
-        
-        ${lib.concatStringsSep "\n" (lib.mapAttrsToList (key: value:
-          ''export ${key}="${lib.escape ["\""] value}"''
-        ) cfg.sessionVariables)}
+
+        ${lib.concatStringsSep "\n" (
+          lib.mapAttrsToList (
+            key: value: ''export ${key}="${lib.escape [ "\"" ] value}"''
+          ) cfg.sessionVariables
+        )}
       '';
-      
+
       oh-my-zsh = {
         enable = true;
       };
@@ -104,7 +113,7 @@ in {
       enable = true;
       settings = builtins.fromTOML (builtins.readFile ./myCatppuccin.omp.toml);
     };
-    
+
     # Konsole
     # IDK where I should place this...
     # From here: https://unix.stackexchange.com/a/545615
@@ -119,7 +128,7 @@ in {
     home.file.".local/share/konsole/UserProfile.profile".text = ''
       [Appearance]
       Font=FiraCode Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-      
+
       [General]
       Command=~/.hacks/useShell.sh
       Name=UserProfile

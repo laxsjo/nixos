@@ -1,10 +1,17 @@
-{ lib, config, pkgs, inputs, system, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  system,
+  ...
+}:
 
 let
   name = "vesc-tool";
   cfg = config.programs.${name};
-  
-  # vescToolDerivation = (pkgs.stdenv.mkDerivation 
+
+  # vescToolDerivation = (pkgs.stdenv.mkDerivation
   #   (let
   #     desktopItem = pkgs.makeDesktopItem {
   #       name = name;
@@ -46,7 +53,7 @@ let
   #       mkdir -p $out/bin
   #       mkdir -p $out/share/icons
   #       mkdir -p $out/share/applications
-        
+
   #       cp build/lin/vesc_tool_* $out/bin/vesc_tool
   #       cp res/version/neutral_v.svg $out/share/icons/
   #       cp ${desktopItem}/share/applications/${name}.desktop $out/share/applications/
@@ -63,21 +70,21 @@ let
   #       pkgs.libsForQt5.qtserialport
   #       pkgs.libsForQt5.qtgraphicaleffects
   #       pkgs.libsForQt5.wrapQtAppsHook
-        
-  #       # Make the desktop icon work
-  #       pkgs.copyDesktopItems
-  #     ];
-  #   })
-  # );
-in {
+
+in
+#       # Make the desktop icon work
+#       pkgs.copyDesktopItems
+#     ];
+#   })
+# );
+{
   options = {
     programs.${name}.enable = lib.mkEnableOption "VESC Tool";
   };
-  
+
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       vesc-tool
     ];
   };
 }
-

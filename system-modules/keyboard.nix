@@ -91,7 +91,10 @@ in
       layout = "se-workman";
       extraLayouts.se-workman = {
         description = "Swedish layout with workman letters";
-        languages   = [ "eng" "swe" ];
+        languages = [
+          "eng"
+          "swe"
+        ];
         symbolsFile = xkbSymbols;
       };
     };

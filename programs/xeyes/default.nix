@@ -1,19 +1,25 @@
 # Tracks mouse movement whenever mouse moves over window using XWayland.
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 let
   name = "xeyes";
   cfg = config.programs.${name};
-in {
+in
+{
   options = {
     programs.${name}.enable = lib.mkEnableOption "the xeyes utility program and desktop entry";
   };
-  
+
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       xorg.xeyes
     ];
-    
+
     xdg.desktopEntries = {
       ${name} = {
         name = "XEyes";
@@ -25,7 +31,7 @@ in {
         categories = [ "Utility" ];
       };
     };
-    
+
     programs.plasma.window-rules = [
       {
         description = "Keeps XEyes above other applications";
@@ -33,7 +39,7 @@ in {
           type = "substring";
           value = "XEyes";
         };
-        
+
         apply = {
           "above" = {
             value = true;
@@ -44,5 +50,3 @@ in {
     ];
   };
 }
-
-  

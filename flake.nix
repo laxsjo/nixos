@@ -47,7 +47,15 @@
   };
 
   outputs =
-    inputs@{ self, nixpkgs, home-manager, treefmt-nix, flatpak, flake-utils, ... }:
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      treefmt-nix,
+      flatpak,
+      flake-utils,
+      ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };

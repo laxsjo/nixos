@@ -9,14 +9,10 @@ let
     ];
   };
 in
-  pkgs.symlinkJoin {
-    name = "breeze-clean";
-    paths = [
-      (pkgs.atPath
-        "${patched}/share/sddm/themes/breeze"
-        "share/sddm/themes/breeze-clean")
-      (pkgs.atPath
-        ./metadata.desktop
-        "share/sddm/themes/breeze-clean/metadata.desktop")
-    ];
-  }
+pkgs.symlinkJoin {
+  name = "breeze-clean";
+  paths = [
+    (pkgs.atPath "${patched}/share/sddm/themes/breeze" "share/sddm/themes/breeze-clean")
+    (pkgs.atPath ./metadata.desktop "share/sddm/themes/breeze-clean/metadata.desktop")
+  ];
+}

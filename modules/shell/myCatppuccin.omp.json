@@ -1,613 +1,611 @@
 {
-    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-    "version": 2,
-    "palette": {
-        "lavender": "#babbf1",
-        "blue": "#8caaee",
-        "sapphire": "#85c1dc",
-        "sky": "#99d1db",
-        "teal": "#81c8be",
-        "green": "#a6d189",
-        "yellow": "#e5c890",
-        "peach": "#ef9f76",
-        "maroon": "#ea999c",
-        "red": "#e78284",
-        "mauve": "#ca9ee6",
-        "pink": "#f4b8e4",
-        "text": "#ffffff",
-        "textLight": "#c6d0f5",
-        "textDark": "#4c4f69",
-        "surface": "#414559",
-        "overlay": "#737994"
-    },
-    "blocks": [
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "palette": {
+    "lavender": "#babbf1",
+    "blue": "#8caaee",
+    "sapphire": "#85c1dc",
+    "sky": "#99d1db",
+    "teal": "#81c8be",
+    "green": "#a6d189",
+    "yellow": "#e5c890",
+    "peach": "#ef9f76",
+    "maroon": "#ea999c",
+    "red": "#e78284",
+    "mauve": "#ca9ee6",
+    "pink": "#f4b8e4",
+    "text": "#ffffff",
+    "textLight": "#c6d0f5",
+    "textDark": "#4c4f69",
+    "surface": "#414559",
+    "overlay": "#737994"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
         {
-            "type": "prompt",
-            "alignment": "left",
-            "segments": [
-                {
-                    "type": "text",
-                    "style": "plain",
-                    "foreground": "p:textLight",
-                    "template": "╭─"
-                },
-                {
-                    "type": "os",
-                    "style": "diamond",
-                    "leading_diamond": "",
-                    "powerline_symbol": "",
-                    "foreground": "p:text",
-                    "background": "p:blue",
-                    "template": "♥ ʕ•ᴥ•ʔっ{{.Icon}} ",
-                    "background_templates": [
-                        "{{if eq .OS \"debian\"}}p:sapphire{{end}}"
-                    ]
-                },
-                {
-                    "type": "root",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "foreground": "p:text",
-                    "background": "p:red",
-                    "template": "<parentBackground></>  "
-                },
-                {
-                    "type": "path",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "foreground": "p:text",
-                    "background": "p:surface",
-                    "template": " {{ .Parent }}{{ if or .Parent .RootDir }}<p:blue>{{ .Path }}</>{{ else }}{{ .Path }}{{ end }} ",
-                    "properties": {
-                        "style": "folder",
-                        "home_icon": "<p:green>~</>"
-                    }
-                }
-            ]
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:textLight",
+          "template": "╭─"
         },
         {
-            "type": "prompt",
-            "alignment": "right",
-            "segments": [
-                {
-                    "type": "node",
-                    "min_width": 220,
-                    "foreground": "p:green",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
-                    "properties": {
-                        "fetch_package_manager": true,
-                        "npm_icon": "<p:red></>",
-                        "yarn_icon": "<p:blue></>"
-                    }
-                },
-                {
-                    "type": "python",
-                    "min_width": 220,
-                    "foreground": "p:textDark",
-                    "background": "p:yellow",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}"
-                },
-                {
-                    "type": "java",
-                    "min_width": 220,
-                    "foreground": "p:text",
-                    "background": "p:red",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
-                },
-                {
-                    "type": "dotnet",
-                    "min_width": 220,
-                    "foreground": "p:blue",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Unsupported }}{{ else }}{{ .Full }}{{ end }}"
-                },
-                {
-                    "type": "go",
-                    "min_width": 220,
-                    "foreground": "p:sapphire",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": "ﳑ {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
-                },
-                {
-                    "type": "rust",
-                    "min_width": 220,
-                    "foreground": "p:red",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
-                },
-                {
-                    "type": "dart",
-                    "min_width": 220,
-                    "foreground": "p:blue",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
-                },
-                {
-                    "type": "angular",
-                    "min_width": 220,
-                    "foreground": "p:red",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
-                },
-                {
-                    "type": "nx",
-                    "min_width": 220,
-                    "foreground": "p:text",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": "{{ if .Error }}{{ .Error }}{{ else }}Nx {{ .Full }}{{ end }}"
-                },
-                {
-                    "type": "julia",
-                    "min_width": 220,
-                    "foreground": "p:green",
-                    "background": "p:mauve",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": "<#ca3c34></> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
-                },
-                {
-                    "type": "ruby",
-                    "min_width": 220,
-                    "foreground": "p:red",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
-                },
-                {
-                    "type": "azfunc",
-                    "min_width": 220,
-                    "foreground": "p:sky",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": "<#f5bf45></> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
-                },
-                {
-                    "type": "aws",
-                    "min_width": 220,
-                    "foreground": "p:peach",
-                    "background": "p:overlay",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": "\ue7ad {{.Profile}}{{if .Region}}@{{.Region}}{{end}}"
-                },
-                {
-                    "type": "kubectl",
-                    "min_width": 220,
-                    "foreground": "p:text",
-                    "background": "p:blue",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": "\ufd31 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}"
-                },
-                {
-                    "type": "git",
-                    "min_width": 220,
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "foreground": "p:textDark",
-                    "background": "p:red",
-                    "background_templates": [
-                        "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
-                        "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:teal{{ end }}",
-                        "{{ if gt .Ahead 0 }}p:mauve{{ end }}",
-                        "{{ if gt .Behind 0 }}p:mauve{{ end }}"
-                    ],
-                    "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350>  {{ .Staging.String }}</>{{ end }} ",
-                    "properties": {
-                        "branch_icon": "\ue725 ",
-                        "fetch_status": true,
-                        "fetch_upstream_icon": true
-                    }
-                },
-                {
-                    "type": "session",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "foreground": "p:textLight",
-                    "background": "p:surface",
-                    "template": " <p:yellow>{{ .UserName }}</>@{{ .HostName }} "
-                },
-                {
-                    "type": "battery",
-                    "min_width": 220,
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "foreground": "p:textLight",
-                    "background": "p:overlay",
-                    "template": " {{if not .Error}}{{if gt .Percentage 98}}{{else if gt .Percentage 90}}{{else if gt .Percentage 80}}{{else if gt .Percentage 70}}{{else if gt .Percentage 60}}{{else if gt .Percentage 50}}{{else if gt .Percentage 40}}{{else if gt .Percentage 30}}{{else if gt .Percentage 20}}{{else if gt .Percentage 0}}{{end}}{{if .Icon}}{{ .Icon }}{{else if eq \"Unknown\" .State.String}}<p:green> </>{{end}}{{end}}{{.Error}}",
-                    "foreground_templates": [
-                        "{{if eq \"Unknown\" .State.String}}p:green{{end}}",
-                        "{{if eq \"Not Charging\" .State.String}}p:green{{end}}",
-                        "{{if gt .Percentage 80}}p:green{{end}}",
-                        "{{if gt .Percentage 50}}p:yellow{{end}}",
-                        "{{if gt .Percentage 10}}p:orange{{end}}",
-                        "{{if gt .Percentage 0}}p:red{{end}}"
-                    ],
-                    "properties": {
-                        "discharging_icon": " <p:textLight></>",
-                        "charging_icon": " <p:textLight></>",
-                        "charged_icon": " <p:green></>",
-                        "not_charging_icon": " <p:green></>",
-                        "display_error": true
-                    }
-                },
-                {
-                    "type": "sysinfo",
-                    "min_width": 220,
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "foreground": "p:textLight",
-                    "background": "p:overlay",
-                    // Rounds to .Precision significant digits
-                    // "template": "{{$powers := list 1 10 100 1000}} CPU: {{$len := len (toString (floor .PhysicalPercentUsed ))}}{{if eq (toString (floor .PhysicalPercentUsed)) \"0\"}}{{$len = 0}}{{end}}{{mulf (round (divf .PhysicalPercentUsed (index $powers $len )) .Precision) (index $powers $len )}} | Mem: {{$memP := divf (sub .PhysicalTotalMemory .PhysicalFreeMemory) .PhysicalTotalMemory }}{{$memLen := (len (toString (floor $memP )))}}{{if eq (toString (floor $memP)) \"0\"}}{{$memLen = 0}}{{end}}{{mulf (round (divf $memP (index $powers $memLen )) .Precision) (index $powers $memLen )}}/{{if gt .PhysicalTotalMemory 1800000 }}{{div .PhysicalTotalMemory 1000000000.0}}GB{{else}}{{div .PhysicalTotalMemory 1000000.0}}MB{{end}}",
-                    // Rounds to 1 decimal if < 1
-                    "template": "{{if .Segments.Contains \"Battery\"}}|{{end}}  <p:yellow>{{if eq 0.0 (floor .PhysicalPercentUsed)}}{{round .PhysicalPercentUsed .Precision}}{{else}}{{floor .PhysicalPercentUsed}}{{end}}</> | Mem {{$memP := divf (sub .PhysicalTotalMemory .PhysicalFreeMemory) .PhysicalTotalMemory }}<p:yellow>{{if eq 0.0 (floor $memP)}}{{round $memP .Precision}}{{else}}{{floor $memP}}{{end}}</>/{{if gt .PhysicalTotalMemory 1800000 }}{{div .PhysicalTotalMemory 1000000000.0}}GB{{else}}{{div .PhysicalTotalMemory 1000000.0}}MB{{end}} ",
-                    "properties": {
-                        "precision": 2
-                    }
-                },
-                {
-                    "type": "owm",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "foreground": "p:text",
-                    "background": "p:peach",
-                    "template": " {{.Weather}} {{.Temperature}}{{.UnitIcon}}",
-                    "properties": {
-                        "apikey": "e6860cd372076a3adfe087b7c83285d5",
-                        "location": "Stockholm,Stockholms kommun,SE",
-                        "units": "metric",
-                        "http_timeout": 1800,
-                        "cache_timeout": 1000
-                    }
-                },
-                {
-                    "type": "time",
-                    "foreground": "p:text",
-                    "background": "p:peach",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ .CurrentDate | date .Format }} ",
-                    "properties": {
-                        "time_format": "15:04"
-                    }
-                },
-                {
-                    "type": "text",
-                    "foreground": "p:text",
-                    "background": "p:red",
-                    "style": "diamond",
-                    "trailing_diamond": "",
-                    "invert_powerline": true,
-                    "template": "(◕‿◕✿)"
-                }
-            ]
+          "type": "os",
+          "style": "diamond",
+          "leading_diamond": "",
+          "powerline_symbol": "",
+          "foreground": "p:text",
+          "background": "p:blue",
+          "template": "♥ ʕ•ᴥ•ʔっ{{.Icon}} ",
+          "background_templates": ["{{if eq .OS \"debian\"}}p:sapphire{{end}}"]
         },
         {
-            "type": "prompt",
-            "alignment": "left",
-            "newline": true,
-            "segments": [
-                {
-                    "type": "text",
-                    "style": "plain",
-                    "foreground": "p:textLight",
-                    "template": "│  ╰"
-                },
-                {
-                    "type": "executiontime",
-                    "style": "diamond",
-                    "leading_diamond": "",
-                    "powerline_symbol": "",
-                    "foreground": "p:text",
-                    "background": "p:lavender",
-                    "template": " 羽{{ .FormattedMs }}⠀",
-                    "properties": {
-                        "style": "roundrock",
-                        "threshold": 0
-                    }
-                },
-                {
-                    "type": "exit",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "foreground": "p:red",
-                    "background": "p:surface",
-                    "template": " {{ .Code }}: {{ .Meaning }} "
-                },
-                {
-                    "type": "text",
-                    "style": "powerline",
-                    "foreground": "parentBackground",
-                    "background": "p:transparent",
-                    "template": ""
-                }
-            ]
+          "type": "root",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "p:text",
+          "background": "p:red",
+          "template": "<parentBackground></>  "
         },
         {
-            "type": "prompt",
-            "alignment": "right",
-            "segments": [
-                {
-                    "type": "node",
-                    "max_width": 220,
-                    "foreground": "p:green",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
-                    "properties": {
-                        "fetch_package_manager": true,
-                        "npm_icon": "<p:red></>",
-                        "yarn_icon": "<p:blue></>"
-                    }
-                },
-                {
-                    "type": "python",
-                    "max_width": 220,
-                    "foreground": "p:textDark",
-                    "background": "p:yellow",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
-                },
-                {
-                    "type": "java",
-                    "max_width": 220,
-                    "foreground": "p:text",
-                    "background": "p:red",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
-                },
-                {
-                    "type": "dotnet",
-                    "max_width": 220,
-                    "foreground": "p:blue",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Unsupported }}{{ else }}{{ .Full }}{{ end }} "
-                },
-                {
-                    "type": "go",
-                    "max_width": 220,
-                    "foreground": "p:sapphire",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": "ﳑ {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
-                },
-                {
-                    "type": "rust",
-                    "max_width": 220,
-                    "foreground": "p:red",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
-                },
-                {
-                    "type": "dart",
-                    "max_width": 220,
-                    "foreground": "p:blue",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
-                },
-                {
-                    "type": "angular",
-                    "max_width": 220,
-                    "foreground": "p:red",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
-                },
-                {
-                    "type": "nx",
-                    "max_width": 220,
-                    "foreground": "p:text",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": "{{ if .Error }}{{ .Error }}{{ else }}Nx {{ .Full }}{{ end }} "
-                },
-                {
-                    "type": "julia",
-                    "max_width": 220,
-                    "foreground": "p:green",
-                    "background": "p:mauve",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": "<#ca3c34></> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
-                },
-                {
-                    "type": "ruby",
-                    "max_width": 220,
-                    "foreground": "p:red",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
-                },
-                {
-                    "type": "azfunc",
-                    "max_width": 220,
-                    "foreground": "p:sky",
-                    "background": "p:surface",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": "<#f5bf45></> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
-                },
-                {
-                    "type": "aws",
-                    "max_width": 220,
-                    "foreground": "p:peach",
-                    "background": "p:overlay",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": "\ue7ad {{.Profile}}{{if .Region}}@{{.Region}}{{end}} "
-                },
-                {
-                    "type": "kubectl",
-                    "max_width": 220,
-                    "foreground": "p:text",
-                    "background": "p:blue",
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "template": "\ufd31 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
-                },
-                {
-                    "type": "git",
-                    "max_width": 220,
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "foreground": "p:textDark",
-                    "background": "p:red",
-                    "background_templates": [
-                        "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
-                        "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:teal{{ end }}",
-                        "{{ if gt .Ahead 0 }}p:mauve{{ end }}",
-                        "{{ if gt .Behind 0 }}p:mauve{{ end }}"
-                    ],
-                    "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350>  {{ .Staging.String }}</>{{ end }} ",
-                    "properties": {
-                        "branch_icon": "\ue725 ",
-                        "fetch_status": true,
-                        "fetch_upstream_icon": true
-                    }
-                },
-                {
-                    "type": "battery",
-                    "max_width": 220,
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "foreground": "p:textLight",
-                    "background": "p:overlay",
-                    "template": " {{if not .Error}}{{if gt .Percentage 98}}{{else if gt .Percentage 90}}{{else if gt .Percentage 80}}{{else if gt .Percentage 70}}{{else if gt .Percentage 60}}{{else if gt .Percentage 50}}{{else if gt .Percentage 40}}{{else if gt .Percentage 30}}{{else if gt .Percentage 20}}{{else if gt .Percentage 0}}{{end}}{{if .Icon}}{{ .Icon }}{{else if eq \"Unknown\" .State.String}}<p:green> </>{{end}}{{end}}{{.Error}}",
-                    "foreground_templates": [
-                        "{{if eq \"Unknown\" .State.String}}p:green{{end}}",
-                        "{{if eq \"Not Charging\" .State.String}}p:green{{end}}",
-                        "{{if gt .Percentage 80}}p:green{{end}}",
-                        "{{if gt .Percentage 50}}p:yellow{{end}}",
-                        "{{if gt .Percentage 10}}p:orange{{end}}",
-                        "{{if gt .Percentage 0}}p:red{{end}}"
-                    ],
-                    "properties": {
-                        "discharging_icon": " <p:textLight></>",
-                        "charging_icon": " <p:textLight></>",
-                        "charged_icon": " <p:green></>",
-                        "not_charging_icon": " <p:green></>",
-                        "display_error": true
-                    }
-                },
-                {
-                    "type": "sysinfo",
-                    "max_width": 220,
-                    "style": "powerline",
-                    "powerline_symbol": "",
-                    "invert_powerline": true,
-                    "foreground": "p:textLight",
-                    "background": "p:overlay",
-                    // Rounds to .Precision significant digits
-                    // "template": "{{$powers := list 1 10 100 1000}} CPU: {{$len := len (toString (floor .PhysicalPercentUsed ))}}{{if eq (toString (floor .PhysicalPercentUsed)) \"0\"}}{{$len = 0}}{{end}}{{mulf (round (divf .PhysicalPercentUsed (index $powers $len )) .Precision) (index $powers $len )}} | Mem: {{$memP := divf (sub .PhysicalTotalMemory .PhysicalFreeMemory) .PhysicalTotalMemory }}{{$memLen := (len (toString (floor $memP )))}}{{if eq (toString (floor $memP)) \"0\"}}{{$memLen = 0}}{{end}}{{mulf (round (divf $memP (index $powers $memLen )) .Precision) (index $powers $memLen )}}/{{if gt .PhysicalTotalMemory 1800000 }}{{div .PhysicalTotalMemory 1000000000.0}}GB{{else}}{{div .PhysicalTotalMemory 1000000.0}}MB{{end}}",
-                    // Rounds to 1 decimal if < 1
-                    "template": "{{if .Segments.Contains \"Battery\"}}|{{end}}  <p:yellow>{{if eq 0.0 (floor .PhysicalPercentUsed)}}{{round .PhysicalPercentUsed .Precision}}{{else}}{{floor .PhysicalPercentUsed}}{{end}}</> | Mem {{$memP := divf (sub .PhysicalTotalMemory .PhysicalFreeMemory) .PhysicalTotalMemory }}<p:yellow>{{if eq 0.0 (floor $memP)}}{{round $memP .Precision}}{{else}}{{floor $memP}}{{end}}</>/{{if gt .PhysicalTotalMemory 1800000 }}{{div .PhysicalTotalMemory 1000000000.0}}GB{{else}}{{div .PhysicalTotalMemory 1000000.0}}MB{{end}} ",
-                    "properties": {
-                        "precision": 2
-                    }
-                },
-                {
-                    "type": "text",
-                    "max_width": 220,
-                    "style": "powerline",
-                    "foreground": "p:textLight",
-                    "background": "transparent",
-                    "template": "<parentBackground></>╯ ",
-                    "properties": {}
-                }
-            ]
-        },
-        {
-            "type": "prompt",
-            "alignment": "left",
-            "segments": [
-                {
-                    "type": "text",
-                    "style": "plain",
-                    "foreground": "p:textLight",
-                    "template": "╰─"
-                },
-                {
-                    "type": "exit",
-                    "style": "plain",
-                    "foreground": "p:textLight",
-                    "template": " ",
-                    "properties": {
-                        "always_enabled": true
-                    }
-                }
-            ],
-            "newline": true
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "p:text",
+          "background": "p:surface",
+          "template": " {{ .Parent }}{{ if or .Parent .RootDir }}<p:blue>{{ .Path }}</>{{ else }}{{ .Path }}{{ end }} ",
+          "properties": {
+            "style": "folder",
+            "home_icon": "<p:green>~</>"
+          }
         }
-    ]
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "node",
+          "min_width": 220,
+          "foreground": "p:green",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "properties": {
+            "fetch_package_manager": true,
+            "npm_icon": "<p:red></>",
+            "yarn_icon": "<p:blue></>"
+          }
+        },
+        {
+          "type": "python",
+          "min_width": 220,
+          "foreground": "p:textDark",
+          "background": "p:yellow",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}"
+        },
+        {
+          "type": "java",
+          "min_width": 220,
+          "foreground": "p:text",
+          "background": "p:red",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+        },
+        {
+          "type": "dotnet",
+          "min_width": 220,
+          "foreground": "p:blue",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Unsupported }}{{ else }}{{ .Full }}{{ end }}"
+        },
+        {
+          "type": "go",
+          "min_width": 220,
+          "foreground": "p:sapphire",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": "ﳑ {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+        },
+        {
+          "type": "rust",
+          "min_width": 220,
+          "foreground": "p:red",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "dart",
+          "min_width": 220,
+          "foreground": "p:blue",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+        },
+        {
+          "type": "angular",
+          "min_width": 220,
+          "foreground": "p:red",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+        },
+        {
+          "type": "nx",
+          "min_width": 220,
+          "foreground": "p:text",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}Nx {{ .Full }}{{ end }}"
+        },
+        {
+          "type": "julia",
+          "min_width": 220,
+          "foreground": "p:green",
+          "background": "p:mauve",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": "<#ca3c34></> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+        },
+        {
+          "type": "ruby",
+          "min_width": 220,
+          "foreground": "p:red",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+        },
+        {
+          "type": "azfunc",
+          "min_width": 220,
+          "foreground": "p:sky",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": "<#f5bf45></> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+        },
+        {
+          "type": "aws",
+          "min_width": 220,
+          "foreground": "p:peach",
+          "background": "p:overlay",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": "\ue7ad {{.Profile}}{{if .Region}}@{{.Region}}{{end}}"
+        },
+        {
+          "type": "kubectl",
+          "min_width": 220,
+          "foreground": "p:text",
+          "background": "p:blue",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": "\ufd31 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}"
+        },
+        {
+          "type": "git",
+          "min_width": 220,
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "foreground": "p:textDark",
+          "background": "p:red",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:teal{{ end }}",
+            "{{ if gt .Ahead 0 }}p:mauve{{ end }}",
+            "{{ if gt .Behind 0 }}p:mauve{{ end }}"
+          ],
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350>  {{ .Staging.String }}</>{{ end }} ",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          }
+        },
+        {
+          "type": "session",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "foreground": "p:textLight",
+          "background": "p:surface",
+          "template": " <p:yellow>{{ .UserName }}</>@{{ .HostName }} "
+        },
+        {
+          "type": "battery",
+          "min_width": 220,
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "foreground": "p:textLight",
+          "background": "p:overlay",
+          "template": " {{if not .Error}}{{if gt .Percentage 98}}{{else if gt .Percentage 90}}{{else if gt .Percentage 80}}{{else if gt .Percentage 70}}{{else if gt .Percentage 60}}{{else if gt .Percentage 50}}{{else if gt .Percentage 40}}{{else if gt .Percentage 30}}{{else if gt .Percentage 20}}{{else if gt .Percentage 0}}{{end}}{{if .Icon}}{{ .Icon }}{{else if eq \"Unknown\" .State.String}}<p:green> </>{{end}}{{end}}{{.Error}}",
+          "foreground_templates": [
+            "{{if eq \"Unknown\" .State.String}}p:green{{end}}",
+            "{{if eq \"Not Charging\" .State.String}}p:green{{end}}",
+            "{{if gt .Percentage 80}}p:green{{end}}",
+            "{{if gt .Percentage 50}}p:yellow{{end}}",
+            "{{if gt .Percentage 10}}p:orange{{end}}",
+            "{{if gt .Percentage 0}}p:red{{end}}"
+          ],
+          "properties": {
+            "discharging_icon": " <p:textLight></>",
+            "charging_icon": " <p:textLight></>",
+            "charged_icon": " <p:green></>",
+            "not_charging_icon": " <p:green></>",
+            "display_error": true
+          }
+        },
+        {
+          "type": "sysinfo",
+          "min_width": 220,
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "foreground": "p:textLight",
+          "background": "p:overlay",
+          // Rounds to .Precision significant digits
+          // "template": "{{$powers := list 1 10 100 1000}} CPU: {{$len := len (toString (floor .PhysicalPercentUsed ))}}{{if eq (toString (floor .PhysicalPercentUsed)) \"0\"}}{{$len = 0}}{{end}}{{mulf (round (divf .PhysicalPercentUsed (index $powers $len )) .Precision) (index $powers $len )}} | Mem: {{$memP := divf (sub .PhysicalTotalMemory .PhysicalFreeMemory) .PhysicalTotalMemory }}{{$memLen := (len (toString (floor $memP )))}}{{if eq (toString (floor $memP)) \"0\"}}{{$memLen = 0}}{{end}}{{mulf (round (divf $memP (index $powers $memLen )) .Precision) (index $powers $memLen )}}/{{if gt .PhysicalTotalMemory 1800000 }}{{div .PhysicalTotalMemory 1000000000.0}}GB{{else}}{{div .PhysicalTotalMemory 1000000.0}}MB{{end}}",
+          // Rounds to 1 decimal if < 1
+          "template": "{{if .Segments.Contains \"Battery\"}}|{{end}}  <p:yellow>{{if eq 0.0 (floor .PhysicalPercentUsed)}}{{round .PhysicalPercentUsed .Precision}}{{else}}{{floor .PhysicalPercentUsed}}{{end}}</> | Mem {{$memP := divf (sub .PhysicalTotalMemory .PhysicalFreeMemory) .PhysicalTotalMemory }}<p:yellow>{{if eq 0.0 (floor $memP)}}{{round $memP .Precision}}{{else}}{{floor $memP}}{{end}}</>/{{if gt .PhysicalTotalMemory 1800000 }}{{div .PhysicalTotalMemory 1000000000.0}}GB{{else}}{{div .PhysicalTotalMemory 1000000.0}}MB{{end}} ",
+          "properties": {
+            "precision": 2
+          }
+        },
+        {
+          "type": "owm",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "foreground": "p:text",
+          "background": "p:peach",
+          "template": " {{.Weather}} {{.Temperature}}{{.UnitIcon}}",
+          "properties": {
+            "apikey": "e6860cd372076a3adfe087b7c83285d5",
+            "location": "Stockholm,Stockholms kommun,SE",
+            "units": "metric",
+            "http_timeout": 1800,
+            "cache_timeout": 1000
+          }
+        },
+        {
+          "type": "time",
+          "foreground": "p:text",
+          "background": "p:peach",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "properties": {
+            "time_format": "15:04"
+          }
+        },
+        {
+          "type": "text",
+          "foreground": "p:text",
+          "background": "p:red",
+          "style": "diamond",
+          "trailing_diamond": "",
+          "invert_powerline": true,
+          "template": "(◕‿◕✿)"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:textLight",
+          "template": "│  ╰"
+        },
+        {
+          "type": "executiontime",
+          "style": "diamond",
+          "leading_diamond": "",
+          "powerline_symbol": "",
+          "foreground": "p:text",
+          "background": "p:lavender",
+          "template": " 羽{{ .FormattedMs }}⠀",
+          "properties": {
+            "style": "roundrock",
+            "threshold": 0
+          }
+        },
+        {
+          "type": "exit",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "p:red",
+          "background": "p:surface",
+          "template": " {{ .Code }}: {{ .Meaning }} "
+        },
+        {
+          "type": "text",
+          "style": "powerline",
+          "foreground": "parentBackground",
+          "background": "p:transparent",
+          "template": ""
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "node",
+          "max_width": 220,
+          "foreground": "p:green",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "properties": {
+            "fetch_package_manager": true,
+            "npm_icon": "<p:red></>",
+            "yarn_icon": "<p:blue></>"
+          }
+        },
+        {
+          "type": "python",
+          "max_width": 220,
+          "foreground": "p:textDark",
+          "background": "p:yellow",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "java",
+          "max_width": 220,
+          "foreground": "p:text",
+          "background": "p:red",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "dotnet",
+          "max_width": 220,
+          "foreground": "p:blue",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Unsupported }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "go",
+          "max_width": 220,
+          "foreground": "p:sapphire",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": "ﳑ {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "rust",
+          "max_width": 220,
+          "foreground": "p:red",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "dart",
+          "max_width": 220,
+          "foreground": "p:blue",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "angular",
+          "max_width": 220,
+          "foreground": "p:red",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "nx",
+          "max_width": 220,
+          "foreground": "p:text",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}Nx {{ .Full }}{{ end }} "
+        },
+        {
+          "type": "julia",
+          "max_width": 220,
+          "foreground": "p:green",
+          "background": "p:mauve",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": "<#ca3c34></> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "ruby",
+          "max_width": 220,
+          "foreground": "p:red",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "azfunc",
+          "max_width": 220,
+          "foreground": "p:sky",
+          "background": "p:surface",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": "<#f5bf45></> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "aws",
+          "max_width": 220,
+          "foreground": "p:peach",
+          "background": "p:overlay",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": "\ue7ad {{.Profile}}{{if .Region}}@{{.Region}}{{end}} "
+        },
+        {
+          "type": "kubectl",
+          "max_width": 220,
+          "foreground": "p:text",
+          "background": "p:blue",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "template": "\ufd31 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
+        },
+        {
+          "type": "git",
+          "max_width": 220,
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "foreground": "p:textDark",
+          "background": "p:red",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:teal{{ end }}",
+            "{{ if gt .Ahead 0 }}p:mauve{{ end }}",
+            "{{ if gt .Behind 0 }}p:mauve{{ end }}"
+          ],
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350>  {{ .Staging.String }}</>{{ end }} ",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          }
+        },
+        {
+          "type": "battery",
+          "max_width": 220,
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "foreground": "p:textLight",
+          "background": "p:overlay",
+          "template": " {{if not .Error}}{{if gt .Percentage 98}}{{else if gt .Percentage 90}}{{else if gt .Percentage 80}}{{else if gt .Percentage 70}}{{else if gt .Percentage 60}}{{else if gt .Percentage 50}}{{else if gt .Percentage 40}}{{else if gt .Percentage 30}}{{else if gt .Percentage 20}}{{else if gt .Percentage 0}}{{end}}{{if .Icon}}{{ .Icon }}{{else if eq \"Unknown\" .State.String}}<p:green> </>{{end}}{{end}}{{.Error}}",
+          "foreground_templates": [
+            "{{if eq \"Unknown\" .State.String}}p:green{{end}}",
+            "{{if eq \"Not Charging\" .State.String}}p:green{{end}}",
+            "{{if gt .Percentage 80}}p:green{{end}}",
+            "{{if gt .Percentage 50}}p:yellow{{end}}",
+            "{{if gt .Percentage 10}}p:orange{{end}}",
+            "{{if gt .Percentage 0}}p:red{{end}}"
+          ],
+          "properties": {
+            "discharging_icon": " <p:textLight></>",
+            "charging_icon": " <p:textLight></>",
+            "charged_icon": " <p:green></>",
+            "not_charging_icon": " <p:green></>",
+            "display_error": true
+          }
+        },
+        {
+          "type": "sysinfo",
+          "max_width": 220,
+          "style": "powerline",
+          "powerline_symbol": "",
+          "invert_powerline": true,
+          "foreground": "p:textLight",
+          "background": "p:overlay",
+          // Rounds to .Precision significant digits
+          // "template": "{{$powers := list 1 10 100 1000}} CPU: {{$len := len (toString (floor .PhysicalPercentUsed ))}}{{if eq (toString (floor .PhysicalPercentUsed)) \"0\"}}{{$len = 0}}{{end}}{{mulf (round (divf .PhysicalPercentUsed (index $powers $len )) .Precision) (index $powers $len )}} | Mem: {{$memP := divf (sub .PhysicalTotalMemory .PhysicalFreeMemory) .PhysicalTotalMemory }}{{$memLen := (len (toString (floor $memP )))}}{{if eq (toString (floor $memP)) \"0\"}}{{$memLen = 0}}{{end}}{{mulf (round (divf $memP (index $powers $memLen )) .Precision) (index $powers $memLen )}}/{{if gt .PhysicalTotalMemory 1800000 }}{{div .PhysicalTotalMemory 1000000000.0}}GB{{else}}{{div .PhysicalTotalMemory 1000000.0}}MB{{end}}",
+          // Rounds to 1 decimal if < 1
+          "template": "{{if .Segments.Contains \"Battery\"}}|{{end}}  <p:yellow>{{if eq 0.0 (floor .PhysicalPercentUsed)}}{{round .PhysicalPercentUsed .Precision}}{{else}}{{floor .PhysicalPercentUsed}}{{end}}</> | Mem {{$memP := divf (sub .PhysicalTotalMemory .PhysicalFreeMemory) .PhysicalTotalMemory }}<p:yellow>{{if eq 0.0 (floor $memP)}}{{round $memP .Precision}}{{else}}{{floor $memP}}{{end}}</>/{{if gt .PhysicalTotalMemory 1800000 }}{{div .PhysicalTotalMemory 1000000000.0}}GB{{else}}{{div .PhysicalTotalMemory 1000000.0}}MB{{end}} ",
+          "properties": {
+            "precision": 2
+          }
+        },
+        {
+          "type": "text",
+          "max_width": 220,
+          "style": "powerline",
+          "foreground": "p:textLight",
+          "background": "transparent",
+          "template": "<parentBackground></>╯ ",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:textLight",
+          "template": "╰─"
+        },
+        {
+          "type": "exit",
+          "style": "plain",
+          "foreground": "p:textLight",
+          "template": " ",
+          "properties": {
+            "always_enabled": true
+          }
+        }
+      ],
+      "newline": true
+    }
+  ]
 }

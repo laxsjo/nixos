@@ -1,4 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   name = "ssh";
@@ -12,16 +18,18 @@ let
     patches = (old.patches or [ ]) ++ [ ./openssh.patch ];
     doCheck = false;
   });
-in {
+in
+{
   options = {
-    module.${name}.enable = lib.mkEnableOption "ssh. You want to enable this. (Why did I even make this an option?)";
+    module.${name}.enable =
+      lib.mkEnableOption "ssh. You want to enable this. (Why did I even make this an option?)";
   };
-  
+
   config = lib.mkIf cfg.enable {
     programs.ssh = {
       enable = true;
       package = patchedOpenssh;
-      
+
       includes = [
         "${./config}"
       ];

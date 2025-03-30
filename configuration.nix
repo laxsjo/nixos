@@ -2,12 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   oryx = (pkgs.callPackage ./oryx.nix { });
 in
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./system-modules/keyboard.nix
     ./system-modules/kde
@@ -54,14 +60,14 @@ in
   # services.xserver.enable = true;
 
   # Configure keymap in X11
-#   services.xserver = {
-#     # enable = true;
-#     exportConfiguration = true; # link /usr/share/X11/ properly
-#     xkb = {
-#       layout = "se";
-#       variant = "workman,";
-#     };
-#   };
+  #   services.xserver = {
+  #     # enable = true;
+  #     exportConfiguration = true; # link /usr/share/X11/ properly
+  #     xkb = {
+  #       layout = "se";
+  #       variant = "workman,";
+  #     };
+  #   };
 
   # Configure console keymap
   #console.keyMap = "sv-latin1";
@@ -69,14 +75,14 @@ in
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-  
+
   # Enable autodiscovery of network printers.
   services.avahi = {
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
   };
-  
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -96,10 +102,14 @@ in
   # idk where this belongs, to make sure that editing admin files in sublime works
   security.polkit.enable = true;
   # Set sudo password timeout to 2 hours.
-  security.sudo.extraConfig = let timeoutMins = 120; in ''
-    Defaults        timestamp_timeout=${builtins.toString (timeoutMins * 60)}
-  '';
-  
+  security.sudo.extraConfig =
+    let
+      timeoutMins = 120;
+    in
+    ''
+      Defaults        timestamp_timeout=${builtins.toString (timeoutMins * 60)}
+    '';
+
   # Is this enabled by default? *thinking-emoji*
   # Previously known as hardware.opengl.enable
   hardware.graphics = {
@@ -115,7 +125,7 @@ in
   # services.xserver.libinput.enable = true;
 
   users.groups = {
-    "plugdev" = {};
+    "plugdev" = { };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -123,7 +133,13 @@ in
     isNormalUser = true;
     description = "Rasmus Söderhielm";
     # I'm not sure if I'm supposed to be a member of the plugdev group...
-    extraGroups = [ "networkmanager" "wheel" "dialout" "plugdev" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout"
+      "plugdev"
+      "docker"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
@@ -132,7 +148,7 @@ in
   # users.extraUsers.rasmus = {
   #   shell = pkgs.zsh;
   # };
-  
+
   # Install docker
   virtualisation.docker.enable = true;
 
@@ -148,7 +164,7 @@ in
       "openssl-1.1.1w" # For sublime4
     ];
   };
-  
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -161,7 +177,7 @@ in
     nerdfonts
     cntr
   ];
-  
+
   # Enable flatpaks
   services.flatpak.enable = true;
 
@@ -172,7 +188,10 @@ in
   ];
 
   # Nix configuration
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Make shells available
   programs.zsh.enable = true;
@@ -211,10 +230,10 @@ in
         SUBSYSTEMS=="usb", ATTRS{idVendor}=="303a", ATTRS{idProduct}=="1001", \
           MODE:="0667", \
           SYMLINK+="esp32c3_%n"
-        
+
         # For the Brother PTouch
         SUBSYSTEM=="usb", ATTR{idVendor}=="04f9", ATTR{idProduct}=="2060",MODE:="0667",SYMLINK+="ptouch_%n"
-        
+
         # For the Framework 16 Keyboard
         SUBSYSTEM=="usb", ATTR{idVendor}=="32ac", ATTR{idProduct}=="0018", MODE:="0660", GROUP="plugdev"
       '';
@@ -224,7 +243,7 @@ in
       destination = "/etc/udev/rules.d/99-android.rules";
       text = ''
         ## For debugging android phones
-      
+
         # Google Pixel 7 Pro
         # (IDK, this rule might also apply to more google products...)
         SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE:="0660", GROUP="plugdev"
@@ -232,10 +251,10 @@ in
     })
     oryx
   ];
-  
+
   # TODO: move to better place
   boot.binfmt.emulatedSystems = [ "i686-linux" ];
-  
+
   # Enable polkit (might be necessary for vscode to be able to use sudo in terminal?)
   # security.polkit.enable = true; # Was already enabled apparently...
 

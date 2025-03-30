@@ -1,19 +1,25 @@
 # Globabl shortcuts to focus windows
 # TODO: This isn't currently working
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 let
   name = "shortcuts";
   cfg = config.module.${name};
-in {
+in
+{
   imports = [
     ./shortcuts.nix
   ];
-  
+
   options = {
     module.${name}.enable = lib.mkEnableOption "global application shortcuts";
   };
-  
+
   config = lib.mkIf cfg.enable {
     module.shortcuts.shortcuts = {
       "code-editor" = {

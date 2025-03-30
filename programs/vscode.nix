@@ -1,19 +1,23 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 
 let
   name = "vscode";
-  
+
   vscode-derivation = pkgs.vscode-fhs.overrideAttrs;
-  
-  # vscode-runner = 
-in {
+
+in
+# vscode-runner =
+{
   config = {
     programs.vscode = {
       enable = true;
       package = pkgs.vscode-fhs;
-      
-      
-      
+
       # extensions = [
       #   pkgs.vscode-extensions.jnoortheen.nix-ide
       # ];
