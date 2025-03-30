@@ -36,7 +36,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 while IFS= read -r line; do
-    current_len=$(printf "$line" | wc --chars)
+    current_len=$(printf "%s" "$line" | wc --chars)
     if (( current_len > LENGTH )); then
         echo "${line:0:$LENGTH}..."
     else
