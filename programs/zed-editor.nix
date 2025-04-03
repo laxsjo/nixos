@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  inputs,
   ...
 }:
 
@@ -14,7 +15,8 @@ in
 {
   config = {
     home.packages = [
-      pkgs.${name}
+      # Building this took roughly 26 mins on my machine...
+      inputs.zed.outputs.packages.${pkgs.system}.default
     ];
   };
 }

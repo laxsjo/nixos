@@ -44,6 +44,9 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
+    zed = {
+      url = "github:zed-industries/zed/v0.179.4";
+    };
   };
 
   outputs =
