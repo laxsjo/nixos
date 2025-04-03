@@ -132,8 +132,10 @@
 
       # usage `git adog`: pretty commit graph
       # from this amazing post: https://stackoverflow.com/a/35075021/15507414
-      alias.adog = "log --all --decorate --oneline --graph";
-      alias.dog = "log --decorate --oneline --graph";
+      # I've customized the formatting of oneline to place the commit
+      # decorations after the summary.
+      alias.adog = "log --all --decorate --format=\"%C(auto)%h %s%d\" --graph";
+      alias.dog = "log --decorate --format=\"%C(auto)%h %s%d\" --graph";
     };
   };
 
