@@ -87,6 +87,7 @@
 
       ## Gaming
       prismlauncher # Minecraft launcher
+      modrinth-app
 
       ## Editing programs
       kicad
