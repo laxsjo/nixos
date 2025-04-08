@@ -53,6 +53,10 @@ in
         "lt" = "eza -T -L 4 --icons always";
         "gitp" = "git --no-pager";
         "dd" = "\\dd status=progress";
+        
+        # Outputs stdin to both stdout and stderr. Place in pipe chain to
+        # inspect value at that point.
+        "inspect" = "tee /dev/stderr";
       };
 
       initExtra = ''
