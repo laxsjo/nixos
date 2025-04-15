@@ -1,4 +1,9 @@
 # Disable host key checking for Lind Programmer Pi
+# Old IP
 Host 192.168.1.240
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+# New IP
+Host 192.168.2.240
     StrictHostKeyChecking no
     UserKnownHostsFile=/dev/null
