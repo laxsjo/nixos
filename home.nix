@@ -30,8 +30,8 @@
       wev
       git
       kdotool
-      lbm
-      lbm64
+      lbm.repl
+      lbm.repl64
       neofetch
       nixVersions.latest
       tree

@@ -26,13 +26,6 @@
     };
     lispbm = {
       url = "github:svenssonjoel/lispBM/master";
-      flake = false;
-    };
-    lispbm-flake = {
-      url = "github:laxsjo/lispbm-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-      inputs.lispbm-src.follows = "lispbm";
     };
     gd-save-transfer = {
       url = "git+file:///home/rasmus/projects/github/gd-save-transfer";
@@ -72,7 +65,7 @@
           {
             nixpkgs.overlays = [
               inputs.vesc-tool-flake.overlays.default
-              inputs.lispbm-flake.overlays.default
+              inputs.lispbm.overlays.default
               inputs.ghostty.overlays.default
               (import ./overlay.nix)
             ];
