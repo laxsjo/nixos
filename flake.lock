@@ -733,11 +733,11 @@
     "vesc-tool": {
       "flake": false,
       "locked": {
-        "lastModified": 1739374748,
-        "narHash": "sha256-o2xqXzyGpbS7S7B7UF6zZywMO9uMVMB32zQpKSxCjdI=",
+        "lastModified": 1744814857,
+        "narHash": "sha256-Yf+cIQG6BdkE2UIVyVeCaAMFz7l/mRaI1oXDr1WfkRs=",
         "owner": "vedderb",
         "repo": "vesc_tool",
-        "rev": "4dc56f2dc6ddff55b05b04328b42c375048517a0",
+        "rev": "27274e489b45500ce62a92145fc10ebb26fb9457",
         "type": "github"
       },
       "original": {
