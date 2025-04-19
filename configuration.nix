@@ -9,7 +9,7 @@
   ...
 }:
 let
-  oryx = (pkgs.callPackage ./oryx.nix { });
+  oryx = (pkgs.callPackage ./system-modules/oryx.nix { });
 in
 {
   imports = [
@@ -17,7 +17,7 @@ in
     ./hardware-configuration.nix
     ./system-modules/keyboard.nix
     ./system-modules/kde
-    ./cachix.nix
+    ./system-modules/cachix.nix
   ];
 
   # Bootloader.

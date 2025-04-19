@@ -25,14 +25,8 @@
     "cachix.nix"
     "cachix/**"
 
-    # Misc large files that I don't feel like formatting.
-    "keysymdef.h"
-    "keysyms.txt"
-    "output.xkb"
-
     # Files which I don't have a formatter for
     "modules/ssh/config"
-    "output.xkb"
     "system-modules/kde/metadata.desktop"
   ];
 }
