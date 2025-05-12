@@ -75,9 +75,7 @@
       enpass
       obsidian
       google-chrome # Only for flasing moonlander keyboard
-      pinta # Minimal image editor
       filezilla
-      inkscape
       vlc
       blender-hip
       obsidian
@@ -90,7 +88,10 @@
       modrinth-app
 
       ## Editing programs
+      inkscape
       kicad
+      krita
+      pinta # Minimal image editor
     ]
     ++ [
       inputs.gd-save-transfer.packages.${system}.default
