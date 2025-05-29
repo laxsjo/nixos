@@ -54,7 +54,7 @@ let
       hash = "sha256-XF1owxyC1VjrTaAiK1XhZugIQ11v4JxrBBb8ZHV5DlA=";
     };
 
-    cargoHash = "sha256-81GFc7qp0NNrw5oOHgfxghnMD4VQNY4AkyGmcdVFF4o=";
+    cargoHash = "sha256-L7s3cQwCdggPVT3GXxyH/gm2OGKznqyzyKAFNqh2bC8=";
   };
 in
 {

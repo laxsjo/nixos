@@ -83,8 +83,8 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      vesc-tool
+    home.packages = [
+      inputs.vesc-tool-flake.packages.${system}.vesc-tool
     ];
   };
 }

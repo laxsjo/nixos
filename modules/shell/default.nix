@@ -59,7 +59,7 @@ in
         "inspect" = "tee /dev/stderr";
       };
 
-      initExtra = ''
+      initContent = ''
         # Bind ctrl+backspace to delete word
         bindkey '^H' backward-kill-word
 

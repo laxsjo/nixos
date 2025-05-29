@@ -2,8 +2,8 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
@@ -18,9 +18,7 @@
       flake = false;
     };
     vesc-tool-flake = {
-      # url = "git+file:///home/rasmus/Lind/vesc-tool-flake";
       url = "github:laxsjo/vesc-tool-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
       inputs.src.follows = "vesc-tool";
     };
@@ -64,7 +62,6 @@
         modules = [
           {
             nixpkgs.overlays = [
-              inputs.vesc-tool-flake.overlays.default
               inputs.lispbm.overlays.default
               inputs.ghostty.overlays.default
               (import ./overlay.nix)
