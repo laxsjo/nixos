@@ -118,6 +118,7 @@
     "tfstate",
     "tomjwatson",
     "treefmt",
+    "uinput",
     "usbutils",
     "vesktop",
     "vfat",
@@ -136,6 +137,6 @@
   ],
   "gitlens.advanced.blame.customArguments": [
     "--ignore-revs-file",
-    "${workspaceFolder}/.git-blame-ignore-revs",
-  ],
+    "${workspaceFolder}/.git-blame-ignore-revs"
+  ]
 }

@@ -15,7 +15,7 @@ in
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./system-modules/keyboard.nix
+    ./system-modules/keyboard
     ./system-modules/kde
     ./system-modules/cachix.nix
   ];

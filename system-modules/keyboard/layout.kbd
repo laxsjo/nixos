@@ -1,0 +1,18 @@
+(defsrc
+  AltLeft AltRight ArrowLeft ArrowRight
+)
+
+(deflayer base
+  (multi lalt (layer-while-held alt))
+  (multi ralt (layer-while-held alt))
+  ArrowLeft
+  ArrowRight
+)
+
+;; Maps alt+left to home and alt+right to end.
+(deflayer alt
+  _
+  _
+  (multi (release-key alt) Home)
+  (multi (release-key alt) End)
+)
