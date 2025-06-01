@@ -15,12 +15,8 @@
     };
     vesc-tool = {
       url = "github:vedderb/vesc_tool/master";
-      flake = false;
-    };
-    vesc-tool-flake = {
-      url = "github:laxsjo/vesc-tool-flake";
       inputs.flake-utils.follows = "flake-utils";
-      inputs.src.follows = "vesc-tool";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     lispbm = {
       url = "github:svenssonjoel/lispBM/master";

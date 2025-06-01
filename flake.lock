@@ -3,11 +3,11 @@
     "bldcSrc": {
       "flake": false,
       "locked": {
-        "lastModified": 1726298176,
-        "narHash": "sha256-Z4pVm/5K4wxx0iHAmFeEPQiWZmHcoKWHJUt7UDwkU1I=",
+        "lastModified": 1733324381,
+        "narHash": "sha256-ui9N8QSog1G5zyK7yRrD0Xl+Y2CZhvvhBkaJuQZ2qZw=",
         "owner": "vedderb",
         "repo": "bldc",
-        "rev": "b8a7a34f03e4338fe8e927f9dab944ef95efc2f5",
+        "rev": "a0d40e2c5a42c810888d8c379307e6b0a118a125",
         "type": "github"
       },
       "original": {
@@ -376,6 +376,22 @@
         "type": "github"
       }
     },
+    "nixpkgsOld": {
+      "locked": {
+        "lastModified": 1748037224,
+        "narHash": "sha256-92vihpZr6dwEMV6g98M5kHZIttrWahb9iRPBm1atcPk=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "f09dede81861f3a83f7f06641ead34f02f37597f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1719763542,
@@ -472,16 +488,16 @@
     },
     "nixpkgs_8": {
       "locked": {
-        "lastModified": 1725103162,
-        "narHash": "sha256-Ym04C5+qovuQDYL/rKWSR+WESseQBbNAe5DsXNx5trY=",
+        "lastModified": 1735554305,
+        "narHash": "sha256-zExSA1i/b+1NMRhGGLtNfFGXgLtgo+dcuzHzaWA6w3Q=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "12228ff1752d7b7624a54e9c1af4b222b3c1073b",
+        "rev": "0e82ab234249d8eee3e8c91437802b32c74bb3fd",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-unstable",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -559,7 +575,6 @@
         "plasma-manager": "plasma-manager",
         "treefmt-nix": "treefmt-nix_2",
         "vesc-tool": "vesc-tool",
-        "vesc-tool-flake": "vesc-tool-flake",
         "zed": "zed"
       }
     },
@@ -728,6 +743,24 @@
         "type": "github"
       }
     },
+    "treefmt-nix_3": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_8"
+      },
+      "locked": {
+        "lastModified": 1744961264,
+        "narHash": "sha256-aRmUh0AMwcbdjJHnytg1e5h5ECcaWtIFQa6d9gI85AI=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "8d404a69efe76146368885110f29a2ca3700bee6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
     "utils": {
       "inputs": {
         "systems": "systems_7"
@@ -747,44 +780,29 @@
       }
     },
     "vesc-tool": {
-      "flake": false,
+      "inputs": {
+        "bldcSrc": "bldcSrc",
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgsOld": "nixpkgsOld",
+        "treefmt-nix": "treefmt-nix_3"
+      },
       "locked": {
-        "lastModified": 1745583302,
-        "narHash": "sha256-L0ll+AvcDwtEtyHFUnUVVCcfA1mXbyb9XT/VxtB5qoQ=",
+        "lastModified": 1748618178,
+        "narHash": "sha256-SXG7ukrSkNW7SF0VJpSBHR60aAGBVYJ2mFQWhSFuVa0=",
         "owner": "vedderb",
         "repo": "vesc_tool",
-        "rev": "c11b404b4623a72567c3ba70587f89f472be6380",
+        "rev": "b71ad9fcfb088350d5eadeea29292de3e5a06bb8",
         "type": "github"
       },
       "original": {
         "owner": "vedderb",
         "ref": "master",
         "repo": "vesc_tool",
-        "type": "github"
-      }
-    },
-    "vesc-tool-flake": {
-      "inputs": {
-        "bldcSrc": "bldcSrc",
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": "nixpkgs_8",
-        "src": [
-          "vesc-tool"
-        ]
-      },
-      "locked": {
-        "lastModified": 1727443277,
-        "narHash": "sha256-CFc1kfoBRBvgrCqlZs7cLi4s8AWa64+ahmLSB5IHtqo=",
-        "owner": "laxsjo",
-        "repo": "vesc-tool-flake",
-        "rev": "87c401d0c36b8f8387835b8ecaba4e4b503919fa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "laxsjo",
-        "repo": "vesc-tool-flake",
         "type": "github"
       }
     },

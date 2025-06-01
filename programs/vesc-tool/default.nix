@@ -84,7 +84,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      inputs.vesc-tool-flake.packages.${system}.vesc-tool
+      inputs.vesc-tool.packages.${system}.vesc-tool
     ];
   };
 }
