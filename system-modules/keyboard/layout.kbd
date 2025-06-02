@@ -1,18 +1,34 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+;; Maps (shift+)alt+left to (shift+)home and (shift+)alt+right to (shift+)end.
+;; If any other modifiers are present send the original arrow.
+
 (defsrc
-  AltLeft AltRight ArrowLeft ArrowRight
+  left
+  right
+)
+
+(defvar
+  any-shift (or lshift rshift)
+  any-alt (or lalt ralt)
+  any-other (or lctrl rctrl lmeta rmeta)
 )
 
 (deflayer base
-  (multi lalt (layer-while-held alt))
-  (multi ralt (layer-while-held alt))
-  ArrowLeft
-  ArrowRight
-)
-
-;; Maps alt+left to home and alt+right to end.
-(deflayer alt
-  _
-  _
-  (multi (release-key alt) Home)
-  (multi (release-key alt) End)
+  (switch
+    ((and
+      $any-alt
+      (not $any-other)
+    )) (unmod (lalt ralt) home) break
+    () ArrowLeft break
+  )
+  (switch
+    ((and
+      $any-alt
+      (not $any-other)
+    )) (unmod (lalt ralt) end) break
+    () ArrowRight break
+  )
 )
