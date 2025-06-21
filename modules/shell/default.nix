@@ -91,6 +91,13 @@ in
           fi
         }
 
+        # usage: whichrealpath PROGRAM...
+        # Print real path of PROGRAM names. Shorthand to wrap `which` in
+        # `realpath`.
+        whichrealpath() {
+          realpath $(which $@)
+        }
+
         # Make sure that `nix develop` always uses zsh with my prompt:
         # Override nix develop to add -c "zsh" to the end of the given arguments.
         alias nix="nix-override"
