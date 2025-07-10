@@ -32,7 +32,9 @@ let
   loginBackground =
     imageMapRange ../../assets/wallpapers/zen-coral-white-dim.jpeg "#F66E51" "white" "#BC97FF"
       "white";
-  desktopBackground = ../../assets/wallpapers/zen-dark-coral-dim.jpeg;
+  # Wallpaper from Garuda Mokka Theme
+  # https://gitlab.com/garuda-linux/themes-and-settings/settings/garuda-mokka/-/blob/a5d2debff18475196588ed4a3e096197d74b4fac/wallpapers/
+  desktopBackground = ../../assets/wallpapers/River-city_Mocha.jpg;
   sddmUserThemeConfig = makeIni "theme.conf.user" {
     General = {
       background = "${loginBackground}";
