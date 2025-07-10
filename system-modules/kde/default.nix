@@ -30,9 +30,9 @@ let
   # Wallpapers by Sameera Sandakelum:
   # https://photos.app.goo.gl/vm9UudLFVqMrcyKW7
   loginBackground =
-    imageMapRange ../../assets/zen-coral-white-dim.jpeg "#F66E51" "white" "#BC97FF"
+    imageMapRange ../../assets/wallpapers/zen-coral-white-dim.jpeg "#F66E51" "white" "#BC97FF"
       "white";
-  desktopBackground = ../../assets/zen-dark-coral-dim.jpeg;
+  desktopBackground = ../../assets/wallpapers/zen-dark-coral-dim.jpeg;
   sddmUserThemeConfig = makeIni "theme.conf.user" {
     General = {
       background = "${loginBackground}";
