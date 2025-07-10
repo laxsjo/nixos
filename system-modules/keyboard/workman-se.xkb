@@ -1,5 +1,12 @@
+// For an (incomplete) list of key action names, see
+// https://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap
+
 xkb_symbols "se-workman" {
-  //include "se"
+  // Each of the segments between the '+'s refer to some xkb_symbols construct.
+  // These are located in XKB files (like this one!) under this directory:
+  // spell-checker: disable-next-line
+  // /nix/store/6fq80h0myz0nc01425zm9hrfcl2p5hd7-xkeyboard-config-2.44/share/X11/xkb/symbols/
+  // (The path is also listed by `man xkeyboard-config`)
   include "pc+se+inet(evdev)"
 
   // Alphanumeric section
@@ -55,6 +62,12 @@ xkb_symbols "se-workman" {
   key <LSGT> {
     type= "FOUR_LEVEL",
     symbols[Group1]= [ semicolon, colon, bar, brokenbar ]
+  };
+  
+  // Map AltGr+'-' to em-dash '—' and Shift+AltGr+'-' to en-dash '–'.
+  key <AB10> {
+    type= "FOUR_LEVEL",
+    symbols[Group1]= [ minus, underscore, U2014, U2013 ]
   };
   
   // Make `, ^, and ~ not act as deadkey
