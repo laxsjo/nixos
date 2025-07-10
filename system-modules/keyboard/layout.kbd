@@ -27,4 +27,9 @@
     )) (unmod (lalt ralt) end) break
     () ArrowRight break
   )
+  ;; Map shift+backspace to delete.
+  Backspace (switch
+    ($any-shift) (unmod (lshift rshift) Delete) break
+    () Backspace break
+  )
 )
