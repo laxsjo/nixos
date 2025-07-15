@@ -12,5 +12,6 @@
     ./rlr.nix
     ./emote.nix
     ./zed-editor.nix
+    ./git.nix
   ];
 }
