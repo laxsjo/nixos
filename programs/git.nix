@@ -31,6 +31,11 @@
         alias.adog = "log --all --decorate --format=\"%C(auto)%h %s%d\" --graph";
         alias.dog = "log --decorate --format=\"%C(auto)%h %s%d\" --graph";
       };
+
+      ignores = [
+        # Created by the "VS Code Counter" extension
+        ".VSCodeCounter/"
+      ];
     };
   };
 }
