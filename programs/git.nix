@@ -30,6 +30,9 @@
         # decorations after the summary.
         alias.adog = "log --all --decorate --format=\"%C(auto)%h %s%d\" --graph";
         alias.dog = "log --decorate --format=\"%C(auto)%h %s%d\" --graph";
+
+        alias.show-names = "show --oneline --name-status";
+        alias.log-line = "log --oneline";
       };
 
       ignores = [
