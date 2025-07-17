@@ -33,6 +33,7 @@
 
         alias.show-names = "show --oneline --name-status";
         alias.log-line = "log --oneline";
+        alias.switchd = "switch --detach";
       };
 
       ignores = [
