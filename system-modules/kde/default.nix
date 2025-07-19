@@ -416,7 +416,7 @@ in
             "Libinput/0/0/DP-3"."PointerAcceleration" = 0.000;
             "Libinput/1133/45108/Logitech MX Master 3S"."PointerAcceleration" = "-0.800";
             "Libinput/1133/50509/Logitech USB Receiver"."PointerAcceleration" = "-1.000";
-            "Libinput/1133/50509/Logitech USB Receiver"."ScrollFactor" = 1.5;
+            "Libinput/1133/50509/Logitech USB Receiver"."ScrollFactor" = 1;
             "Libinput/12951/6505/ZSA Technology Labs Moonlander Mark I"."PointerAcceleration" = 0.000;
             "Libinput/12972/24/Framework Laptop 16 Keyboard Module - ISO Consumer Control"."ScrollFactor" = 0.1;
             "Libinput/2362/628/PIXA3854:00 093A:0274 Mouse"."PointerAcceleration" = 0.000;
