@@ -13,5 +13,6 @@
     ./emote.nix
     ./zed-editor.nix
     ./git.nix
+    ./nbted.nix
   ];
 }
