@@ -792,11 +792,11 @@
         "treefmt-nix": "treefmt-nix_3"
       },
       "locked": {
-        "lastModified": 1748618178,
-        "narHash": "sha256-SXG7ukrSkNW7SF0VJpSBHR60aAGBVYJ2mFQWhSFuVa0=",
+        "lastModified": 1753857766,
+        "narHash": "sha256-r6Sxa8a2DNseWZ86vp/Wm22qP9KM7+ZpkyRtQ1xh2hE=",
         "owner": "vedderb",
         "repo": "vesc_tool",
-        "rev": "b71ad9fcfb088350d5eadeea29292de3e5a06bb8",
+        "rev": "f3b8c6f8c7b31420b0981448e6abb4bd5ddedbaa",
         "type": "github"
       },
       "original": {
