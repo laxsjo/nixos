@@ -14,5 +14,6 @@
     ./zed-editor.nix
     ./git.nix
     ./nbted.nix
+    ./gdb.nix
   ];
 }
