@@ -126,22 +126,11 @@ in
     };
 
     # Konsole
-    # IDK where I should place this...
-    # From here: https://unix.stackexchange.com/a/545615
-    home.file.".hacks/useShell.sh" = {
-      executable = true;
-      text = ''
-        #!/bin/sh
-        PSHELL=$(getent passwd $USER | cut -d: -f7)
-        eval "$PSHELL"
-      '';
-    };
     home.file.".local/share/konsole/UserProfile.profile".text = ''
       [Appearance]
       Font=FiraCode Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
       [General]
-      Command=~/.hacks/useShell.sh
       Name=UserProfile
       Parent=FALLBACK/
     '';
