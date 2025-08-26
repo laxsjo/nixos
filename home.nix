@@ -92,6 +92,7 @@
       kicad
       krita
       pinta # Minimal image editor
+      libreoffice-qt6 # LibreOffice Suite
     ]
     ++ [
       inputs.gd-save-transfer.packages.${system}.default
