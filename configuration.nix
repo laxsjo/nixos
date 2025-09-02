@@ -184,6 +184,8 @@ in
   fonts.packages = with pkgs; [
     fira-code
     nerd-fonts.fira-code
+    libertine
+    fira-sans
   ];
 
   # Nix configuration
