@@ -186,6 +186,7 @@ in
     nerd-fonts.fira-code
     libertine
     fira-sans
+    inriafonts
   ];
 
   # Nix configuration
