@@ -72,7 +72,6 @@
       sublime4 # Not using, but still keeping it around ¯\_(ツ)_/¯
       spotify
       discord
-      enpass
       obsidian
       google-chrome # Only for flasing moonlander keyboard
       filezilla

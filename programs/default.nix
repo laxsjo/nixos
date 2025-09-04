@@ -15,5 +15,6 @@
     ./git.nix
     ./nbted.nix
     ./gdb.nix
+    ./enpass.nix
   ];
 }
