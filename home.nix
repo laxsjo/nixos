@@ -92,6 +92,7 @@
       krita
       pinta # Minimal image editor
       libreoffice-qt6 # LibreOffice Suite
+      audacity # Audio manipulation
     ]
     ++ [
       inputs.gd-save-transfer.packages.${system}.default
