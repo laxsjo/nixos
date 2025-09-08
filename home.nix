@@ -160,6 +160,10 @@
       appId = "com.boxy_svg.BoxySVG";
       origin = "flathub";
     }
+    {
+      appId = "com.github.tchx84.Flatseal";
+      origin = "flathub";
+    }
   ];
   services.flatpak.overrides = {
     "com.valvesoftware.Steam".Environment = {
