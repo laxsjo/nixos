@@ -81,6 +81,7 @@
       geeqie # image viewer
       kooha # Image recorder
       ghostty # Terminal emulator
+      geteduroam # Application for configuring eduroam network.
 
       ## Gaming
       prismlauncher # Minecraft launcher
