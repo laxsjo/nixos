@@ -88,7 +88,9 @@
       modrinth-app
 
       ## Editing programs
-      inkscape
+      (inkscape-with-extensions.override {
+        inkscapeExtensions = [ inkscape-extensions.inkstitch ];
+      })
       kicad
       krita
       pinta # Minimal image editor
