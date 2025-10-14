@@ -167,6 +167,10 @@
       appId = "com.github.tchx84.Flatseal";
       origin = "flathub";
     }
+    {
+      appId = "io.mrarm.mcpelauncher";
+      origin = "flathub";
+    }
   ];
   services.flatpak.overrides = {
     "com.valvesoftware.Steam".Environment = {
