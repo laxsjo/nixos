@@ -39,6 +39,7 @@
       ignores = [
         # Created by the "VS Code Counter" extension
         ".VSCodeCounter/"
+        ".ignored"
       ];
     };
   };
