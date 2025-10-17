@@ -82,6 +82,7 @@
       kooha # Image recorder
       ghostty # Terminal emulator
       geteduroam # Application for configuring eduroam network.
+      bruno # API client
 
       ## Gaming
       prismlauncher # Minecraft launcher
