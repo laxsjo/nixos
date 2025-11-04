@@ -32,4 +32,5 @@
     ($any-shift) (unmod (lshift rshift) Delete) break
     () Backspace break
   )
+  caps tab
 )
