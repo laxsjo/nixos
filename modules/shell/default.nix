@@ -63,6 +63,17 @@ in
         # Bind ctrl+backspace to delete word
         bindkey '^H' backward-kill-word
 
+        # Configure prompt to update every second
+        TRAPALRM() {
+          local precmd
+          for precmd in $precmd_functions; do
+            $precmd
+          done
+          zle .reset-prompt        
+        }
+
+        TMOUT=1
+
         # usage: faketty [command] [args]
         # Run command in an environment that pretends to be a terminal. Suitable for
         # piping into other commands while forcing colors.
