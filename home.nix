@@ -57,6 +57,7 @@
       openocd
       android-tools # To get adb for debugging Android phones.
       xsel # Utility for saving stdin to clipboard.
+      htop # Modern alternative to top.
 
       ## Other
       man-pages
