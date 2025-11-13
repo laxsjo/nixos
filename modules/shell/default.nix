@@ -137,13 +137,22 @@ in
     };
 
     # Konsole
-    home.file.".local/share/konsole/UserProfile.profile".text = ''
-      [Appearance]
-      Font=FiraCode Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+    home.file =
+      let
+        theme = "catppuccin-macchiato";
+      in
+      {
+        ".local/share/konsole/UserProfile.profile".text = ''
+          [Appearance]
+          ColorScheme=${theme}
+          Font=FiraCode Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
-      [General]
-      Name=UserProfile
-      Parent=FALLBACK/
-    '';
+          [General]
+          Name=UserProfile
+          Parent=FALLBACK/
+        '';
+        ".local/share/konsole/${theme}.colorscheme".source =
+          "${inputs.catppuccin-konsole}/themes/${theme}.colorscheme";
+      };
   };
 }

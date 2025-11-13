@@ -34,6 +34,10 @@
     zed = {
       url = "github:zed-industries/zed/v0.179.4";
     };
+    catppuccin-konsole = {
+      url = "github:catppuccin/konsole";
+      flake = false;
+    };
   };
 
   outputs =
