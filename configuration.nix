@@ -192,6 +192,7 @@ in
     libertine
     fira-sans
     inriafonts
+    noto-fonts-cjk-sans # Includes Noto Sans Japanese
   ];
 
   # Nix configuration
