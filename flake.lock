@@ -17,6 +17,18 @@
         "type": "github"
       }
     },
+    "catppuccin-alacritty": {
+      "flake": false,
+      "locked": {
+        "path": "git@github.com:catppuccin/alacritty.git",
+        "type": "path"
+      },
+      "original": {
+        "path": "git@github.com:catppuccin/alacritty.git",
+        "type": "path"
+      },
+      "parent": []
+    },
     "catppuccin-konsole": {
       "flake": false,
       "locked": {
@@ -580,6 +592,7 @@
     },
     "root": {
       "inputs": {
+        "catppuccin-alacritty": "catppuccin-alacritty",
         "catppuccin-konsole": "catppuccin-konsole",
         "flake-utils": "flake-utils",
         "flatpak": "flatpak",

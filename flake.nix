@@ -38,6 +38,10 @@
       url = "github:catppuccin/konsole";
       flake = false;
     };
+    catppuccin-alacritty = {
+      url = "git@github.com:catppuccin/alacritty.git";
+      flake = false;
+    };
   };
 
   outputs =

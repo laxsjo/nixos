@@ -16,5 +16,6 @@
     ./nbted.nix
     ./gdb.nix
     ./enpass.nix
+    ./alacritty.nix
   ];
 }
