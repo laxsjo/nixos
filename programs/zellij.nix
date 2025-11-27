@@ -18,6 +18,8 @@ in
     programs.zellij.settings = {
       # Apparently catppuccin comes preinstalled with zellij.
       inherit theme;
+      
+      show_startup_tips = false;
     };
   };
 }
