@@ -17,5 +17,6 @@
     ./gdb.nix
     ./enpass.nix
     ./alacritty.nix
+    ./zellij.nix
   ];
 }

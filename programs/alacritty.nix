@@ -17,6 +17,11 @@ in
         opacity = 0.5;
         blur = true;
         decorations = "None";
+        startup_mode = "Maximized";
+      };
+
+      terminal = {
+        shell = "${config.programs.zellij.package}/bin/zellij";
       };
 
       general = {
