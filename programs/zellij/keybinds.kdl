@@ -1,0 +1,129 @@
+// Remaps
+//   h j k l -> n e o i
+//   "new" -> h
+//   "embed" -> m
+// and some other conflicting keys
+keybinds {
+    resize {
+        bind "n" "Left" {
+            Resize "Increase Left"
+        }
+        bind "e" "Down" {
+            Resize "Increase Down"
+        }
+        bind "o" "Up" {
+            Resize "Increase Up"
+        }
+        bind "i" "Right" {
+            Resize "Increase Right"
+        }
+        bind "N" {
+            Resize "Decrease Left"
+        }
+        bind "E" {
+            Resize "Decrease Down"
+        }
+        bind "O" {
+            Resize "Decrease Up"
+        }
+        bind "I" {
+            Resize "Decrease Right"
+        }
+    }
+    pane {
+        bind "n" "Left" {
+            MoveFocus "Left"
+        }
+        bind "e" "Down" {
+            MoveFocus "Down"
+        }
+        bind "o" "Up" {
+            MoveFocus "Up"
+        }
+        bind "i" "Right" {
+            MoveFocus "Right"
+        }
+        bind "h" {
+            NewPane
+            SwitchToMode "Normal"
+        }
+        bind "m" {
+            TogglePaneEmbedOrFloating
+            SwitchToMode "Normal"
+        }
+        bind "l" {
+            TogglePanePinned
+            SwitchToMode "Normal"
+        }
+    }
+    move {
+        bind "h" "Tab" {
+            MovePane
+        }
+        bind "n" "Left" {
+            MovePane "Left"
+        }
+        bind "e" "Down" {
+            MovePane "Down"
+        }
+        bind "o" "Up" {
+            MovePane "Up"
+        }
+        bind "i" "Right" {
+            MovePane "Right"
+        }
+    }
+    tab {
+        bind "n" "Left" "Up" "o" {
+            GoToPreviousTab
+        }
+        bind "i" "Right" "Down" "e" {
+            GoToNextTab
+        }
+        bind "h" {
+            NewTab
+            SwitchToMode "Normal"
+        }
+    }
+    scroll {
+        bind "j" {
+            EditScrollback
+            SwitchToMode "Normal"
+        }
+        bind "e" "Down" {
+            ScrollDown
+        }
+        bind "o" "Up" {
+            ScrollUp
+        }
+        bind "Ctrl f" "PageDown" "Right" "i" {
+            PageScrollDown
+        }
+        bind "Ctrl b" "PageUp" "Left" "n" {
+            PageScrollUp
+        }
+    }
+    shared_except "locked" {
+        bind "Alt h" {
+            NewPane
+        }
+        bind "Alt u" {
+            MoveTab "Left"
+        }
+        bind "Alt p" {
+            MoveTab "Right"
+        }
+        bind "Alt n" "Alt Left" {
+            MoveFocusOrTab "Left"
+        }
+        bind "Alt i" "Alt Right" {
+            MoveFocusOrTab "Right"
+        }
+        bind "Alt e" "Alt Down" {
+            MoveFocus "Down"
+        }
+        bind "Alt o" "Alt Up" {
+            MoveFocus "Up"
+        }
+    }
+}
