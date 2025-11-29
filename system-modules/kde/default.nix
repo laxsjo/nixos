@@ -1,5 +1,6 @@
 {
   lib,
+  selfLib,
   config,
   pkgs,
   inputs,
@@ -7,37 +8,16 @@
 }:
 
 let
-  makeIni = (pkgs.formats.ini { }).generate;
-  imageMapRange =
-    image: sourceColorStart: sourceColorEnd: destinationColorStart: destinationColorEnd:
-    pkgs.stdenvNoCC.mkDerivation {
-      name = "${image.name or builtins.baseNameOf image}.recolored.png";
-      nativeBuildInputs = [ pkgs.imagemagick ];
+  user = "rasmus";
+  userConfig = config.home-manager.users.${user};
 
-      phases = [ "installPhase" ];
-      installPhase = ''
-        magick "${image}" \
-          -level-colors "${sourceColorStart}":"${sourceColorEnd}" \
-          -colorspace Gray \
-          +level-colors "${destinationColorStart}":"${destinationColorEnd}" \
-          PNG:$out
-      '';
-    };
+  makeIni = (pkgs.formats.ini { }).generate;
   secsFromMins = minutes: 60 * minutes;
 
-  user = "rasmus";
   theme = "breeze-clean";
-  # Wallpapers by Sameera Sandakelum:
-  # https://photos.app.goo.gl/vm9UudLFVqMrcyKW7
-  loginBackground =
-    imageMapRange ../../assets/wallpapers/zen-coral-white-dim.jpeg "#F66E51" "white" "#BC97FF"
-      "white";
-  # Wallpaper from Garuda Mokka Theme
-  # https://gitlab.com/garuda-linux/themes-and-settings/settings/garuda-mokka/-/blob/a5d2debff18475196588ed4a3e096197d74b4fac/wallpapers/
-  desktopBackground = ../../assets/wallpapers/River-city_Mocha.jpg;
   sddmUserThemeConfig = makeIni "theme.conf.user" {
     General = {
-      background = "${loginBackground}";
+      background = "${selfLib.wallpaper.loginBackground}";
     };
   };
 in
@@ -125,8 +105,8 @@ in
         enable = true;
 
         # Lockscreen wallpaper
-        kscreenlocker.appearance.wallpaper = loginBackground;
-        workspace.wallpaper = desktopBackground;
+        kscreenlocker.appearance.wallpaper = selfLib.wallpaper.loginBackground;
+        workspace.wallpaper = selfLib.wallpaper.desktopBackground;
 
         # Power settings
         powerdevil = {

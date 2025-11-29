@@ -57,12 +57,13 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
+      selfLib = import ./lib { inherit pkgs; };
       treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
     in
     rec {
       nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem rec {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs selfLib; };
         modules = [
           {
             nixpkgs.overlays = [
