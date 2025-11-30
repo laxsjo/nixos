@@ -165,9 +165,7 @@ in
     allowUnfree = true;
 
     # Allow unsafe packages
-    permittedInsecurePackages = [
-      "openssl-1.1.1w" # For sublime4
-    ];
+    permittedInsecurePackages = [ ];
   };
 
   # List packages installed in system profile. To search, run:

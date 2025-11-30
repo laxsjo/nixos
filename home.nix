@@ -70,7 +70,6 @@
       kdePackages.filelight
 
       ## Misc programs
-      sublime4 # Not using, but still keeping it around ¯\_(ツ)_/¯
       spotify
       discord
       obsidian
@@ -87,7 +86,6 @@
 
       ## Gaming
       prismlauncher # Minecraft launcher
-      modrinth-app
 
       ## Editing programs
       (inkscape-with-extensions.override {
