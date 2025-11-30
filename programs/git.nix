@@ -10,7 +10,7 @@
   config = {
     programs.git = {
       enable = true;
-      extraConfig = {
+      settings = {
         user.name = "laxsjo";
         user.email = "rasmus.soderhielm@gmail.com";
 

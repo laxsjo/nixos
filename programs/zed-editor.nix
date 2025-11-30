@@ -16,7 +16,7 @@ in
   config = {
     home.packages = [
       # Building this took roughly 26 mins on my machine...
-      inputs.zed.outputs.packages.${pkgs.system}.default
+      inputs.zed.outputs.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };
 }

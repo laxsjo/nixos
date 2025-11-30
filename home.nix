@@ -98,8 +98,8 @@
       audacity # Audio manipulation
     ]
     ++ [
-      inputs.gd-save-transfer.packages.${system}.default
-      inputs.lolitop.packages.${system}.default
+      inputs.gd-save-transfer.packages.${stdenv.hostPlatform.system}.default
+      inputs.lolitop.packages.${stdenv.hostPlatform.system}.default
     ];
 
   # The state version is required and should stay at the version you

@@ -122,8 +122,6 @@ in
   };
   hardware.amdgpu = {
     opencl.enable = true;
-    # IDK if this actually changed anything.
-    amdvlk.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
