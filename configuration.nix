@@ -142,6 +142,7 @@ in
       "dialout"
       "plugdev"
       "docker"
+      "wireshark"
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
@@ -157,6 +158,9 @@ in
 
   # Install firefox.
   programs.firefox.enable = true;
+  
+  # Install wireshark
+  programs.wireshark.enable = true;
 
   nixpkgs.config = {
     # Allow unfree packages
