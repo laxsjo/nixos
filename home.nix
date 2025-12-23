@@ -83,6 +83,7 @@
       ghostty # Terminal emulator
       geteduroam # Application for configuring eduroam network.
       bruno # API client
+      burpsuite # Web application penetration testing application
 
       ## Gaming
       prismlauncher # Minecraft launcher
