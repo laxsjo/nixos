@@ -36,6 +36,9 @@
       nixVersions.latest
       tree
       cowsay
+      pokemonsay
+      kittysay
+      tewisay
       just
       jq
       xorg.xwininfo
