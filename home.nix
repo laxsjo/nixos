@@ -91,6 +91,7 @@
 
       ## Gaming
       prismlauncher # Minecraft launcher
+      openmw # Morrowind engine
 
       ## Editing programs
       (inkscape-with-extensions.override {

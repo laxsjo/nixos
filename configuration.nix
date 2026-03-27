@@ -143,6 +143,7 @@ in
       "plugdev"
       "docker"
       "wireshark"
+      "libvirtd"
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
@@ -161,7 +162,11 @@ in
   
   # Install wireshark
   programs.wireshark.enable = true;
-
+  
+  # Install virt manager
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+  
   nixpkgs.config = {
     # Allow unfree packages
     allowUnfree = true;
