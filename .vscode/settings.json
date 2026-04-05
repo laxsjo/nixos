@@ -169,5 +169,6 @@
   "gitlens.advanced.blame.customArguments": [
     "--ignore-revs-file",
     "${workspaceFolder}/.git-blame-ignore-revs"
-  ]
+  ],
+  "nixEnvSelector.suggestion": false
 }

@@ -198,6 +198,9 @@ in
     fira-sans
     inriafonts
     noto-fonts-cjk-sans # Includes Noto Sans Japanese
+    oldstandard
+    montserrat
+    bodoni-moda
   ];
 
   # Nix configuration
