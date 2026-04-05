@@ -28,9 +28,6 @@
       url = "github:cortex/lolitop";
       # url = "git+file:///home/rasmus/projects/github/xtop-laxsjo";
     };
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
     zed = {
       url = "github:zed-industries/zed/v0.179.4";
     };
@@ -68,7 +65,6 @@
           {
             nixpkgs.overlays = [
               inputs.lispbm.overlays.default
-              inputs.ghostty.overlays.default
               (import ./overlay.nix)
             ];
           }
