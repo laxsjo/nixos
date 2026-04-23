@@ -3,6 +3,7 @@
 //   "new" -> h
 //   "embed" -> m
 // and some other conflicting keys
+// Also removes ctrl q
 keybinds {
     resize {
         bind "n" "Left" {
@@ -125,5 +126,6 @@ keybinds {
         bind "Alt o" "Alt Up" {
             MoveFocus "Up"
         }
+        unbind "Ctrl q"
     }
 }

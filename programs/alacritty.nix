@@ -19,6 +19,10 @@ in
         decorations = "None";
         startup_mode = "Maximized";
       };
+      
+      keyboard.bindings = [
+        { key = "Q"; mods = "Control"; chars = "\\u0011"; }
+      ];
 
       terminal = {
         shell = "${config.programs.zellij.package}/bin/zellij";
