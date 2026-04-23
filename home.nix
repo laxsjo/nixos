@@ -62,6 +62,7 @@
       xsel # Utility for saving stdin to clipboard.
       htop # Modern alternative to top.
       sage # Interactive Python-based CAS environment
+      nixos-rebuild-ng # nixos-rebuild rewrite
 
       ## Other
       man-pages
