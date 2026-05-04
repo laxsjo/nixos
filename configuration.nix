@@ -15,9 +15,10 @@ in
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./system-modules/keyboard
-    ./system-modules/kde
     ./system-modules/cachix.nix
+    ./system-modules/fonts.nix
+    ./system-modules/kde
+    ./system-modules/keyboard
   ];
 
   # Bootloader.
@@ -189,19 +190,6 @@ in
 
   # Enable flatpaks
   services.flatpak.enable = true;
-
-  # Fonts
-  fonts.packages = with pkgs; [
-    fira-code
-    nerd-fonts.fira-code
-    libertine
-    fira-sans
-    inriafonts
-    noto-fonts-cjk-sans # Includes Noto Sans Japanese
-    oldstandard
-    montserrat
-    bodoni-moda
-  ];
 
   # Nix configuration
   nix.settings.experimental-features = [

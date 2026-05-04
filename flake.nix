@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
@@ -45,6 +46,7 @@
     inputs@{
       self,
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
       treefmt-nix,
       flatpak,
@@ -54,13 +56,14 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
+      pkgs-unstable = import nixpkgs-unstable { inherit system; };
       selfLib = import ./lib { inherit pkgs; };
       treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
     in
     rec {
       nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem rec {
         inherit system;
-        specialArgs = { inherit inputs selfLib; };
+        specialArgs = { inherit inputs selfLib pkgs-unstable; };
         modules = [
           {
             nixpkgs.overlays = [
