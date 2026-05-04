@@ -15,6 +15,7 @@ in
     fira-sans
     inriafonts
     noto-fonts-cjk-sans # Includes Noto Sans Japanese
+    noto-fonts-monochrome-emoji
     oldstandard
     montserrat
     bodoni-moda
