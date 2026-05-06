@@ -19,6 +19,7 @@ in
     oldstandard
     montserrat
     bodoni-moda
+    sn-pro
   ] ++ [
     (mkFont "karrik" ../assets/fonts/karrik/fonts)
   ];
