@@ -99,6 +99,8 @@ in
       home.packages = [
         # Allows kde system settings UI to edit SDDM settings.
         pkgs.kdePackages.sddm-kcm
+        pkgs.kdePackages.plasma-keyboard
+        pkgs.kdePackages.kcharselect
       ];
 
       programs.plasma = {
