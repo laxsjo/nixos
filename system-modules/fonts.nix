@@ -10,6 +10,7 @@ in
 {
   fonts.packages = with pkgs; [
     bodoni-moda
+    eb-garamond
     fira-code
     fira-sans
     inriafonts
