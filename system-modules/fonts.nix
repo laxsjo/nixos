@@ -14,6 +14,7 @@ in
     fira-sans
     inriafonts
     libertine
+    lora
     montserrat
     nerd-fonts.fira-code
     noto-fonts-cjk-sans # Includes Noto Sans Japanese
