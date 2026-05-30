@@ -13,6 +13,7 @@ in
     eb-garamond
     fira-code
     fira-sans
+    garamond-libre
     inriafonts
     libertine
     lora
