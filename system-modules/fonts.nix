@@ -9,16 +9,16 @@ let
 in
 {
   fonts.packages = with pkgs; [
+    bodoni-moda
     fira-code
-    nerd-fonts.fira-code
-    libertine
     fira-sans
     inriafonts
+    libertine
+    montserrat
+    nerd-fonts.fira-code
     noto-fonts-cjk-sans # Includes Noto Sans Japanese
     noto-fonts-monochrome-emoji
     oldstandard
-    montserrat
-    bodoni-moda
     sn-pro
   ] ++ [
     (mkFont "karrik" ../assets/fonts/karrik/fonts)
