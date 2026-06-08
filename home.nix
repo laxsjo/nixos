@@ -71,6 +71,7 @@
       wineWowPackages.waylandFull # To be able to run windows EXEs.
       rustup # To make the rust-analyzer vscode extension work.
       typstyle # Formatter for Typst
+      nil # Nix language server.
 
       ## GUI utils
       kdePackages.filelight
