@@ -779,16 +779,16 @@
         "treefmt-nix": "treefmt-nix_3"
       },
       "locked": {
-        "lastModified": 1775204305,
-        "narHash": "sha256-GdBwOhEtee4YWTwvem5gPuTV65R0l0iI8V7BswB2QkQ=",
-        "owner": "vedderb",
+        "lastModified": 1781004833,
+        "narHash": "sha256-ygyVZmiThi3UFVEWFNwn2l2ZRIqTv+F9qRpj3ZjS7ns=",
+        "owner": "Lindboard",
         "repo": "vesc_tool",
-        "rev": "eb7aab412a93448bb93f5d4d68b88dcf3e1cc74b",
+        "rev": "ec91bf08bfd1ce1e2f149f41fc6290c39226f74a",
         "type": "github"
       },
       "original": {
-        "owner": "vedderb",
-        "ref": "master",
+        "owner": "Lindboard",
+        "ref": "lind-fw-compat",
         "repo": "vesc_tool",
         "type": "github"
       }

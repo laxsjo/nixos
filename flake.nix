@@ -15,7 +15,7 @@
       inputs.home-manager.follows = "home-manager";
     };
     vesc-tool = {
-      url = "github:vedderb/vesc_tool/master";
+      url = "github:Lindboard/vesc_tool/lind-fw-compat";
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
