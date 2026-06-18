@@ -23,6 +23,7 @@
         submodule.recurse = true;
         submodule.fetchJobs = 8;
         advice.detachedHead = false;
+        tag.sort = "-version:refname";
 
         # usage `git adog`: pretty commit graph
         # from this amazing post: https://stackoverflow.com/a/35075021/15507414
