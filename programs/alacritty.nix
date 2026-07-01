@@ -19,9 +19,13 @@ in
         decorations = "None";
         startup_mode = "Maximized";
       };
-      
+
       keyboard.bindings = [
-        { key = "Q"; mods = "Control"; chars = "\\u0011"; }
+        {
+          key = "Q";
+          mods = "Control";
+          chars = "\\u0011";
+        }
       ];
 
       terminal = {

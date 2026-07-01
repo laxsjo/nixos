@@ -29,7 +29,7 @@ in
     programs.ssh = {
       enable = true;
       package = patchedOpenssh;
-      
+
       enableDefaultConfig = false;
       matchBlocks."*" = {
         forwardAgent = false;
