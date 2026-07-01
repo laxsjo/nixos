@@ -79,6 +79,7 @@ in
               { replace_newest = false; }
             ];
             "ctrl-shift-a" = "editor::SelectLargerSyntaxNode";
+            "alt-h" = "editor::Hover";
           };
         }
         {
