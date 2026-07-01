@@ -30,7 +30,7 @@
       # url = "git+file:///home/rasmus/projects/github/xtop-laxsjo";
     };
     zed = {
-      url = "github:zed-industries/zed/v0.179.4";
+      url = "github:zed-industries/zed/v1.8.2";
     };
     catppuccin-konsole = {
       url = "github:catppuccin/konsole";
