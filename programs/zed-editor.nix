@@ -43,7 +43,7 @@ in
         theme = {
           mode = "system";
           light = "One Light";
-          dark = "One Dark";
+          dark = "Catppuccin Frappé";
         };
         terminal = {
           font_family = "FiraCode Nerd Font";
@@ -99,6 +99,8 @@ in
     };
 
     programs.zed-editor.extensions = [
+      "catppuccin"
+      "catppuccin-icons"
       "git-firefly"
       "nix"
       "rust"
