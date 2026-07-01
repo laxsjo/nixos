@@ -39,6 +39,7 @@ in
         };
         vim_mode = false;
         ui_font_size = 16;
+        buffer_font_family = "FiraCode Nerd Font";
         buffer_font_size = 16;
         theme = {
           mode = "system";
@@ -47,6 +48,7 @@ in
         };
         terminal = {
           font_family = "FiraCode Nerd Font";
+          font_size = 14;
           line_height = "standard";
         };
       };
