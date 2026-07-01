@@ -108,6 +108,8 @@ in
       "zig"
     ];
     home.packages = [
+      # Includes C/C++ language server
+      pkgs.clang-tools
       # Nix language server
       pkgs.nixd
       # Includes the rust langauge server
