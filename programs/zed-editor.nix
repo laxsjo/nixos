@@ -107,6 +107,7 @@ in
       "nix"
       "rust"
       "toml"
+      "typst"
       "zig"
     ];
     home.packages = [
@@ -116,6 +117,8 @@ in
       pkgs.nixd
       # Includes the rust langauge server
       pkgs.rustup
+      # Typst language server
+      pkgs.tinymist
       # Zig language server
       pkgs.zls
     ];
