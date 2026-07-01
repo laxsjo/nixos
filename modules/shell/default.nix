@@ -34,10 +34,6 @@ in
       eza
     ];
 
-    module.${name}.sessionVariables = {
-      "EDITOR" = "code --wait";
-    };
-
     programs.zsh = {
       enable = true;
       enableCompletion = true;
@@ -69,7 +65,7 @@ in
           for precmd in $precmd_functions; do
             $precmd
           done
-          zle .reset-prompt        
+          zle .reset-prompt
         }
 
         TMOUT=1
@@ -90,7 +86,7 @@ in
             echo "  git-is-ancestor <commit> main"
             return 0
           fi
-          
+
           git merge-base --is-ancestor $1 $2
           if [[ $? = 0 ]]; then
             echo "true"

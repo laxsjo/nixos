@@ -14,9 +14,108 @@ let
 in
 {
   config = {
-    home.packages = [
+    programs.zed-editor = {
+      enable = true;
       # Building this took roughly 26 mins on my machine...
-      inputs.zed.outputs.packages.${pkgs.stdenv.hostPlatform.system}.default
+      package = inputs.zed.outputs.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
+      userSettings = {
+        project_panel = {
+          dock = "left";
+        };
+        outline_panel = {
+          dock = "left";
+        };
+        collaboration_panel = {
+          dock = "left";
+        };
+        agent = {
+          dock = "right";
+          favorite_models = [ ];
+          model_parameters = [ ];
+        };
+        git_panel = {
+          dock = "left";
+        };
+        vim_mode = false;
+        ui_font_size = 16;
+        buffer_font_size = 16;
+        theme = {
+          mode = "system";
+          light = "One Light";
+          dark = "One Dark";
+        };
+        terminal = {
+          font_family = "FiraCode Nerd Font";
+          line_height = "standard";
+        };
+      };
+
+      userKeymaps = [
+        {
+          context = "Workspace";
+          bindings = {
+            "ctrl-shift-t" = "terminal_panel::ToggleFocus";
+            "ctrl-shift-g" = null;
+            "ctrl-shift-g g" = "git_panel::ToggleFocus";
+          };
+        }
+        {
+          context = "Editor";
+          bindings = {
+            "ctrl-k ctrl-c" = "editor::ToggleComments";
+            "ctrl-alt-up" = "editor::AddSelectionAbove";
+            "ctrl-alt-down" = "editor::AddSelectionBelow";
+            "ctrl-enter" = "editor::NewlineBelow";
+            "ctrl-shift-enter" = "editor::NewlineAbove";
+            "ctrl-d" = "editor::DuplicateLineDown";
+            "ctrl-shift-d" = "editor::DuplicateLineUp";
+            "alt-n" = [
+              "editor::SelectNext"
+              { replace_newest = false; }
+            ];
+            "alt-shift-n" = [
+              "editor::SelectPrevious"
+              { replace_newest = false; }
+            ];
+            "ctrl-shift-a" = "editor::SelectLargerSyntaxNode";
+          };
+        }
+        {
+          context = "GitPanel > Editor";
+          bindings = {
+            "ctrl-alt-enter" = "git::Commit";
+          };
+        }
+        {
+          context = "GitDiff > Editor";
+          bindings = {
+            "ctrl-shift-g a" = "git::StageAndNext";
+            "ctrl-shift-g u" = "git::UnstageAndNext";
+          };
+        }
+      ];
+    };
+
+    programs.zed-editor.extensions = [
+      "git-firefly"
+      "nix"
+      "rust"
+      "toml"
+      "zig"
     ];
+    home.packages = [
+      # Nix language server
+      pkgs.nixd
+      # Includes the rust langauge server
+      pkgs.rustup
+      # Zig language server
+      pkgs.zls
+    ];
+
+    # Configure Zed as the default editor
+    module.shell.sessionVariables = {
+      "EDITOR" = "zed --wait --classic";
+    };
   };
 }
