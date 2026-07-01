@@ -61,7 +61,7 @@ in
           };
         }
         {
-          context = "Editor";
+          context = "Pane > Editor";
           bindings = {
             "ctrl-k ctrl-c" = "editor::ToggleComments";
             "ctrl-alt-up" = "editor::AddSelectionAbove";
@@ -83,13 +83,13 @@ in
           };
         }
         {
-          context = "GitPanel > Editor";
+          context = "Pane > GitPanel > Editor";
           bindings = {
             "ctrl-alt-enter" = "git::Commit";
           };
         }
         {
-          context = "GitDiff > Editor";
+          context = "Pane > GitDiff > Editor";
           bindings = {
             "ctrl-shift-g a" = "git::StageAndNext";
             "ctrl-shift-g u" = "git::UnstageAndNext";
