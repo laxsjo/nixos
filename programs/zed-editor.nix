@@ -66,6 +66,13 @@ in
 
       userKeymaps = [
         {
+          # Unbind default keybindings as they conflict with other mappings.
+          unbind = {
+            "ctrl-n" = "menu::SelectNext";
+            "ctrl-p" = "menu::SelectPrevious";
+          };
+        }
+        {
           context = "Workspace";
           bindings = {
             "ctrl-shift-t" = "terminal_panel::ToggleFocus";
