@@ -2,44 +2,35 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    treefmt-nix.url = "github:numtide/treefmt-nix";
-    flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
-    flake-utils.url = "github:numtide/flake-utils";
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
-    vesc-tool = {
-      url = "github:Lindboard/vesc_tool/lind-fw-compat";
-      inputs.flake-utils.follows = "flake-utils";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    lispbm = {
-      url = "github:svenssonjoel/lispBM/master";
-    };
-    gd-save-transfer = {
-      url = "git+file:///home/rasmus/projects/github/gd-save-transfer";
-    };
-    lolitop = {
-      url = "github:cortex/lolitop";
-      # url = "git+file:///home/rasmus/projects/github/xtop-laxsjo";
-    };
-    zed = {
-      url = "github:zed-industries/zed/v1.8.2";
+    catppuccin-alacritty = {
+      url = "git@github.com:catppuccin/alacritty.git";
+      flake = false;
     };
     catppuccin-konsole = {
       url = "github:catppuccin/konsole";
       flake = false;
     };
-    catppuccin-alacritty = {
-      url = "git@github.com:catppuccin/alacritty.git";
-      flake = false;
+    flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
+    flake-utils.url = "github:numtide/flake-utils";
+    gd-save-transfer.url = "git+file:///home/rasmus/projects/github/gd-save-transfer";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    lispbm.url = "github:svenssonjoel/lispBM/master";
+    lolitop.url = "github:cortex/lolitop";
+    nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
+    treefmt-nix.url = "github:numtide/treefmt-nix";
+    vesc-tool = {
+      url = "github:Lindboard/vesc_tool/lind-fw-compat";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zed.url = "github:zed-industries/zed/v1.8.2";
   };
 
   outputs =
