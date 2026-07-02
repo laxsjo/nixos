@@ -52,6 +52,16 @@ in
           font_size = 14;
           line_height = "standard";
         };
+        wrap_guides = [ 80 ];
+
+        languages = {
+          "Git Commit" = {
+            wrap_guides = [
+              50
+              72
+            ];
+          };
+        };
       };
 
       userKeymaps = [
