@@ -3,6 +3,7 @@
   pkgs,
   config,
   inputs,
+  system,
   ...
 }:
 
@@ -17,7 +18,7 @@ in
     programs.zed-editor = {
       enable = true;
       # Building this took roughly 26 mins on my machine...
-      package = inputs.zed.outputs.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      package = inputs.zed.outputs.packages.${system}.default;
 
       userSettings = {
         project_panel = {
@@ -113,6 +114,10 @@ in
     home.packages = [
       # Includes C/C++ language server
       pkgs.clang-tools
+      # LispBM language server
+      # Note that the Zed LispBM extension is currently installed manually from
+      # the repo.
+      inputs.lispbm-lsp.packages.${system}.default
       # Nix language server
       pkgs.nixd
       # Includes the rust langauge server
