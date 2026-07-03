@@ -66,10 +66,13 @@ in
 
       userKeymaps = [
         {
-          # Unbind default keybindings as they conflict with other mappings.
           unbind = {
+            # Unbind these from the default keybindings as they conflict with
+            # other mappings, and I don't care about them.
             "ctrl-n" = "menu::SelectNext";
             "ctrl-p" = "menu::SelectPrevious";
+
+            "ctrl-q" = "zed::Quit";
           };
         }
         {
