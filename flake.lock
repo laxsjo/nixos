@@ -944,11 +944,11 @@
         "treefmt-nix": "treefmt-nix_3"
       },
       "locked": {
-        "lastModified": 1781004833,
-        "narHash": "sha256-ygyVZmiThi3UFVEWFNwn2l2ZRIqTv+F9qRpj3ZjS7ns=",
+        "lastModified": 1769700389,
+        "narHash": "sha256-g+1OG2yOsPLEXusr6kGAYRjNcHItI+ZFBKO9HnDDuAQ=",
         "owner": "Lindboard",
         "repo": "vesc_tool",
-        "rev": "ec91bf08bfd1ce1e2f149f41fc6290c39226f74a",
+        "rev": "524f8847bb88d76b7856b17708f4a45945bec6ca",
         "type": "github"
       },
       "original": {
