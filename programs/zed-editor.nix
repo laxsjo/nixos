@@ -21,6 +21,8 @@ in
       package = inputs.zed.outputs.packages.${system}.default;
 
       userSettings = {
+        # I only switch panes using ctrl-tab, therefore disable the tab bar. :)
+        tab_bar.show = false;
         project_panel = {
           dock = "left";
         };
