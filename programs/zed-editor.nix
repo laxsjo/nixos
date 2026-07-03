@@ -100,19 +100,15 @@ in
             ];
             "ctrl-shift-a" = "editor::SelectLargerSyntaxNode";
             "alt-h" = "editor::Hover";
+            "ctrl-shift-g a" = "git::StageAndNext";
+            "ctrl-shift-g u" = "git::UnstageAndNext";
+            "ctrl-shift-g r" = "git::Restore";
           };
         }
         {
           context = "Pane > GitPanel > Editor";
           bindings = {
             "ctrl-alt-enter" = "git::Commit";
-          };
-        }
-        {
-          context = "Pane > GitDiff > Editor";
-          bindings = {
-            "ctrl-shift-g a" = "git::StageAndNext";
-            "ctrl-shift-g u" = "git::UnstageAndNext";
           };
         }
       ];
