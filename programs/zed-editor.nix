@@ -55,6 +55,9 @@ in
         wrap_guides = [ 80 ];
 
         languages = {
+          "lispBM" = {
+            colorize_brackets = true;
+          };
           "Git Commit" = {
             wrap_guides = [
               50
