@@ -126,6 +126,7 @@ in
       "catppuccin"
       "catppuccin-icons"
       "git-firefly"
+      "just"
       "nix"
       "rust"
       "toml"
@@ -135,6 +136,8 @@ in
     home.packages = [
       # Includes C/C++ language server
       pkgs.clang-tools
+      # Just language server
+      pkgs.just-lsp
       # LispBM language server
       # Note that the Zed LispBM extension is currently installed manually from
       # the repo.
