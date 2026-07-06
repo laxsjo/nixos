@@ -139,6 +139,8 @@ in
       # Note that the Zed LispBM extension is currently installed manually from
       # the repo.
       inputs.lispbm-lsp.packages.${system}.default
+      # Language server for package.json I think?
+      pkgs.package-version-server
       # Nix language server
       pkgs.nixd
       # Includes the rust langauge server
