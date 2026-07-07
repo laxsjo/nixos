@@ -55,6 +55,7 @@ in
           line_height = "standard";
         };
         wrap_guides = [ 80 ];
+        vertical_scroll_margin = 10;
 
         languages = {
           "lispBM" = {
