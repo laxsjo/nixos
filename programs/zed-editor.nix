@@ -71,6 +71,9 @@ in
 
       userKeymaps = [
         {
+          bindings = {
+            "ctrl-<" = "zed::OpenSettingsFile";
+          };
           unbind = {
             # Unbind these from the default keybindings as they conflict with
             # other mappings, and I don't care about them.
