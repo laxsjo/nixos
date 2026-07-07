@@ -76,6 +76,7 @@ in
             # other mappings, and I don't care about them.
             "ctrl-n" = "menu::SelectNext";
             "ctrl-p" = "menu::SelectPrevious";
+            "ctrl-alt-," = "zed::OpenSettingsFile";
 
             "ctrl-q" = "zed::Quit";
           };
@@ -86,6 +87,13 @@ in
             "ctrl-shift-t" = "terminal_panel::ToggleFocus";
             "ctrl-shift-g" = null;
             "ctrl-shift-g g" = "git_panel::ToggleFocus";
+          };
+        }
+        {
+          context = "Pane";
+          bindings = {
+            "ctrl-alt-." = "pane::GoBack";
+            "ctrl-alt-," = "pane::GoForward";
           };
         }
         {
