@@ -87,6 +87,10 @@ in
             "ctrl-shift-t" = "terminal_panel::ToggleFocus";
             "ctrl-shift-g" = null;
             "ctrl-shift-g g" = "git_panel::ToggleFocus";
+            "ctrl-shift-s" = "workspace::SaveWithoutFormat";
+          };
+          unbind = {
+            "ctrl-shift-s" = "workspace::SaveAs";
           };
         }
         {
