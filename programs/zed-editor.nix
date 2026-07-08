@@ -58,7 +58,7 @@ in
         vertical_scroll_margin = 10;
 
         languages = {
-          "lispBM" = {
+          "LispBM" = {
             colorize_brackets = true;
           };
           "Git Commit" = {
