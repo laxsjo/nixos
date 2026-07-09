@@ -24,6 +24,9 @@
         submodule.fetchJobs = 8;
         advice.detachedHead = false;
         tag.sort = "-version:refname";
+        # Don't "quote" UTF-8 encoded filenames, i.e. display UTF-8 filenames
+        # properly. (:
+        core.quotepath = false;
 
         # usage `git adog`: pretty commit graph
         # from this amazing post: https://stackoverflow.com/a/35075021/15507414
