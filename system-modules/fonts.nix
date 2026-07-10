@@ -25,6 +25,7 @@ in
       nerd-fonts.fira-code
       noto-fonts-cjk-sans # Includes Noto Sans Japanese
       noto-fonts-monochrome-emoji
+      noto-fonts-color-emoji
       oldstandard
       sn-pro
     ]
