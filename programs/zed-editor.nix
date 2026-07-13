@@ -162,6 +162,8 @@ in
       pkgs.package-version-server
       # Nix language server
       pkgs.nixd
+      # Python linter, formatter, and language server
+      pkgs.ruff
       # Includes the rust langauge server
       pkgs.rustup
       # Typst language server
