@@ -150,8 +150,11 @@ in
       "zig"
     ];
     home.packages = [
+      pkgs.bash-language-server
       # Includes C/C++ language server
       pkgs.clang-tools
+      # Go language server
+      pkgs.gopls
       # Just language server
       pkgs.just-lsp
       # LispBM language server
@@ -166,8 +169,14 @@ in
       pkgs.ruff
       # Includes the rust langauge server
       pkgs.rustup
+      # Tailwind CSS language server
+      pkgs.tailwindcss-language-server
       # Typst language server
       pkgs.tinymist
+      pkgs.typescript-language-server
+      # CSS language server
+      pkgs.vscode-css-languageserver
+      pkgs.yaml-language-server
       # Zig language server
       pkgs.zls
     ];
