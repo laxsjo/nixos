@@ -123,6 +123,7 @@ in
               { replace_newest = false; }
             ];
             "ctrl-shift-a" = "editor::SelectLargerSyntaxNode";
+            "ctrl-alt-b" = "editor::UnwrapSyntaxNode";
             "alt-h" = "editor::Hover";
             "ctrl-shift-g a" = "git::StageAndNext";
             "ctrl-shift-g u" = "git::UnstageAndNext";
