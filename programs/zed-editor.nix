@@ -141,6 +141,7 @@ in
     programs.zed-editor.extensions = [
       "catppuccin"
       "catppuccin-icons"
+      "editorconfig"
       "git-firefly"
       "just"
       "nix"
