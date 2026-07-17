@@ -16,7 +16,7 @@
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     lispbm.url = "github:svenssonjoel/lispBM/master";
-    lispbm-lsp.url = "github:cortex/lispbm-lsp/add-nix-flake";
+    lispbm-lsp.url = "github:cortex/lispbm-lsp";
     lolitop.url = "github:cortex/lolitop";
     nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";

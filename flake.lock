@@ -299,16 +299,15 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1782910798,
-        "narHash": "sha256-THxL66nq47TiBEhATLs78TbLbgZ7NeG3mdIU2yE6UO8=",
+        "lastModified": 1784281965,
+        "narHash": "sha256-sfHkLPCG9qvlCSSiTW5ONBwA6WulZrolBm+pWCO1lw4=",
         "owner": "cortex",
         "repo": "lispbm-lsp",
-        "rev": "14abd951f0c8484ac302c3df8557a4e9c24da0d7",
+        "rev": "f5ca969c94f5384d832570ece381db759d3ab098",
         "type": "github"
       },
       "original": {
         "owner": "cortex",
-        "ref": "add-nix-flake",
         "repo": "lispbm-lsp",
         "type": "github"
       }
