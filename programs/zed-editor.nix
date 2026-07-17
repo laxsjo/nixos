@@ -141,6 +141,12 @@ in
             "ctrl-alt-enter" = "git::Commit";
           };
         }
+        {
+          context = "ProjectPanel && not_editing";
+          bindings = {
+            "ctrl-space" = "project_panel::OpenPermanent";
+          };
+        }
       ];
     };
 
