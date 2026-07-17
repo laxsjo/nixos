@@ -49,6 +49,11 @@ in
           light = "One Light";
           dark = "Catppuccin Frappé";
         };
+        theme_overrides = {
+          "Catppuccin Frappé" = {
+            "syntax"."error".color = "#e78284";
+          };
+        };
         terminal = {
           font_family = "FiraCode Nerd Font";
           font_size = 14;
