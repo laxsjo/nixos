@@ -79,6 +79,7 @@
       ## Misc programs
       spotify
       discord
+      fontforge-gtk # Font editor
       obsidian
       google-chrome # Only for flasing moonlander keyboard
       filezilla
