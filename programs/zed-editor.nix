@@ -72,6 +72,12 @@ in
               72
             ];
           };
+          "Python" = {
+            language_servers = [
+              "basedpyright"
+              "ruff"
+            ];
+          };
         };
       };
 
@@ -163,6 +169,8 @@ in
       "zig"
     ];
     home.packages = [
+      # Python language server, based on pyright (alternative to ruff)
+      pkgs.basedpyright
       pkgs.bash-language-server
       # Includes C/C++ language server
       pkgs.clang-tools
