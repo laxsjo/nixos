@@ -200,6 +200,8 @@ in
       pkgs.yaml-language-server
       # Zig language server
       pkgs.zls
+      # Python language server (alternative to ruff), currently unused
+      pkgs.ty
     ];
 
     # Configure Zed as the default editor
