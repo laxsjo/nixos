@@ -102,6 +102,7 @@ in
             "ctrl-shift-t" = "terminal_panel::ToggleFocus";
             "ctrl-shift-g" = null;
             "ctrl-shift-g g" = "git_panel::ToggleFocus";
+            "ctrl-shift-g w" = "git::Worktree";
             "ctrl-shift-s" = "workspace::SaveWithoutFormat";
           };
           unbind = {
