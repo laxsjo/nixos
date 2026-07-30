@@ -77,6 +77,7 @@
       kdePackages.filelight
 
       ## Misc programs
+      bambu-studio # Slicer for BambuLab 3D printers
       blender-hip
       bruno # API client
       burpsuite # Web application penetration testing application
