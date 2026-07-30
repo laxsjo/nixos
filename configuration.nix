@@ -192,10 +192,13 @@ in
   services.flatpak.enable = true;
 
   # Nix configuration
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    trusted-users = [ "@wheel" ];
+  };
 
   # Make shells available
   programs.zsh.enable = true;
