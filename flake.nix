@@ -31,7 +31,6 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zed.url = "github:zed-industries/zed/v1.8.2";
   };
 
   outputs =
@@ -75,6 +74,7 @@
             # home.nix
             home-manager.extraSpecialArgs.inputs = inputs;
             home-manager.extraSpecialArgs.system = system;
+            home-manager.extraSpecialArgs.pkgs-unstable = pkgs-unstable;
           }
         ];
       };

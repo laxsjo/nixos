@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  pkgs-unstable,
   config,
   inputs,
   system,
@@ -18,7 +19,7 @@ in
     programs.zed-editor = {
       enable = true;
       # Building this took roughly 26 mins on my machine...
-      package = inputs.zed.outputs.packages.${system}.default;
+      package = pkgs-unstable.zed-editor;
 
       userSettings = {
         # I only switch panes using ctrl-tab, therefore disable the tab bar. :)
@@ -207,7 +208,7 @@ in
 
     # Configure Zed as the default editor
     module.shell.sessionVariables = {
-      "EDITOR" = "zed --wait --classic";
+      "EDITOR" = "zeditor --wait --classic";
     };
   };
 }
