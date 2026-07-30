@@ -7,6 +7,7 @@ let
       name = name;
       src = directory;
       nativeBuildInputs = [ pkgs-unstable.installFonts ];
+      dontInstallWebfonts = true;
     };
 in
 {
