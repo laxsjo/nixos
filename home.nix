@@ -25,86 +25,85 @@
     with pkgs;
     [
       ## Terminal applications
-      httpie
-      # To debug wayland events, like key presses and mouse events.
-      wev
-      git
-      kdotool
-      lbm.repl
-      lbm.repl64
-      neofetch
-      nixVersions.latest
-      tree
-      cowsay
-      pokemonsay
-      kittysay
-      tewisay
-      just
-      jq
-      xorg.xwininfo
-      file
+      android-tools # To get adb for debugging Android phones.
       bbe # binary file editor
       # See the following for an example:
       # https://discourse.nixos.org/t/debug-a-failed-derivation-with-breakpointhook-and-cntr/8669
       cntr # For debugging derivations in interactive containers
-      nmap # For scanning active ports
-      sshpass # For non-interactive password ssh/scp connections
-      pv # Show progress for any command that can be piped.
-      dust # Terminal folder size visualization
-      reuse # Tool for working with the REUSE recommendations.
-      usbutils
+      cowsay
       direnv
-      nix-direnv
-      zip
-      unzip
-      openocd
-      android-tools # To get adb for debugging Android phones.
-      xsel # Utility for saving stdin to clipboard.
+      dust # Terminal folder size visualization
+      file
+      git
       htop # Modern alternative to top.
-      sage # Interactive Python-based CAS environment
+      httpie
+      jq
+      just
+      kdotool
+      kittysay
+      lbm.repl
+      lbm.repl64
+      neofetch
+      nix-direnv
       nixos-rebuild-ng # nixos-rebuild rewrite
+      nixVersions.latest
+      nmap # For scanning active ports
+      openocd
+      pokemonsay
+      pv # Show progress for any command that can be piped.
+      reuse # Tool for working with the REUSE recommendations.
+      sage # Interactive Python-based CAS environment
+      sshpass # For non-interactive password ssh/scp connections
+      tewisay
+      tree
+      unzip
+      usbutils
+      # To debug wayland events, like key presses and mouse events.
+      wev
+      xorg.xwininfo
+      xsel # Utility for saving stdin to clipboard.
+      zip
 
       ## Other
       man-pages
       man-pages-posix
-      wayland-utils # To be able to use wayland-info in Info Center
-      wineWowPackages.waylandFull # To be able to run windows EXEs.
+      nil # Nix language server.
       rustup # To make the rust-analyzer vscode extension work.
       typstyle # Formatter for Typst
-      nil # Nix language server.
+      wayland-utils # To be able to use wayland-info in Info Center
+      wineWowPackages.waylandFull # To be able to run windows EXEs.
 
       ## GUI utils
       kdePackages.filelight
 
       ## Misc programs
-      spotify
-      discord
-      fontforge-gtk # Font editor
-      obsidian
-      google-chrome # Only for flasing moonlander keyboard
-      filezilla
-      vlc
       blender-hip
-      obsidian
-      geeqie # image viewer
-      kooha # Image recorder
-      geteduroam # Application for configuring eduroam network.
       bruno # API client
       burpsuite # Web application penetration testing application
+      discord
+      filezilla
+      fontforge-gtk # Font editor
+      geeqie # image viewer
+      geteduroam # Application for configuring eduroam network.
+      google-chrome # Only for flasing moonlander keyboard
+      kooha # Image recorder
+      obsidian
+      spotify
+      vlc
 
       ## Gaming
-      prismlauncher # Minecraft launcher
       openmw # Morrowind engine
+      prismlauncher # Minecraft launcher
 
       ## Editing programs
       (inkscape-with-extensions.override {
         inkscapeExtensions = [ inkscape-extensions.inkstitch ];
       })
+      audacity # Audio manipulation
       kicad
       krita
-      pinta # Minimal image editor
       libreoffice-qt6 # LibreOffice Suite
-      audacity # Audio manipulation
+      pinta # Minimal image editor
     ]
     ++ [
       inputs.gd-save-transfer.packages.${stdenv.hostPlatform.system}.default
