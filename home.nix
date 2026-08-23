@@ -88,6 +88,7 @@
       geeqie # image viewer
       geteduroam # Application for configuring eduroam network.
       google-chrome # Only for flasing moonlander keyboard
+      inputs.llm-agents.packages.${pkgs.hostPlatform.system}.claude-desktop
       kooha # Image recorder
       obsidian
       spotify
