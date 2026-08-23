@@ -27,6 +27,7 @@
       ## Terminal applications
       android-tools # To get adb for debugging Android phones.
       bbe # binary file editor
+      claude-code # Terminal based agentic coding tool
       # See the following for an example:
       # https://discourse.nixos.org/t/debug-a-failed-derivation-with-breakpointhook-and-cntr/8669
       cntr # For debugging derivations in interactive containers
