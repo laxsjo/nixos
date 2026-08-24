@@ -18,5 +18,6 @@
     ./enpass.nix
     ./alacritty.nix
     ./zellij
+    ./typst-watch
   ];
 }

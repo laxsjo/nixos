@@ -156,6 +156,7 @@
   programs.vscode.enable = true;
   programs.linecut.enable = true;
   programs.rlr.enable = true;
+  programs.typst-watch.enable = true;
 
   ## Flatpaks!
   # services.flatpak.enable = true;
