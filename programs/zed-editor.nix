@@ -64,6 +64,10 @@ in
         vertical_scroll_margin = 10;
 
         languages = {
+          "Assembly" = {
+            tab_size = 8;
+            hard_tabs = true;
+          };
           "LispBM" = {
             colorize_brackets = true;
           };
@@ -159,18 +163,22 @@ in
     };
 
     programs.zed-editor.extensions = [
+      "assembly"
       "catppuccin"
       "catppuccin-icons"
       "editorconfig"
       "git-firefly"
       "just"
       "nix"
+      "make"
       "rust"
       "toml"
       "typst"
       "zig"
     ];
     home.packages = [
+      # Language server for various assembly languages.
+      pkgs.asm-lsp
       # Python language server, based on pyright (alternative to ruff)
       pkgs.basedpyright
       pkgs.bash-language-server
