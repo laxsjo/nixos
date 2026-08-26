@@ -91,6 +91,7 @@
       inputs.llm-agents.packages.${pkgs.hostPlatform.system}.claude-desktop
       kooha # Image recorder
       obsidian
+      rars # RISC-V emulator and IDE
       spotify
       vlc
 
