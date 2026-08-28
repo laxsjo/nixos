@@ -178,7 +178,15 @@ in
     ];
     home.packages = [
       # Language server for various assembly languages.
-      pkgs.asm-lsp
+      (pkgs.symlinkJoin {
+        name = "asm-lsp";
+        paths = [ pkgs.asm-lsp ];
+        buildInputs = [ pkgs.makeWrapper ];
+        postBuild = ''
+          wrapProgram $out/bin/asm-lsp \
+            --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.clang ]}
+        '';
+      })
       # Python language server, based on pyright (alternative to ruff)
       pkgs.basedpyright
       pkgs.bash-language-server
