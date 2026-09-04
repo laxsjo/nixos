@@ -78,6 +78,7 @@
       kdePackages.filelight
 
       ## Misc programs
+      anki # Flashcard learning tool
       bambu-studio # Slicer for BambuLab 3D printers
       blender-hip
       bruno # API client
