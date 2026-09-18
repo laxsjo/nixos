@@ -171,6 +171,7 @@ in
       "just"
       "nix"
       "make"
+      "prolog"
       "rust"
       "toml"
       "typst"
