@@ -166,6 +166,8 @@ in
       "assembly"
       "catppuccin"
       "catppuccin-icons"
+      "dockerfile"
+      "docker-compose"
       "editorconfig"
       "git-firefly"
       "just"
