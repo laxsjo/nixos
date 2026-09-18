@@ -195,6 +195,8 @@ in
       pkgs.bash-language-server
       # Includes C/C++ language server
       pkgs.clang-tools
+      # Required for gopls to work
+      pkgs.go
       # Go language server
       pkgs.gopls
       # Just language server
