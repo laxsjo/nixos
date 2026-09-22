@@ -91,6 +91,7 @@
       google-chrome # Only for flasing moonlander keyboard
       inputs.llm-agents.packages.${pkgs.hostPlatform.system}.claude-desktop
       kooha # Image recorder
+      obs # Screen recorder
       obsidian
       rars # RISC-V emulator and IDE
       spotify
