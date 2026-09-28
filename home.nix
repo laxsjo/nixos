@@ -52,6 +52,7 @@
       openocd
       pokemonsay
       pv # Show progress for any command that can be piped.
+      python3 # Python 3 interpreter
       reuse # Tool for working with the REUSE recommendations.
       sage # Interactive Python-based CAS environment
       sshpass # For non-interactive password ssh/scp connections
