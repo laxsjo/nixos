@@ -13,13 +13,13 @@
     flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
     flake-utils.url = "github:numtide/flake-utils";
     gd-save-transfer.url = "git+file:///home/rasmus/projects/github/gd-save-transfer";
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     lispbm.url = "github:svenssonjoel/lispBM/master";
     lispbm-lsp.url = "github:cortex/lispbm-lsp";
     llm-agents.url = "github:numtide/llm-agents.nix";
     lolitop.url = "github:cortex/lolitop";
-    nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/release-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
