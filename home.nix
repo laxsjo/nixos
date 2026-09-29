@@ -79,9 +79,9 @@
       kdePackages.filelight
 
       ## Misc programs
+      (blender.override { rocmSupport = true; })
       anki # Flashcard learning tool
       bambu-studio # Slicer for BambuLab 3D printers
-      blender-hip
       bruno # API client
       burpsuite # Web application penetration testing application
       discord
