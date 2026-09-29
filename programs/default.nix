@@ -8,7 +8,8 @@
     ./vscode.nix
     ./linecut
     ./discord.nix
-    ./pypeek.nix
+    # This takes ages to build, and I don't think I use it.
+    # ./pypeek.nix
     ./rlr.nix
     ./emote.nix
     ./zed-editor.nix
