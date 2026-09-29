@@ -44,7 +44,7 @@
       kittysay
       lbm.repl
       lbm.repl64
-      neofetch
+      fastfetch
       nix-direnv
       nixos-rebuild-ng # nixos-rebuild rewrite
       nixVersions.latest
