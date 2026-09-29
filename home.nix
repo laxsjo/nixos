@@ -73,7 +73,7 @@
       rustup # To make the rust-analyzer vscode extension work.
       typstyle # Formatter for Typst
       wayland-utils # To be able to use wayland-info in Info Center
-      wineWowPackages.waylandFull # To be able to run windows EXEs.
+      wineWow64Packages.waylandFull # To be able to run windows EXEs.
 
       ## GUI utils
       kdePackages.filelight
