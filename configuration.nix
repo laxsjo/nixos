@@ -183,8 +183,8 @@ in
     wget
     git
     gedit
-    xorg.setxkbmap
-    xorg.xkbcomp
+    setxkbmap
+    xkbcomp
     cntr
   ];
 

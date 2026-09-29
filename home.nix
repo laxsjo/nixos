@@ -62,7 +62,7 @@
       usbutils
       # To debug wayland events, like key presses and mouse events.
       wev
-      xorg.xwininfo
+      xwininfo
       xsel # Utility for saving stdin to clipboard.
       zip
 
