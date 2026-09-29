@@ -40,6 +40,9 @@ in
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
+      # This is the default for the latest home manager state version.
+      dotDir = "${config.xdg.configHome}/zsh";
+
       shellAliases = {
         # Apparently this makes aliases resolve when using sudo...
         "sudo" = "sudo ";
