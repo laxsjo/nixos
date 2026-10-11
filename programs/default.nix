@@ -20,5 +20,6 @@
     ./alacritty.nix
     ./zellij
     ./typst-watch
+    ./pick-color
   ];
 }

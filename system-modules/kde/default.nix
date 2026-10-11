@@ -362,7 +362,8 @@ in
           "plasmashell"."cyclePrevAction" = "none,,Previous History Item";
           "plasmashell"."manage activities" = "Meta+Q";
           "plasmashell"."next activity" = "Meta+A,none,Walk through activities";
-          "plasmashell"."previous activity" = "Meta+Shift+A,none,Walk through activities (Reverse)";
+          # Disabled to free up Meta+Shift+A for the pick-color program.
+          "plasmashell"."previous activity" = [ ];
           "plasmashell"."repeat_action" = "none,Meta+Ctrl+R,Manually Invoke Action on Current Clipboard";
           "plasmashell"."show dashboard" = "Ctrl+F12";
           "plasmashell"."show-barcode" = "none,,Show Barcode…";
