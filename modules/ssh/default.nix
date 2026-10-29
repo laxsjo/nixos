@@ -14,7 +14,10 @@ let
   # fail with 'Bad owner or permissions on /home/rasmus/.ssh/config'. This patch disables
   # that check in openssh.
   # source: https://github.com/nix-community/home-manager/issues/322#issuecomment-1178614454
-  patchedOpenssh = pkgs.openssh.overrideAttrs (old: {
+  # openssh_gssapi is openssh with the GSSAPI key exchange patches, needed for the
+  # GSSAPI* options used by the KTH student shell host. The plain openssh package
+  # rejects them with 'Unsupported option'/'Bad configuration option'.
+  patchedOpenssh = pkgs.openssh_gssapi.overrideAttrs (old: {
     patches = (old.patches or [ ]) ++ [ ./openssh.patch ];
     doCheck = false;
   });

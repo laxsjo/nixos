@@ -7,3 +7,12 @@ Host 192.168.1.240
 Host 192.168.2.240
     StrictHostKeyChecking no
     UserKnownHostsFile=/dev/null
+
+# To connect to KTH student shell, first run `kinit -f rsoderh@KTH.SE`, followed
+# by `ssh kth`
+Host kth
+  HostName student-shell.sys.kth.se
+  User rsoderh
+  PreferredAuthentications gssapi-with-mic
+  GSSAPIAuthentication yes
+  GSSAPIDelegateCredentials yes
