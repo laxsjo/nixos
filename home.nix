@@ -45,6 +45,7 @@
       lbm.repl
       lbm.repl64
       fastfetch
+      heimdal # Kerberos 5 implementation, used for KTH student shell login.
       nix-direnv
       nixos-rebuild-ng # nixos-rebuild rewrite
       nixVersions.latest
