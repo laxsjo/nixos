@@ -64,7 +64,7 @@
       # To debug wayland events, like key presses and mouse events.
       wev
       xwininfo
-      xsel # Utility for saving stdin to clipboard.
+      wl-clipboard # Utility for saving stdin to clipboard.
       zip
 
       ## Other
