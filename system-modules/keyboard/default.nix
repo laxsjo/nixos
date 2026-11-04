@@ -19,7 +19,7 @@ in
   services.xserver = {
     enable = true;
     xkb = {
-      layout = "se-workman";
+      layout = "se-workman,se";
       extraLayouts.se-workman = {
         description = "Swedish layout with workman letters";
         languages = [
