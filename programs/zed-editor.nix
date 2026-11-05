@@ -173,6 +173,7 @@ in
       "just"
       "nix"
       "make"
+      "postgres-language-server"
       "prolog"
       "rust"
       "toml"
@@ -207,6 +208,8 @@ in
       inputs.lispbm-lsp.packages.${system}.default
       # Language server for package.json I think?
       pkgs.package-version-server
+      # Language server for PostgreSQL SQL files
+      pkgs.postgres-language-server
       # Nix language server
       pkgs.nixd
       # Python linter, formatter, and language server
