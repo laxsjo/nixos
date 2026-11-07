@@ -108,7 +108,7 @@
         inkscapeExtensions = [ inkscape-extensions.inkstitch ];
       })
       audacity # Audio manipulation
-      godot
+      godot_4_7
       kicad
       krita
       libreoffice-qt6 # LibreOffice Suite
