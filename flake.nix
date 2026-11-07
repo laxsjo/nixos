@@ -32,6 +32,7 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    winema3.url = "github:eyduh/WineMA3";
   };
 
   outputs =

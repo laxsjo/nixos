@@ -19,6 +19,7 @@ in
     ./system-modules/fonts.nix
     ./system-modules/kde
     ./system-modules/keyboard
+    ./system-modules/programs
   ];
 
   # Bootloader.
