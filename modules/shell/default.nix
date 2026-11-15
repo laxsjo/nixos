@@ -11,7 +11,7 @@ let
   cfg = config.module.${name};
 in
 {
-  options.module.${name} = with lib; {
+  options.module.${name} = {
     enable = lib.mkEnableOption "shell. You want to enable this. (Why did I even make this an option?)";
     # Custom option for setting environment variables because both home.sessionVariables
     # and programs.zsh.sessionVariables appear to be broken in zsh per
@@ -132,7 +132,7 @@ in
     };
     programs.oh-my-posh = {
       enable = true;
-      settings = builtins.fromTOML (builtins.readFile ./myCatppuccin.omp.toml);
+      settings = fromTOML (builtins.readFile ./myCatppuccin.omp.toml);
     };
 
     # Konsole

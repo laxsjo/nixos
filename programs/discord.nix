@@ -1,8 +1,5 @@
 {
-  lib,
-  config,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -37,7 +34,7 @@ in
 # };
 {
   config = {
-    home.packages = with pkgs; [
+    home.packages = [
       vesktop-patched # Custom discord client with support for wayland screen sharing
     ];
   };

@@ -1,14 +1,11 @@
 {
-  config,
-  lib,
   pkgs,
-  osConfig,
   inputs,
   ...
 }:
 
 {
-  imports = builtins.break [
+  imports = break [
     ./modules/build-env.nix
     ./modules/shortcuts
     ./modules/shell

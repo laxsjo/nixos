@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -10,10 +9,6 @@ let
   name = "rlr";
   cfg = config.programs.${name};
 
-  icon = builtins.fetchurl {
-    url = "https://raw.githubusercontent.com/dynobo/normcap/6f5809c06d97896faf7ea61b05dbf16027777bf9/assets/resources/icons/normcap.svg";
-    sha256 = "sha256:0lsjalks1i425xz75y2hapc17fx8zcf5gqc9ck4s2znhx0ygd4x3";
-  };
   rlr = pkgs.rustPlatform.buildRustPackage rec {
     pname = "rlr";
     version = "7bed0f3830f3506fadb5358bb36a4f8cb4da44e6";
@@ -67,7 +62,7 @@ in
       rlr
     ];
 
-    dconf.settings = with lib.hm.gvariant; {
+    dconf.settings = {
       "com/github/epilys/rlr" = {
         secondary-color = "rgba(12, 67, 88, 0.47)";
         primary-color = "#E8E8E8";

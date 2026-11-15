@@ -3,9 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
-  config,
   pkgs,
-  lib,
   ...
 }:
 let
@@ -114,7 +112,7 @@ in
       timeoutMins = 120;
     in
     ''
-      Defaults        timestamp_timeout=${builtins.toString (timeoutMins * 60)}
+      Defaults        timestamp_timeout=${toString (timeoutMins * 60)}
     '';
 
   # Is this enabled by default? *thinking-emoji*

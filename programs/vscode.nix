@@ -1,17 +1,8 @@
 {
-  lib,
   pkgs,
-  config,
   ...
 }:
 
-let
-  name = "vscode";
-
-  vscode-derivation = pkgs.vscode-fhs.overrideAttrs;
-
-in
-# vscode-runner =
 {
   config = {
     programs.vscode = {

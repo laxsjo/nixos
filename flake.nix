@@ -43,7 +43,6 @@
       home-manager,
       treefmt-nix,
       flatpak,
-      flake-utils,
       ...
     }:
     let

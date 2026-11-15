@@ -19,7 +19,6 @@
 #   ~/.local/share/winema3/gma3_2.3.2/drive_c/ProgramData/MALightingTechnology/gma3_2.3.2/shared/shows/
 
 {
-  pkgs,
   inputs,
   ...
 }:

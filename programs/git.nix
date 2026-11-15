@@ -1,10 +1,4 @@
-{
-  lib,
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+{ ... }:
 
 {
   config = {

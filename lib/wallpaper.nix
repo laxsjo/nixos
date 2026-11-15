@@ -1,5 +1,4 @@
 {
-  lib,
   pkgs,
   ...
 }:
@@ -8,7 +7,7 @@ let
   imageMapRange =
     image: sourceColorStart: sourceColorEnd: destinationColorStart: destinationColorEnd:
     pkgs.stdenvNoCC.mkDerivation {
-      name = "${image.name or builtins.baseNameOf image}.recolored.png";
+      name = "${image.name or baseNameOf image}.recolored.png";
       nativeBuildInputs = [ pkgs.imagemagick ];
 
       phases = [ "installPhase" ];

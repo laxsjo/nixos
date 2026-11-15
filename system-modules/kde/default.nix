@@ -1,15 +1,11 @@
 {
-  lib,
   selfLib,
-  config,
   pkgs,
-  inputs,
   ...
 }:
 
 let
   user = "rasmus";
-  userConfig = config.home-manager.users.${user};
 
   makeIni = (pkgs.formats.ini { }).generate;
   secsFromMins = minutes: 60 * minutes;
@@ -85,8 +81,6 @@ in
   # Home manager configuration
   config.home-manager.users.${user} =
     {
-      lib,
-      config,
       pkgs,
       inputs,
       ...

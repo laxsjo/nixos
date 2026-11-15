@@ -1,8 +1,5 @@
 {
-  lib,
-  config,
   pkgs,
-  inputs,
   ...
 }:
 # Only supported on X11 :(
@@ -32,7 +29,7 @@ let
 in
 {
   config = {
-    home.packages = with pkgs; [
+    home.packages = [
       pypeek
     ];
   };
