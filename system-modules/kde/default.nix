@@ -97,12 +97,94 @@ in
         pkgs.kdePackages.kcharselect
       ];
 
+      # The lock screen has no layout switcher of its own, and kglobalaccel
+      # blocks global shortcuts while locked (https://bugs.kde.org/show_bug.cgi?id=490226),
+      # so if anything flips the layout to plain `se` during a lock there is no
+      # way back short of going through SDDM. That does happen: a flip from
+      # se-workman to se was captured ~8 minutes into a lock, during a stretch
+      # of repeated suspend/resume cycles. Pin the layout for as long as the
+      # screen is locked.
+      systemd.user.services.pin-lockscreen-keyboard-layout = {
+        Unit = {
+          Description = "Pin the keyboard layout to se-workman while the screen is locked";
+          PartOf = [ "graphical-session.target" ];
+          After = [ "graphical-session.target" ];
+        };
+        Service = {
+          ExecStart = toString (
+            pkgs.writeShellScript "pin-lockscreen-keyboard-layout" ''
+              set -u
+
+              send() {
+                ${pkgs.dbus}/bin/dbus-send --session --print-reply "$@" 2>/dev/null
+              }
+
+              locked() {
+                send --dest=org.kde.screensaver /ScreenSaver \
+                  org.freedesktop.ScreenSaver.GetActive \
+                  | ${pkgs.gnugrep}/bin/grep -q "boolean true"
+              }
+
+              # Index 0 is se-workman, per `programs.plasma.input.keyboard.layouts`.
+              select_workman() {
+                send --dest=org.kde.keyboard /Layouts \
+                  org.kde.KeyboardLayouts.setLayout uint32:0 >/dev/null
+              }
+
+              pin_while_locked() {
+                while locked; do
+                  select_workman
+                  ${pkgs.coreutils}/bin/sleep 2
+                done
+              }
+
+              # Covers the case where the screen is already locked at start-up.
+              pin_while_locked
+
+              ${pkgs.dbus}/bin/dbus-monitor --session \
+                "type='signal',interface='org.freedesktop.ScreenSaver',member='ActiveChanged'" \
+              | while read -r _; do
+                  pin_while_locked
+                done
+            ''
+          );
+          Restart = "on-failure";
+          RestartSec = "5s";
+        };
+        Install.WantedBy = [ "graphical-session.target" ];
+      };
+
       programs.plasma = {
         enable = true;
 
         # Lockscreen wallpaper
         kscreenlocker.appearance.wallpaper = selfLib.wallpaper.loginBackground;
         workspace.wallpaper = selfLib.wallpaper.desktopBackground;
+
+        # Declare the keyboard layouts explicitly. Without this `kxkbrc` stays
+        # empty, so Plasma has no layout config of its own and KWin only learns
+        # about the layouts through the libxkbcommon `XKB_DEFAULT_LAYOUT`
+        # fallback. That leaves `DisplayNames` empty, which is why both layouts
+        # used to be reported as plain "Swedish".
+        input.keyboard = {
+          # Mirrors what `services.xserver.xkb` puts in the session environment
+          # (XKB_DEFAULT_MODEL / XKB_DEFAULT_OPTIONS). KWin stops consulting
+          # those once `Use=true` has been written to kxkbrc, so they have to be
+          # repeated here.
+          model = "pc104";
+          options = [ "terminate:ctrl_alt_bksp" ];
+          switchingPolicy = "global";
+          layouts = [
+            {
+              layout = "se-workman";
+              displayName = "WM";
+            }
+            {
+              layout = "se";
+              displayName = "SE";
+            }
+          ];
+        };
 
         # Power settings
         powerdevil = {
@@ -117,9 +199,20 @@ in
 
         shortcuts = {
           "ActivityManager"."switch-to-activity-dad1e87e-84fb-4f4e-aa0f-cb086bfb65a6" = [ ];
-          "KDE Keyboard Layout Switcher"."Switch keyboard layout to Swedish" = [ ];
-          "KDE Keyboard Layout Switcher"."Switch to Last-Used Keyboard Layout" = "Meta+Alt+L";
-          "KDE Keyboard Layout Switcher"."Switch to Next Keyboard Layout" = "Meta+Alt+K";
+          # These per-layout actions are named after `input.keyboard`'s
+          # displayName, so they changed from "… to Swedish" when both
+          # layouts stopped sharing that name.
+          "KDE Keyboard Layout Switcher"."Switch keyboard layout to WM" = [ ];
+          "KDE Keyboard Layout Switcher"."Switch keyboard layout to SE" = [ ];
+          # Both of these used to be layout-*dependent*: kglobalaccel matches on
+          # keysym, and `k`/`l` move between the two layouts (`k` is <AB06> in
+          # se-workman but <AC08> in se), so switching to se was a one-way trip —
+          # the same physical key then sent Meta+Alt+N and matched nothing.
+          # Meta+Alt+Space sits in the same place in both layouts, so it toggles
+          # in both directions. "Last-Used" is redundant with only two layouts,
+          # and its Meta+Alt+L binding was one keystroke away from Meta+L (lock).
+          "KDE Keyboard Layout Switcher"."Switch to Last-Used Keyboard Layout" = [ ];
+          "KDE Keyboard Layout Switcher"."Switch to Next Keyboard Layout" = "Meta+Alt+Space";
           "kaccess"."Toggle Screen Reader On and Off" = "Meta+Alt+S";
           "kcm_touchpad"."Disable Touchpad" = "Touchpad Off";
           "kcm_touchpad"."Enable Touchpad" = "Touchpad On";
